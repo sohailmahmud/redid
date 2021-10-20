@@ -1,0 +1,41 @@
+name: redid
+description: A new Flutter project.
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_native_splash: ^1.2.4
+  intl_phone_number_input: ^0.7.0+2
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/icons/logo.png
+    - assets/icons/password.png
+    - assets/icons/phoneno.png
+    - assets/icons/forgotpass.png
+
+  fonts:
+    - family: Chiller
+      fonts:
+        - asset: assets/fonts/Chiller.ttf
+          weight: 700
+    - family: Book-Antiqua
+      fonts:
+        - asset: assets/fonts/book-antiqua.ttf
