@@ -65,11 +65,9 @@ class SignInState extends State<SignIn> {
             padding: const EdgeInsets.symmetric(
               vertical: 11.0,
             ),
-            child: const Image(
-              image: AssetImage(
-                'assets/icons/phoneno.png',
-              ),
-              fit: BoxFit.fitHeight,
+            child: const Icon(
+              Icons.phone_android,
+              size: 28,
             ),
           ),
         ),
@@ -96,11 +94,9 @@ class SignInState extends State<SignIn> {
             padding: const EdgeInsets.symmetric(
               vertical: 11.0,
             ),
-            child: const Image(
-              image: AssetImage(
-                'assets/icons/password.png',
-              ),
-              fit: BoxFit.fitHeight,
+            child: const Icon(
+              Icons.lock,
+              size: 28,
             ),
           ),
           suffixIcon: IconButton(
@@ -130,14 +126,14 @@ class SignInState extends State<SignIn> {
         onPressed: () {
           Navigator.of(context).pushNamed('');
         },
-        padding: const EdgeInsets.only(top: 6.0, bottom: 8.0),
+        padding: const EdgeInsets.only(top: 8.0, bottom: 10.0),
         color: kButtonColor,
         child: const Text(
           'Sign in',
           style: TextStyle(
             fontFamily: "Book-Antiqua",
             letterSpacing: 0.5,
-            fontSize: 22,
+            fontSize: 24,
             color: Colors.black,
             fontWeight: FontWeight.bold,
           ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/views/auth/signin/signin.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key, this.title}) : super(key: key);
@@ -11,6 +13,11 @@ class SignUp extends StatefulWidget {
 }
 
 class SignUpState extends State<SignUp> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController controller = TextEditingController();
+  String initialCountry = 'BD';
+  PhoneNumber number = PhoneNumber(isoCode: 'BD');
+
   bool showvalue = false;
   @override
   Widget build(BuildContext context) {
@@ -29,7 +36,7 @@ class SignUpState extends State<SignUp> {
     );
 
     final fieldTitle = Container(
-      padding: const EdgeInsets.only(bottom: 5),
+      padding: const EdgeInsets.only(bottom: 30),
       child: const Text(
         'Enter Your Phone Number',
         style: TextStyle(
@@ -40,6 +47,72 @@ class SignUpState extends State<SignUp> {
           fontWeight: FontWeight.w600,
         ),
         textAlign: TextAlign.center,
+      ),
+    );
+    final phoneNumber = Container(
+      padding: const EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 15),
+      child: Form(
+        key: formKey,
+        child: Container(
+          padding: EdgeInsets.zero,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              InternationalPhoneNumberInput(
+                onInputChanged: (PhoneNumber number) {
+                  // ignore: avoid_print
+                  print(number.phoneNumber);
+                },
+                onInputValidated: (bool value) {
+                  // ignore: avoid_print
+                  print(value);
+                },
+                selectorConfig: const SelectorConfig(
+                  selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                ),
+                textStyle: const TextStyle(
+                  fontFamily: "Book-Antiqua",
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+                selectorTextStyle: const TextStyle(
+                  fontFamily: "Book-Antiqua",
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+                inputDecoration: InputDecoration(
+                  hintText: 'Phone Number',
+                  contentPadding:
+                      const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                ),
+                searchBoxDecoration: InputDecoration(
+                  hintText: 'Search by country or phone number',
+                  contentPadding:
+                      const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                ),
+                spaceBetweenSelectorAndTextField: 0,
+                ignoreBlank: false,
+                initialValue: number,
+                textFieldController: controller,
+                formatInput: false,
+                keyboardType: const TextInputType.numberWithOptions(
+                  signed: true,
+                  decimal: true,
+                ),
+                inputBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                onSaved: (PhoneNumber number) {
+                  // ignore: avoid_print
+                  print('On Saved: $number');
+                },
+              ),
+            ],
+          ),
+        ),
       ),
     );
     final agreementCheck = Container(
@@ -87,7 +160,7 @@ class SignUpState extends State<SignUp> {
                         style: TextStyle(
                           fontFamily: 'Book-Antiqua',
                           fontSize: 17,
-                          color: kBaseColor,
+                          color: kInfectedColor,
                           fontWeight: FontWeight.w600,
                           decoration: TextDecoration.underline,
                         ),
@@ -106,7 +179,7 @@ class SignUpState extends State<SignUp> {
                         style: TextStyle(
                           fontFamily: 'Book-Antiqua',
                           fontSize: 17,
-                          color: kBaseColor,
+                          color: kInfectedColor,
                           fontWeight: FontWeight.w600,
                           decoration: TextDecoration.underline,
                         ),
@@ -159,7 +232,7 @@ class SignUpState extends State<SignUp> {
           borderRadius: BorderRadius.circular(10),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed('');
+          Navigator.of(context).pushNamed(SignIn.tag);
         },
         padding: const EdgeInsets.only(top: 5.0, bottom: 8.0),
         color: kButtonColor,
@@ -184,6 +257,7 @@ class SignUpState extends State<SignUp> {
           children: <Widget>[
             signUpLogo,
             fieldTitle,
+            phoneNumber,
             agreementCheck,
             getOTPButton,
             signInButton,
@@ -192,15 +266,30 @@ class SignUpState extends State<SignUp> {
       ),
     );
   }
-}
 
-String numberValidator(String value) {
-  if (value == '') {
+  String numberValidator(String value) {
+    if (value == '') {
+      return '';
+    }
+    final n = num.tryParse(value);
+    if (n == null) {
+      return '"$value" is not a valid number!';
+    }
     return '';
   }
-  final n = num.tryParse(value);
-  if (n == null) {
-    return '"$value" is not a valid number!';
+
+  void getPhoneNumber(String phoneNumber) async {
+    PhoneNumber number =
+        await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber, 'US');
+
+    setState(() {
+      this.number = number;
+    });
   }
-  return '';
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
 }
