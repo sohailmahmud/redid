@@ -116,13 +116,13 @@ class SignUpState extends State<SignUp> {
       ),
     );
     final agreementCheck = Container(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 35),
+      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
       child: Row(
         children: [
           Container(
             padding: EdgeInsets.zero,
             child: Transform.scale(
-              scale: 1.4,
+              scale: 1.2,
               child: Checkbox(
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 checkColor: kBackgroundColor,
@@ -144,9 +144,9 @@ class SignUpState extends State<SignUp> {
                     'I have read and agree to the',
                     style: TextStyle(
                       fontFamily: 'Book-Antiqua',
-                      fontSize: 20,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 17.5,
+                      color: kTextColor,
+                      fontWeight: FontWeight.w500,
                     ),
                     //textAlign: TextAlign.left,
                   ),
@@ -159,9 +159,9 @@ class SignUpState extends State<SignUp> {
                         text: "Terms of Use ",
                         style: TextStyle(
                           fontFamily: 'Book-Antiqua',
-                          fontSize: 17,
-                          color: kInfectedColor,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                          color: kDeathColor,
+                          fontWeight: FontWeight.w500,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -169,18 +169,18 @@ class SignUpState extends State<SignUp> {
                         text: "and ",
                         style: TextStyle(
                           fontFamily: 'Book-Antiqua',
-                          fontSize: 17,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                          color: kTextColor,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       TextSpan(
                         text: "Privacy Policy",
                         style: TextStyle(
                           fontFamily: 'Book-Antiqua',
-                          fontSize: 17,
-                          color: kInfectedColor,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 15,
+                          color: kDeathColor,
+                          fontWeight: FontWeight.w500,
                           decoration: TextDecoration.underline,
                         ),
                       ),
@@ -194,7 +194,7 @@ class SignUpState extends State<SignUp> {
       ),
     );
     final getOTPButton = Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: MaterialButton(
         elevation: 5.0,
         colorBrightness: Brightness.light,
@@ -221,7 +221,7 @@ class SignUpState extends State<SignUp> {
     );
     final signInButton = Padding(
       padding:
-          const EdgeInsets.only(left: 25, top: 40.0, right: 25, bottom: 40),
+          const EdgeInsets.only(left: 25, top: 50.0, right: 25, bottom: 40),
       child: MaterialButton(
         elevation: 5.0,
         colorBrightness: Brightness.light,
