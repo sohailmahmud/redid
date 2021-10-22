@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 const kBaseColor = Color(0xFFC21E56);
 const kButtonColor = Color(0xFFFF3399);
+const kTextColor = Color(0xFF000000);
 const kBackgroundColor = Color(0xFFFFFFFF);
 const kConsultationColor = Color(0xFFD4D4D7);
 const kDCardColor = Color(0xFFD9DADC);

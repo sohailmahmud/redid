@@ -60,16 +60,11 @@ class SignInState extends State<SignIn> {
           contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
-            height: 10,
-            width: 10,
-            padding: const EdgeInsets.symmetric(
-              vertical: 11.0,
-            ),
-            child: const Image(
-              image: AssetImage(
-                'assets/icons/phoneno.png',
-              ),
-              fit: BoxFit.fitHeight,
+            padding: EdgeInsets.fromLTRB(
+                6, 0, MediaQuery.of(context).size.width * 0.02, 0),
+            child: const Icon(
+              Icons.phone_android,
+              size: 28,
             ),
           ),
         ),
@@ -93,14 +88,11 @@ class SignInState extends State<SignIn> {
           prefixIcon: Container(
             height: 12,
             width: 12,
-            padding: const EdgeInsets.symmetric(
-              vertical: 11.0,
-            ),
-            child: const Image(
-              image: AssetImage(
-                'assets/icons/password.png',
-              ),
-              fit: BoxFit.fitHeight,
+            padding: EdgeInsets.fromLTRB(
+                6, 0, MediaQuery.of(context).size.width * 0.02, 0),
+            child: const Icon(
+              Icons.lock,
+              size: 28,
             ),
           ),
           suffixIcon: IconButton(
@@ -118,27 +110,26 @@ class SignInState extends State<SignIn> {
         ),
       ),
     );
-    final signInButton = Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 100.0),
+    final signInButton = Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: MaterialButton(
         elevation: 5.0,
         colorBrightness: Brightness.light,
         shape: RoundedRectangleBorder(
-          //side: const BorderSide(color: Colors.black, width: 0.8),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(30),
         ),
         onPressed: () {
           Navigator.of(context).pushNamed('');
         },
-        padding: const EdgeInsets.only(top: 6.0, bottom: 8.0),
-        color: kButtonColor,
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 13),
+        color: kBaseColor,
         child: const Text(
           'Sign in',
           style: TextStyle(
             fontFamily: "Book-Antiqua",
             letterSpacing: 0.5,
-            fontSize: 22,
-            color: Colors.black,
+            fontSize: 24,
+            color: kTextColor,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -207,26 +198,26 @@ class SignInState extends State<SignIn> {
       ),
     );
     final createAccountButton = Padding(
-      padding: const EdgeInsets.only(top: 5.0, bottom: 40),
+      padding: const EdgeInsets.only(left: 20, top: 5.0, right: 20, bottom: 40),
       child: MaterialButton(
         elevation: 5.0,
         colorBrightness: Brightness.light,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.black, width: 0.8),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(25),
         ),
         onPressed: () {
           Navigator.of(context).pushNamed(SignUp.tag);
         },
-        padding: const EdgeInsets.only(top: 5.0, bottom: 8.0),
-        color: kButtonColor,
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 13),
+        color: kBaseColor,
         child: const Text(
           'Create new Account',
           style: TextStyle(
             fontFamily: "Book-Antiqua",
             letterSpacing: 0.5,
             fontSize: 25,
-            color: kWhiteShadow,
+            color: kTextColor,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

@@ -122,7 +122,7 @@ packages:
     source: hosted
     version: "3.0.8"
   intl_phone_number_input:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: intl_phone_number_input
       url: "https://pub.dartlang.org"

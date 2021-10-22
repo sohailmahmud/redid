@@ -43,7 +43,7 @@ class _AppViewState extends State<AppView> {
               style: TextStyle(
                 fontFamily: 'Book-Antiqua',
                 fontSize: 30,
-                color: Colors.black,
+                color: kTextColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -61,7 +61,7 @@ class _AppViewState extends State<AppView> {
               style: TextStyle(
                 fontFamily: 'Book-Antiqua',
                 fontSize: 30,
-                color: Colors.black,
+                color: kTextColor,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -70,24 +70,23 @@ class _AppViewState extends State<AppView> {
       ),
     );
     final continueButton = Container(
-      width: 320,
       padding: EdgeInsets.only(top: 10, bottom: 20),
       child: MaterialButton(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(30),
         ),
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
-        padding: EdgeInsets.only(top: 10.0, bottom: 12.0),
-        color: kButtonColor,
+        padding: EdgeInsets.fromLTRB(100, 10, 100, 13),
+        color: kBaseColor,
         child: Text(
           'Continue',
           style: TextStyle(
             fontFamily: "Book-Antiqua",
             letterSpacing: 0.5,
             fontSize: 28,
-            color: Colors.black,
+            color: kTextColor,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -96,13 +95,13 @@ class _AppViewState extends State<AppView> {
     final copyrightText = Container(
       padding: EdgeInsets.only(top: 30.0),
       child: Text(
-        '© Copyright 2020-2021 redID.',
+        '© Copyright 2021 redID.',
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Book-Antiqua',
           fontSize: 16.0,
           letterSpacing: 0.5,
-          color: Colors.black,
+          color: kTextColor,
           fontWeight: FontWeight.w700,
         ),
       ),
