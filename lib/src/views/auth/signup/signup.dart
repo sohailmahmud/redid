@@ -194,27 +194,25 @@ class SignUpState extends State<SignUp> {
       ),
     );
     final getOTPButton = Padding(
-      padding:
-          const EdgeInsets.only(top: 0.0, left: 30, bottom: 0.0, right: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 40),
       child: MaterialButton(
         elevation: 5.0,
         colorBrightness: Brightness.light,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.black, width: 0.8),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(30),
         ),
         onPressed: () {
           Navigator.of(context).pushNamed('');
         },
-        padding: const EdgeInsets.only(top: 6.0, bottom: 8.0),
-        color: kButtonColor,
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 12),
+        color: kBaseColor,
         child: const Text(
           'GET OTP',
           style: TextStyle(
             fontFamily: "Book-Antiqua",
             letterSpacing: 0.5,
-            fontSize: 24,
-            color: Colors.black,
+            fontSize: 22,
+            color: kTextColor,
             fontWeight: FontWeight.w700,
             fontStyle: FontStyle.italic,
           ),
@@ -228,21 +226,21 @@ class SignUpState extends State<SignUp> {
         elevation: 5.0,
         colorBrightness: Brightness.light,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(color: Colors.black, width: 0.8),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(30),
         ),
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
-        padding: const EdgeInsets.only(top: 5.0, bottom: 8.0),
-        color: kButtonColor,
+        padding: const EdgeInsets.fromLTRB(10, 10, 10, 12),
+        color: kBaseColor,
         child: const Text(
           'Sign in with password',
           style: TextStyle(
             fontFamily: "Book-Antiqua",
             letterSpacing: 0.5,
             fontSize: 25,
-            color: kWhiteShadow,
+            color: kTextColor,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
