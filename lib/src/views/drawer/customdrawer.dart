@@ -1,19 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/colors.dart';
-
-// ignore: constant_identifier_names
-const String _AccountName = 'Prof. Mohammed Hanif';
-// ignore: constant_identifier_names
-const String _AccountEmail = 'doctor101@prohealth.com';
+import 'package:redid/src/views/auth/signin/signin.dart';
 
 class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({Key? key}) : super(key: key);
   static String tag = 'CustomDrawer';
+  const CustomDrawer({Key? key}) : super(key: key);
   @override
-  State<StatefulWidget> createState() {
-    return CustomDrawerState();
-  }
+  @override
+  CustomDrawerState createState() => CustomDrawerState();
+
+  void openDrawer(BuildContext context) {}
 }
 
 class CustomDrawerState extends State<CustomDrawer> {
@@ -21,38 +18,53 @@ class CustomDrawerState extends State<CustomDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation: 4.0,
       child: Column(
         children: [
           Expanded(
-            flex: 2,
+            flex: 15,
             child: SizedBox(
               width: MediaQuery.of(context).size.width * 0.85,
               child: UserAccountsDrawerHeader(
                 decoration: const BoxDecoration(
                   color: kBaseColor,
                 ),
-                currentAccountPicture: const SizedBox(
-                  child: CircleAvatar(
+                currentAccountPicture: Container(
+                  padding: const EdgeInsets.all(2),
+                  child: const CircleAvatar(
                     radius: 30,
                     backgroundColor: kBaseColor,
                     child: CircleAvatar(
                       radius: 27,
-                      backgroundColor: kTitleColor,
+                      backgroundColor: kShadowColor,
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 25.0,
-                        child: Icon(Icons.verified_user),
+                        child: Icon(
+                          Icons.person,
+                          size: 35,
+                        ),
                       ),
                     ),
                   ),
                 ),
-                accountName: const Text(
-                  _AccountName,
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 15),
+                accountName: Text(
+                  'Rayhan Hasan'.toUpperCase(),
+                  style: const TextStyle(
+                    fontFamily: 'Book-Antiqua',
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    color: kTitleColor,
+                  ),
                 ),
                 accountEmail: const Text(
-                  _AccountEmail,
-                  style: TextStyle(fontFamily: 'Segoe', fontSize: 12),
+                  '0123456789',
+                  style: TextStyle(
+                    fontFamily: 'Book-Antiqua',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: kTitleColor,
+                  ),
                 ),
                 onDetailsPressed: () {
                   setState(() {
@@ -63,7 +75,7 @@ class CustomDrawerState extends State<CustomDrawer> {
             ),
           ),
           Expanded(
-            flex: 5,
+            flex: 50,
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: false,
@@ -75,18 +87,21 @@ class CustomDrawerState extends State<CustomDrawer> {
                     "Home",
                     style: TextStyle(
                         color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
                         letterSpacing: 0.6,
                         fontWeight: FontWeight.w700),
                   ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/homed.png'),
+                      child: Icon(
+                        Icons.home,
+                        color: kBaseColor,
+                      ),
                     ),
                   ),
                   onTap: () {
@@ -105,17 +120,20 @@ class CustomDrawerState extends State<CustomDrawer> {
                   title: const Text("Profile",
                       style: TextStyle(
                           color: kBaseColor,
-                          fontFamily: 'Segoe',
-                          fontSize: 16,
+                          fontFamily: 'Book-Antiqua',
+                          fontSize: 14,
                           letterSpacing: 0.6,
                           fontWeight: FontWeight.w700)),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/profiled.png'),
+                      child: Icon(
+                        Icons.person,
+                        color: kBaseColor,
+                      ),
                     ),
                   ),
                   onTap: () {
@@ -135,18 +153,21 @@ class CustomDrawerState extends State<CustomDrawer> {
                     "Active Status",
                     style: TextStyle(
                         color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
                         letterSpacing: 0.6,
                         fontWeight: FontWeight.w700),
                   ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/statusd.png'),
+                      child: Icon(
+                        Icons.toggle_on_outlined,
+                        color: kBaseColor,
+                      ),
                     ),
                   ),
                   onTap: () {
@@ -165,81 +186,23 @@ class CustomDrawerState extends State<CustomDrawer> {
                   title: const Text(
                     "Terms and Conditions",
                     style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: const CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(Icons.description),
+                      color: kBaseColor,
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 14,
+                      letterSpacing: 0.6,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Privacy Policy",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: const CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(Icons.price_check_rounded),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "About Us",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/aboutd.png'),
+                      child: Icon(
+                        Icons.gavel_rounded,
+                        color: kBaseColor,
+                      ),
                     ),
                   ),
                   onTap: () {
@@ -256,21 +219,61 @@ class CustomDrawerState extends State<CustomDrawer> {
                   dense: true,
                   horizontalTitleGap: 0.0,
                   title: const Text(
-                    "Contact Us",
+                    "Wallet",
                     style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
+                      color: kBaseColor,
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 14,
+                      letterSpacing: 0.6,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/contactd.png'),
+                      child: Icon(
+                        Icons.account_balance_wallet_rounded,
+                        color: kBaseColor,
+                      ),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('');
+                  },
+                ),
+                const Divider(
+                  height: 0.0,
+                  thickness: 0.5,
+                  indent: 18.0,
+                  endIndent: 0.0,
+                  color: kTitleTextColor,
+                ),
+                ListTile(
+                  dense: true,
+                  horizontalTitleGap: 0.0,
+                  title: const Text(
+                    "Job History",
+                    style: TextStyle(
+                      color: kBaseColor,
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 14,
+                      letterSpacing: 0.6,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Icon(
+                        Icons.history_edu_rounded,
+                        color: kBaseColor,
+                      ),
                     ),
                   ),
                   onTap: () {
@@ -287,21 +290,25 @@ class CustomDrawerState extends State<CustomDrawer> {
                   dense: true,
                   horizontalTitleGap: 0.0,
                   title: const Text(
-                    "Settings",
+                    "eCommerce Soon",
                     style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
+                      color: kBaseColor,
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 14,
+                      letterSpacing: 0.6,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/settingsd.png'),
+                      child: Icon(
+                        Icons.shopping_cart,
+                        color: kBaseColor,
+                      ),
                     ),
                   ),
                   onTap: () {
@@ -318,25 +325,29 @@ class CustomDrawerState extends State<CustomDrawer> {
                   dense: true,
                   horizontalTitleGap: 0.0,
                   title: const Text(
-                    "Version 0.8.57+6",
+                    "Online Jobs",
                     style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
+                      color: kBaseColor,
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 14,
+                      letterSpacing: 0.6,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/versiond.png'),
+                      child: Icon(
+                        Icons.work_rounded,
+                        color: kBaseColor,
+                      ),
                     ),
                   ),
                   onTap: () {
-                    Navigator.pushNamed(context, "");
+                    Navigator.of(context).pushNamed('');
                   },
                 ),
                 const Divider(
@@ -345,91 +356,69 @@ class CustomDrawerState extends State<CustomDrawer> {
                     indent: 18.0,
                     endIndent: 0.0,
                     color: kTitleTextColor),
+                ListTile(
+                  dense: true,
+                  horizontalTitleGap: 0.0,
+                  title: const Text(
+                    "Notice",
+                    style: TextStyle(
+                      color: kBaseColor,
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 14,
+                      letterSpacing: 0.6,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
+                    radius: 13,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      radius: 12.0,
+                      child: Icon(
+                        Icons.assignment_rounded,
+                        color: kBaseColor,
+                      ),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('');
+                  },
+                ),
+                const Divider(
+                  height: 0.0,
+                  thickness: 0.5,
+                  indent: 18.0,
+                  endIndent: 0.0,
+                  color: kTitleTextColor,
+                ),
                 ListTile(
                   dense: true,
                   horizontalTitleGap: 0.0,
                   title: const Text(
                     "Sign Out",
                     style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
+                      color: kBaseColor,
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 14,
+                      letterSpacing: 0.6,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
+                  leading: const CircleAvatar(
+                    backgroundColor: kWhiteShade,
                     radius: 13,
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/signoutd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Renew",
-                    style: TextStyle(
+                      child: Icon(
+                        Icons.logout_rounded,
                         color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/renewd.png'),
+                      ),
                     ),
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Reviews",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Segoe',
-                        fontSize: 16,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: kShadowColor,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Image.asset('assets/icons/doctor/reviewsd.png'),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(SignIn.tag);
                   },
                 ),
                 const Divider(
