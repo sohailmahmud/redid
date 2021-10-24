@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:redid/src/styles/colors.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
+import 'package:redid/src/views/auth/signup/verification.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key, this.title}) : super(key: key);
@@ -202,7 +203,7 @@ class SignUpState extends State<SignUp> {
           borderRadius: BorderRadius.circular(30),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed('');
+          Navigator.of(context).pushNamed(Verification.tag);
         },
         padding: const EdgeInsets.fromLTRB(10, 10, 10, 12),
         color: kBaseColor,

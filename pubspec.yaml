@@ -14,6 +14,7 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   intl_phone_number_input: ^0.7.0+2
+  flutter_otp_text_field: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,9 @@ flutter:
   assets:
  #  - assets/icons/password.png
     - assets/icons/forgotpass.png
+    - assets/icons/otp.svg
+    - assets/icons/accountpass.svg
+    - assets/icons/wallet.svg
 
   fonts:
     - family: Chiller

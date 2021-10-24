@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:redid/src/styles/colors.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
+import 'package:redid/src/views/dashboard/dashboard.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key, this.title}) : super(key: key);
@@ -119,7 +120,7 @@ class SignInState extends State<SignIn> {
           borderRadius: BorderRadius.circular(30),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed('');
+          Navigator.of(context).pushNamed(Dashboard.tag);
         },
         padding: const EdgeInsets.fromLTRB(10, 10, 10, 13),
         color: kBaseColor,

@@ -20,12 +20,19 @@ const kInfectedColor = Color(0xFFFF8748);
 const kDeathColor = Color(0xFFFF4848);
 const kRecovercolor = Color(0xFF36C12C);
 const kPrimaryColor = Color(0xFF3382CC);
-final kShadowColor = const Color(0xFFB7B7B7).withOpacity(.16);
+const kShadowColor = Color(0xFFB7B7B7);
 final kActiveShadowColor = const Color(0xFF4056C6).withOpacity(.15);
 const kFaceBookColor = Color(0xFF102397);
 const kGoogleColor = Color(0xFFff4f38);
 const kWhiteShadow = Color(0xFFF5F5F5);
 const kWhiteShade = Color(0xFFF4F4F4);
+const Color primaryColor = Color(0xFF121212);
+const Color accentPurpleColor = Color(0xFF6A53A1);
+const Color accentPinkColor = Color(0xFFF99BBD);
+const Color accentDarkGreenColor = Color(0xFF115C49);
+const Color accentYellowColor = Color(0xFFFFB612);
+const Color accentOrangeColor = Color(0xFFEA7A3B);
+
 // Text Style
 const kHeadingTextStyle = TextStyle(
   fontSize: 22,
