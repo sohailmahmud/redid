@@ -75,7 +75,7 @@ class CustomDrawerState extends State<CustomDrawer> {
             ),
           ),
           Expanded(
-            flex: 50,
+            flex: 40,
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: false,
