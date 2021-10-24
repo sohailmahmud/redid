@@ -295,7 +295,7 @@ class DashboardState extends State<Dashboard> {
                       Container(
                         padding: EdgeInsets.zero,
                         child: const Text(
-                          'eCommerce Soon',
+                          'eCommerce',
                           style: TextStyle(
                             fontFamily: 'Book-Antiqua',
                             fontSize: 16.0,

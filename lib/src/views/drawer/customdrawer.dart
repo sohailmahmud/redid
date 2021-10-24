@@ -341,7 +341,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
                       child: Icon(
-                        Icons.work_rounded,
+                        Icons.stream_outlined,
                         color: kBaseColor,
                       ),
                     ),
