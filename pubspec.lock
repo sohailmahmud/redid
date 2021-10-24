@@ -8,6 +8,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.6"
+  argon_buttons_flutter:
+    dependency: "direct main"
+    description:
+      name: argon_buttons_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   args:
     dependency: transitive
     description:
@@ -111,6 +118,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  flutter_spinkit:
+    dependency: "direct main"
+    description:
+      name: flutter_spinkit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.1.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -198,13 +212,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
-  otp_timer_button:
-    dependency: "direct main"
-    description:
-      name: otp_timer_button
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.1.0"
   path:
     dependency: transitive
     description:

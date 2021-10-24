@@ -16,7 +16,8 @@ dependencies:
   intl_phone_number_input: ^0.7.0+2
   flutter_otp_text_field: ^1.0.0
   font_awesome_flutter: ^9.2.0
-  otp_timer_button: ^1.1.0
+  argon_buttons_flutter: ^1.1.0
+  flutter_spinkit: ^5.1.0
 
 dev_dependencies:
   flutter_test:
