@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/colors.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -14,6 +15,10 @@ class Dashboard extends StatefulWidget {
 }
 
 class DashboardState extends State<Dashboard> {
+  get holding => null;
+
+  get usd => null;
+
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -180,9 +185,9 @@ class DashboardState extends State<Dashboard> {
                         padding: const EdgeInsets.only(top: 10),
                         child: const CircleAvatar(
                           backgroundColor: Colors.transparent,
-                          radius: 22.0,
-                          child: Icon(
-                            Icons.account_balance_wallet_outlined,
+                          radius: 25.0,
+                          child: FaIcon(
+                            FontAwesomeIcons.handHoldingUsd,
                             size: 40,
                           ),
                         ),
