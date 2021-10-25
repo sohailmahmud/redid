@@ -150,23 +150,25 @@ class SignInState extends State<SignIn> {
                   child: Image.asset('assets/icons/forgotpass.png'),
                 ),
               ),
-              InkWell(
-                highlightColor: kBackgroundColor,
-                hoverColor: kBackgroundColor,
-                //splashColor: kBackgroundColor,
-                child: const Text(
-                  'Forgotten Password?',
-                  style: TextStyle(
-                    fontFamily: 'Book-Antiqua',
-                    letterSpacing: 0.5,
-                    fontSize: 20,
-                    color: Colors.black,
+              Expanded(
+                child: InkWell(
+                  highlightColor: kBackgroundColor,
+                  hoverColor: kBackgroundColor,
+                  //splashColor: kBackgroundColor,
+                  child: const Text(
+                    'Forgotten Password?',
+                    style: TextStyle(
+                      fontFamily: 'Book-Antiqua',
+                      letterSpacing: 0.5,
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.right,
                   ),
-                  textAlign: TextAlign.right,
+                  onTap: () {
+                    Navigator.of(context).pushNamed('');
+                  },
                 ),
-                onTap: () {
-                  Navigator.of(context).pushNamed('');
-                },
               ),
             ],
           ),

@@ -243,7 +243,7 @@ class DashboardState extends State<Dashboard> {
                       Container(
                         padding: EdgeInsets.zero,
                         child: const Text(
-                          'Job History',
+                          'Summary',
                           style: TextStyle(
                             fontFamily: 'Book-Antiqua',
                             fontSize: 16.0,
