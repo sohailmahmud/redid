@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/colors.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 
@@ -99,7 +100,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
                       child: Icon(
-                        Icons.home,
+                        Icons.home_outlined,
                         color: kBaseColor,
                       ),
                     ),
@@ -131,7 +132,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
                       child: Icon(
-                        Icons.person,
+                        Icons.person_outlined,
                         color: kBaseColor,
                       ),
                     ),
@@ -234,8 +235,8 @@ class CustomDrawerState extends State<CustomDrawer> {
                     child: CircleAvatar(
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
-                      child: Icon(
-                        Icons.account_balance_wallet_rounded,
+                      child: FaIcon(
+                        FontAwesomeIcons.handHoldingUsd,
                         color: kBaseColor,
                       ),
                     ),
@@ -271,7 +272,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
                       child: Icon(
-                        Icons.history_edu_rounded,
+                        Icons.history_outlined,
                         color: kBaseColor,
                       ),
                     ),
@@ -306,7 +307,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
                       child: Icon(
-                        Icons.shopping_cart,
+                        Icons.shopping_cart_outlined,
                         color: kBaseColor,
                       ),
                     ),
@@ -341,7 +342,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
                       child: Icon(
-                        Icons.work_rounded,
+                        Icons.stream_outlined,
                         color: kBaseColor,
                       ),
                     ),
@@ -376,7 +377,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       backgroundColor: Colors.transparent,
                       radius: 12.0,
                       child: Icon(
-                        Icons.assignment_rounded,
+                        Icons.receipt_long_outlined,
                         color: kBaseColor,
                       ),
                     ),

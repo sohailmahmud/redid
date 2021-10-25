@@ -1,3 +1,4 @@
+import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:redid/src/styles/colors.dart';
@@ -97,6 +98,49 @@ class VerificationState extends State<Verification> {
               onSubmit: (String verificationCode) {}, // end onSubmit
             ),
             const SizedBox(height: 40),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 130),
+              child: ArgonTimerButton(
+                initialTimer: 10,
+                height: 25,
+                width: 100,
+                minWidth: 100,
+                color: kBackgroundColor,
+                borderRadius: 30,
+                colorBrightness: Brightness.light,
+                curve: Curves.ease,
+                materialTapTargetSize: MaterialTapTargetSize.padded,
+                clipBehavior: Clip.antiAlias,
+                reverseCurve: Curves.ease,
+                focusNode: FocusNode(),
+                child: const Text(
+                  "Resend OTP",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 15,
+                    fontFamily: 'Book-Antiqua',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                loader: (timeLeft) {
+                  return Text(
+                    "Valid till $timeLeft seconds",
+                    style: const TextStyle(
+                      color: kTextColor,
+                      fontSize: 15,
+                      fontFamily: 'Book-Antiqua',
+                      fontWeight: FontWeight.w700,
+                    ),
+                  );
+                },
+                onTap: (startTimer, btnState) {
+                  if (btnState == ButtonState.Idle) {
+                    startTimer(10);
+                  }
+                },
+              ),
+            ),
+            const SizedBox(height: 20),
             Center(
               child: MaterialButton(
                 elevation: 5.0,
@@ -122,30 +166,6 @@ class VerificationState extends State<Verification> {
               ),
             ),
             const SizedBox(height: 20),
-            Center(
-              child: MaterialButton(
-                elevation: 5.0,
-                colorBrightness: Brightness.light,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('');
-                },
-                padding: const EdgeInsets.fromLTRB(50, 6, 50, 6),
-                color: kBaseColor,
-                child: const Text(
-                  'Resend OTP',
-                  style: TextStyle(
-                    fontFamily: "Book-Antiqua",
-                    letterSpacing: 0.5,
-                    fontSize: 22,
-                    color: kTextColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
       ),
