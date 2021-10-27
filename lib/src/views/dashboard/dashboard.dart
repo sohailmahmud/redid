@@ -1,7 +1,9 @@
 import 'dart:ui';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/views/dashboard/indicator.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -15,10 +17,58 @@ class Dashboard extends StatefulWidget {
 }
 
 class DashboardState extends State<Dashboard> {
-  get holding => null;
-
-  get usd => null;
-
+  int currentIndex = 1;
+  final List<Widget> swiperBanner = [
+    Container(
+      padding: EdgeInsets.zero,
+      child: Image.asset(
+        "assets/icons/banner1.svg",
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      padding: EdgeInsets.zero,
+      child: Image.asset(
+        "assets/icons/banner2.svg",
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      padding: EdgeInsets.zero,
+      child: Image.asset(
+        "assets/icons/banner3.svg",
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      padding: EdgeInsets.zero,
+      child: Image.asset(
+        "assets/icons/banner4.svg",
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      padding: EdgeInsets.zero,
+      child: Image.asset(
+        "assets/icons/banner5.svg",
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      padding: EdgeInsets.zero,
+      child: Image.asset(
+        "assets/icons/banner6.svg",
+        fit: BoxFit.cover,
+      ),
+    ),
+    Container(
+      padding: EdgeInsets.zero,
+      child: Image.asset(
+        "assets/icons/banner7.svg",
+        fit: BoxFit.cover,
+      ),
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
@@ -99,7 +149,7 @@ class DashboardState extends State<Dashboard> {
             child: IconButton(
               padding: const EdgeInsets.all(2),
               icon: const Icon(
-                Icons.notifications_none_outlined,
+                Icons.notifications_active_outlined,
                 size: 28,
                 color: kTextColor,
               ),
@@ -128,7 +178,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(Indicator.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -411,6 +461,32 @@ class DashboardState extends State<Dashboard> {
         ),
       ],
     );
+    final swiperIndicator = ConstrainedBox(
+      child: Swiper(
+        outer: false,
+        itemCount: swiperBanner.length,
+        itemBuilder: (BuildContext context, int index) {
+          return swiperBanner[index % swiperBanner.length];
+        },
+        pagination: const SwiperPagination(
+          margin: EdgeInsets.only(bottom: 40.0),
+          builder: SwiperPagination.dots,
+          alignment: Alignment.bottomCenter,
+        ),
+        scrollDirection: Axis.horizontal,
+        containerHeight: 350,
+        autoplay: true,
+        autoplayDisableOnInteraction: true,
+        autoplayDelay: 3000,
+        fade: 0.8,
+        onIndexChanged: (int index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+      ),
+      constraints: BoxConstraints.tight(const Size(double.infinity, 350)),
+    );
     return Scaffold(
       appBar: appBar,
       drawer: const CustomDrawer(),
@@ -420,6 +496,7 @@ class DashboardState extends State<Dashboard> {
           padding: const EdgeInsets.only(top: 10.0),
           children: <Widget>[
             dashboardItem,
+            swiperIndicator,
           ],
         ),
       ),
