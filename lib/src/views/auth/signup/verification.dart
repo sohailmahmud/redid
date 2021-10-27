@@ -32,13 +32,10 @@ class VerificationState extends State<Verification> {
           children: [
             Container(
               padding: const EdgeInsets.only(top: 20),
-              child: Hero(
-                tag: 'hero',
-                child: CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  radius: 60,
-                  child: Image.asset('assets/icons/otp.svg'),
-                ),
+              child: CircleAvatar(
+                backgroundColor: Colors.transparent,
+                radius: 60,
+                child: Image.asset('assets/icons/otp.svg'),
               ),
             ),
             Container(
@@ -65,24 +62,24 @@ class VerificationState extends State<Verification> {
                 endIndent: 0.0,
               ),
             ),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.only(
-                    top: 10.0, left: 20.0, bottom: 25.0, right: 20.0),
-                child: const Text(
-                  "Please enter the OTP sent on your registered phone number",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Book-Antiqua',
-                    color: kTextColor,
-                    fontSize: 16,
-                    letterSpacing: 0.5,
-                    fontWeight: FontWeight.w600,
-                  ),
+            Container(
+              padding: const EdgeInsets.only(
+                  top: 10.0, left: 20.0, bottom: 25.0, right: 20.0),
+              child: const Text(
+                "Please enter the OTP sent on your registered phone number",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Book-Antiqua',
+                  color: kTextColor,
+                  fontSize: 16,
+                  letterSpacing: 0.5,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),
-            const Spacer(flex: 2),
+            const SizedBox(
+              height: 20,
+            ),
             OtpTextField(
               numberOfFields: 6,
               borderColor: kBaseColor,

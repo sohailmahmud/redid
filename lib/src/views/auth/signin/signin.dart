@@ -229,19 +229,17 @@ class SignInState extends State<SignIn> {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: Expanded(
-          child: ListView(
-            shrinkWrap: true,
-            padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-            children: <Widget>[
-              signinLogo,
-              phoneNo,
-              passwordField,
-              signInButton,
-              forgotPasswordLabel,
-              createAccountButton,
-            ],
-          ),
+        child: ListView(
+          shrinkWrap: true,
+          padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+          children: <Widget>[
+            signinLogo,
+            phoneNo,
+            passwordField,
+            signInButton,
+            forgotPasswordLabel,
+            createAccountButton,
+          ],
         ),
       ),
     );

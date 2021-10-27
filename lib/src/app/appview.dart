@@ -108,16 +108,14 @@ class _AppViewState extends State<AppView> {
     );
     return Scaffold(
       body: Center(
-        child: Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              homeScreenLogo,
-              welcomeMessage,
-              continueButton,
-              copyrightText,
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            homeScreenLogo,
+            welcomeMessage,
+            continueButton,
+            copyrightText,
+          ],
         ),
       ),
     );
