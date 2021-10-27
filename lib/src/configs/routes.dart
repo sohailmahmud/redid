@@ -6,6 +6,7 @@ import 'package:redid/src/views/auth/signup/setpassword.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
 import 'package:redid/src/views/auth/signup/verification.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
+import 'package:redid/src/views/dashboard/indicator.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
@@ -16,4 +17,5 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   SetPassword.tag: (context) => const SetPassword(),
   Dashboard.tag: (context) => const Dashboard(),
   CustomDrawer.tag: (context) => const CustomDrawer(),
+  Indicator.tag: (context) => const Indicator(),
 };
