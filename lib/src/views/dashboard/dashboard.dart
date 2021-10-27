@@ -460,9 +460,9 @@ class DashboardState extends State<Dashboard> {
         ),
       ],
     );
-    final swiperIndicator = Container(
-      height: 300,
-      width: 410,
+    final swiperIndicator = SizedBox(
+      height: 250,
+      width: 350,
       child: Swiper(
         outer: false,
         itemCount: swiperBanner.length,
@@ -478,14 +478,12 @@ class DashboardState extends State<Dashboard> {
         autoplay: true,
         autoplayDisableOnInteraction: true,
         autoplayDelay: 3000,
-        fade: 0.8,
         onIndexChanged: (int index) {
           setState(() {
             currentIndex = index;
           });
         },
       ),
-      constraints: BoxConstraints.tight(const Size(350, 350)),
     );
     return Scaffold(
       appBar: appBar,
@@ -493,11 +491,11 @@ class DashboardState extends State<Dashboard> {
       backgroundColor: kBackgroundColor,
       body: Center(
         child: ListView(
-          padding: const EdgeInsets.only(top: 12.0),
+          padding: const EdgeInsets.only(top: 2.0),
           children: <Widget>[
-            dashboardItem,
-            const SizedBox(height: 30),
             swiperIndicator,
+            const SizedBox(height: 30),
+            dashboardItem,
           ],
         ),
       ),
