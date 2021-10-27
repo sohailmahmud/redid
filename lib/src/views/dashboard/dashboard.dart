@@ -3,7 +3,6 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/colors.dart';
-import 'package:redid/src/views/dashboard/indicator.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -23,49 +22,49 @@ class DashboardState extends State<Dashboard> {
       padding: EdgeInsets.zero,
       child: Image.asset(
         "assets/icons/banner1.svg",
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
         "assets/icons/banner2.svg",
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
         "assets/icons/banner3.svg",
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
         "assets/icons/banner4.svg",
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
         "assets/icons/banner5.svg",
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
         "assets/icons/banner6.svg",
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
         "assets/icons/banner7.svg",
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       ),
     ),
   ];
@@ -148,8 +147,8 @@ class DashboardState extends State<Dashboard> {
             width: 35,
             child: IconButton(
               padding: const EdgeInsets.all(2),
-              icon: const Icon(
-                Icons.notifications_active_outlined,
+              icon: const FaIcon(
+                FontAwesomeIcons.bell,
                 size: 28,
                 color: kTextColor,
               ),
@@ -178,7 +177,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed(Indicator.tag);
+                    Navigator.of(context).pushNamed('');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -188,8 +187,8 @@ class DashboardState extends State<Dashboard> {
                         child: const CircleAvatar(
                           backgroundColor: Colors.transparent,
                           radius: 22.0,
-                          child: Icon(
-                            Icons.account_circle_outlined,
+                          child: FaIcon(
+                            FontAwesomeIcons.userTie,
                             size: 40,
                           ),
                         ),
@@ -197,7 +196,7 @@ class DashboardState extends State<Dashboard> {
                       Container(
                         padding: EdgeInsets.zero,
                         child: const Text(
-                          'User',
+                          'My Profile',
                           style: TextStyle(
                             fontFamily: 'Book-Antiqua',
                             fontSize: 16.0,
@@ -284,8 +283,8 @@ class DashboardState extends State<Dashboard> {
                         child: const CircleAvatar(
                           backgroundColor: Colors.transparent,
                           radius: 22.0,
-                          child: Icon(
-                            Icons.history_outlined,
+                          child: FaIcon(
+                            FontAwesomeIcons.history,
                             size: 40,
                           ),
                         ),
@@ -461,7 +460,9 @@ class DashboardState extends State<Dashboard> {
         ),
       ],
     );
-    final swiperIndicator = ConstrainedBox(
+    final swiperIndicator = Container(
+      height: 300,
+      width: 410,
       child: Swiper(
         outer: false,
         itemCount: swiperBanner.length,
@@ -469,12 +470,11 @@ class DashboardState extends State<Dashboard> {
           return swiperBanner[index % swiperBanner.length];
         },
         pagination: const SwiperPagination(
-          margin: EdgeInsets.only(bottom: 40.0),
+          margin: EdgeInsets.only(bottom: 5.0),
           builder: SwiperPagination.dots,
           alignment: Alignment.bottomCenter,
         ),
         scrollDirection: Axis.horizontal,
-        containerHeight: 350,
         autoplay: true,
         autoplayDisableOnInteraction: true,
         autoplayDelay: 3000,
@@ -485,7 +485,7 @@ class DashboardState extends State<Dashboard> {
           });
         },
       ),
-      constraints: BoxConstraints.tight(const Size(double.infinity, 350)),
+      constraints: BoxConstraints.tight(const Size(350, 350)),
     );
     return Scaffold(
       appBar: appBar,
@@ -493,9 +493,10 @@ class DashboardState extends State<Dashboard> {
       backgroundColor: kBackgroundColor,
       body: Center(
         child: ListView(
-          padding: const EdgeInsets.only(top: 10.0),
+          padding: const EdgeInsets.only(top: 12.0),
           children: <Widget>[
             dashboardItem,
+            const SizedBox(height: 30),
             swiperIndicator,
           ],
         ),
