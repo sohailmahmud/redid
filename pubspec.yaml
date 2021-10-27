@@ -55,7 +55,5 @@ flutter:
           weight: 700
     - family: Book-Antiqua
       fonts:
-        - asset: assets/fonts/book-antiqua.
-          
-flutter_native_splash:
-  color: 42a5f5
+        - asset: assets/fonts/book-antiqua.ttf
+
