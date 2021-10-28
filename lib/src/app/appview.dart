@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/colors.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
@@ -18,9 +16,9 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     final homeScreenLogo = Container(
-      padding: EdgeInsets.only(top: 80, bottom: 140),
-      child: Hero(
-        tag: 'logo',
+      padding: const EdgeInsets.only(top: 80, bottom: 140),
+      child: const Hero(
+        tag: 'hero',
         child: Text(
           'redID',
           style: TextStyle(
@@ -33,7 +31,7 @@ class _AppViewState extends State<AppView> {
       ),
     );
     final welcomeMessage = Container(
-      padding: EdgeInsets.only(bottom: 130),
+      padding: const EdgeInsets.only(bottom: 130),
       child: RichText(
         textAlign: TextAlign.center,
         text: const TextSpan(
@@ -70,7 +68,7 @@ class _AppViewState extends State<AppView> {
       ),
     );
     final continueButton = Container(
-      padding: EdgeInsets.only(top: 10, bottom: 20),
+      padding: const EdgeInsets.only(top: 10, bottom: 20),
       child: MaterialButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30),
@@ -78,9 +76,9 @@ class _AppViewState extends State<AppView> {
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
-        padding: EdgeInsets.fromLTRB(100, 10, 100, 13),
+        padding: const EdgeInsets.fromLTRB(100, 10, 100, 13),
         color: kBaseColor,
-        child: Text(
+        child: const Text(
           'Continue',
           style: TextStyle(
             fontFamily: "Book-Antiqua",
@@ -93,13 +91,13 @@ class _AppViewState extends State<AppView> {
       ),
     );
     final copyrightText = Container(
-      padding: EdgeInsets.only(top: 30.0),
-      child: Text(
-        '© Copyright 2021 redID.',
+      padding: const EdgeInsets.only(top: 30.0),
+      child: const Text(
+        '© 2021 redID. All rights reserved.',
         textAlign: TextAlign.center,
         style: TextStyle(
           fontFamily: 'Book-Antiqua',
-          fontSize: 16.0,
+          fontSize: 12.0,
           letterSpacing: 0.5,
           color: kTextColor,
           fontWeight: FontWeight.w700,

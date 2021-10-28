@@ -177,7 +177,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('');
+                    //Navigator.of(context).pushNamed('');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -225,7 +225,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('');
+                    //Navigator.of(context).pushNamed('');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -273,7 +273,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('');
+                    //Navigator.of(context).pushNamed('');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -325,7 +325,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('');
+                    //Navigator.of(context).pushNamed('');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -373,7 +373,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('');
+                    //Navigator.of(context).pushNamed('');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -421,7 +421,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('');
+                    //Navigator.of(context).pushNamed('');
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
