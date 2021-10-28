@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:redid/src/app/appview.dart';
+import 'package:redid/src/shared/splashscreen.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 import 'package:redid/src/views/auth/signup/setpassword.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
@@ -9,6 +10,7 @@ import 'package:redid/src/views/dashboard/dashboard.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
+  SplashScreen.tag: (contex) => const SplashScreen(),
   AppView.tag: (context) => const AppView(),
   SignIn.tag: (context) => const SignIn(),
   SignUp.tag: (context) => const SignUp(),
