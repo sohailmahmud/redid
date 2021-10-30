@@ -39,7 +39,7 @@ class _AppViewState extends State<AppView> {
             TextSpan(
               text: "Welcome to ",
               style: TextStyle(
-                fontFamily: 'Book-Antiqua',
+                fontFamily: 'Chiller',
                 fontSize: 30,
                 color: kTextColor,
                 fontWeight: FontWeight.bold,
@@ -48,7 +48,7 @@ class _AppViewState extends State<AppView> {
             TextSpan(
               text: "redID",
               style: TextStyle(
-                fontFamily: 'Book-Antiqua',
+                fontFamily: 'Chiller',
                 fontSize: 30,
                 color: kBaseColor,
                 fontWeight: FontWeight.bold,
@@ -57,7 +57,7 @@ class _AppViewState extends State<AppView> {
             TextSpan(
               text: "!",
               style: TextStyle(
-                fontFamily: 'Book-Antiqua',
+                fontFamily: 'Chiller',
                 fontSize: 30,
                 color: kTextColor,
                 fontWeight: FontWeight.bold,
@@ -83,7 +83,7 @@ class _AppViewState extends State<AppView> {
           style: TextStyle(
             fontFamily: "Book-Antiqua",
             letterSpacing: 0.5,
-            fontSize: 28,
+            fontSize: 26,
             color: kTextColor,
             fontWeight: FontWeight.bold,
           ),

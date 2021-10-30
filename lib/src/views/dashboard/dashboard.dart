@@ -120,13 +120,14 @@ class DashboardState extends State<Dashboard> {
                 child: const Text(
                   'Home',
                   style: TextStyle(
-                    fontFamily: 'Book-Antiqua',
-                    fontSize: 22,
+                    fontFamily: 'Chiller',
+                    fontSize: 25,
+                    letterSpacing: 0.8,
                     color: kBaseColor,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w900,
                     /* shadows: [
                       Shadow(
-                        color: kButtonColor,
+                        color: kBaseColor,
                         offset: Offset(0.0, 3.0),
                         blurRadius: 1.0,
                       ),
@@ -186,10 +187,11 @@ class DashboardState extends State<Dashboard> {
                         padding: const EdgeInsets.only(top: 10),
                         child: const CircleAvatar(
                           backgroundColor: Colors.transparent,
-                          radius: 22.0,
+                          radius: 25.0,
                           child: FaIcon(
                             FontAwesomeIcons.userTie,
                             size: 40,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
@@ -198,9 +200,9 @@ class DashboardState extends State<Dashboard> {
                         child: const Text(
                           'My Profile',
                           style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
+                            fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kCardTitleColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -238,6 +240,7 @@ class DashboardState extends State<Dashboard> {
                           child: FaIcon(
                             FontAwesomeIcons.handHoldingUsd,
                             size: 40,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
@@ -246,9 +249,9 @@ class DashboardState extends State<Dashboard> {
                         child: const Text(
                           'Wallet',
                           style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
+                            fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kCardTitleColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -282,21 +285,22 @@ class DashboardState extends State<Dashboard> {
                         padding: const EdgeInsets.only(top: 10),
                         child: const CircleAvatar(
                           backgroundColor: Colors.transparent,
-                          radius: 22.0,
+                          radius: 25.0,
                           child: FaIcon(
                             FontAwesomeIcons.history,
                             size: 40,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
                       Container(
                         padding: EdgeInsets.zero,
                         child: const Text(
-                          'Summary',
+                          'Job History',
                           style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
+                            fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kCardTitleColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -338,6 +342,7 @@ class DashboardState extends State<Dashboard> {
                           child: Icon(
                             Icons.shopping_cart_outlined,
                             size: 40,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
@@ -346,9 +351,9 @@ class DashboardState extends State<Dashboard> {
                         child: const Text(
                           'eCommerce',
                           style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
+                            fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kCardTitleColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -386,6 +391,7 @@ class DashboardState extends State<Dashboard> {
                           child: Icon(
                             Icons.stream_outlined,
                             size: 40,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
@@ -394,9 +400,9 @@ class DashboardState extends State<Dashboard> {
                         child: const Text(
                           'Online Jobs',
                           style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
+                            fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kCardTitleColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -434,6 +440,7 @@ class DashboardState extends State<Dashboard> {
                           child: Icon(
                             Icons.receipt_long_outlined,
                             size: 40,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
@@ -442,9 +449,9 @@ class DashboardState extends State<Dashboard> {
                         child: const Text(
                           'Notice',
                           style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
+                            fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kCardTitleColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -458,11 +465,123 @@ class DashboardState extends State<Dashboard> {
             ),
           ],
         ),
+        Row(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                width: 120,
+                height: 120,
+                padding: const EdgeInsets.only(
+                    top: 6.0, left: 10.0, bottom: 6.0, right: 5.0),
+                child: MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  color: kBaseColor,
+                  elevation: 10,
+                  onPressed: () {
+                    //Navigator.of(context).pushNamed('');
+                  },
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: const CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 22.0,
+                          child: Icon(
+                            Icons.live_help_outlined,
+                            size: 40,
+                            color: kBackgroundColor,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.zero,
+                        child: const Text(
+                          'Help & Support',
+                          style: TextStyle(
+                            fontFamily: 'Chiller',
+                            fontSize: 16.0,
+                            color: kBackgroundColor,
+                            letterSpacing: 0.5,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                width: 120,
+                height: 120,
+                padding: const EdgeInsets.only(
+                    top: 6.0, left: 5.0, bottom: 6.0, right: 5.0),
+                child: MaterialButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  color: kBaseColor,
+                  elevation: 10,
+                  onPressed: () {
+                    //Navigator.of(context).pushNamed('');
+                  },
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(top: 10),
+                        child: const CircleAvatar(
+                          backgroundColor: Colors.transparent,
+                          radius: 22.0,
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 40,
+                            color: kBackgroundColor,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.zero,
+                        child: const Text(
+                          'About redId',
+                          style: TextStyle(
+                            fontFamily: 'Chiller',
+                            fontSize: 16.0,
+                            color: kBackgroundColor,
+                            letterSpacing: 0.5,
+                            fontWeight: FontWeight.w700,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(),
+            ),
+          ],
+        ),
       ],
     );
     final swiperIndicator = SizedBox(
-      height: 250,
-      width: 350,
+      height: 230,
+      //width: 350,
       child: Swiper(
         outer: false,
         itemCount: swiperBanner.length,
@@ -494,7 +613,7 @@ class DashboardState extends State<Dashboard> {
           padding: const EdgeInsets.only(top: 2.0),
           children: <Widget>[
             swiperIndicator,
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             dashboardItem,
           ],
         ),
