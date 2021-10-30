@@ -18,420 +18,423 @@ class CustomDrawerState extends State<CustomDrawer> {
   bool showUserDetails = false;
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      elevation: 4.0,
-      child: Column(
-        children: [
-          Expanded(
-            flex: 15,
-            child: SizedBox(
-              width: MediaQuery.of(context).size.width * 0.85,
-              child: UserAccountsDrawerHeader(
-                decoration: const BoxDecoration(
-                  color: kBaseColor,
-                ),
-                currentAccountPicture: Container(
-                  padding: const EdgeInsets.all(2),
-                  child: const CircleAvatar(
-                    radius: 30,
-                    backgroundColor: kBaseColor,
-                    child: CircleAvatar(
-                      radius: 27,
-                      backgroundColor: kShadowColor,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.60,
+      child: Drawer(
+        elevation: 4.0,
+        child: Column(
+          children: [
+            Expanded(
+              flex: 15,
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width * 0.85,
+                child: UserAccountsDrawerHeader(
+                  decoration: const BoxDecoration(
+                    color: kBaseColor,
+                  ),
+                  currentAccountPicture: Container(
+                    padding: const EdgeInsets.all(2),
+                    child: const CircleAvatar(
+                      radius: 30,
+                      backgroundColor: kBaseColor,
                       child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 25.0,
-                        child: Icon(
-                          Icons.person,
-                          size: 35,
+                        radius: 27,
+                        backgroundColor: kShadowColor,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                          radius: 25.0,
+                          child: Icon(
+                            Icons.person,
+                            size: 35,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                accountName: Text(
-                  'Rayhan Hasan'.toUpperCase(),
-                  style: const TextStyle(
-                    fontFamily: 'Book-Antiqua',
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    color: kTitleColor,
-                  ),
-                ),
-                accountEmail: const Text(
-                  '0123456789',
-                  style: TextStyle(
-                    fontFamily: 'Book-Antiqua',
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
-                    color: kTitleColor,
-                  ),
-                ),
-                onDetailsPressed: () {
-                  setState(() {
-                    showUserDetails = !showUserDetails;
-                  });
-                },
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 40,
-            child: ListView(
-              padding: EdgeInsets.zero,
-              shrinkWrap: false,
-              children: [
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Home",
-                    style: TextStyle(
-                        color: kBaseColor,
-                        fontFamily: 'Book-Antiqua',
-                        fontSize: 14,
-                        letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.home_outlined,
-                        color: kBaseColor,
-                      ),
+                  accountName: Text(
+                    'Rayhan Hasan'.toUpperCase(),
+                    style: const TextStyle(
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: kTitleColor,
                     ),
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
+                  accountEmail: const Text(
+                    '0123456789',
+                    style: TextStyle(
+                      fontFamily: 'Book-Antiqua',
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: kTitleColor,
+                    ),
+                  ),
+                  onDetailsPressed: () {
+                    setState(() {
+                      showUserDetails = !showUserDetails;
+                    });
                   },
                 ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text("Profile",
+              ),
+            ),
+            Expanded(
+              flex: 40,
+              child: ListView(
+                padding: EdgeInsets.zero,
+                shrinkWrap: false,
+                children: [
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Home",
                       style: TextStyle(
                           color: kBaseColor,
                           fontFamily: 'Book-Antiqua',
                           fontSize: 14,
                           letterSpacing: 0.6,
-                          fontWeight: FontWeight.w700)),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.person_outlined,
-                        color: kBaseColor,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.home_outlined,
+                          color: kBaseColor,
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Active Status",
-                    style: TextStyle(
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text("Profile",
+                        style: TextStyle(
+                            color: kBaseColor,
+                            fontFamily: 'Book-Antiqua',
+                            fontSize: 14,
+                            letterSpacing: 0.6,
+                            fontWeight: FontWeight.w700)),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.person_outlined,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
+                  ),
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Active Status",
+                      style: TextStyle(
+                          color: kBaseColor,
+                          fontFamily: 'Book-Antiqua',
+                          fontSize: 14,
+                          letterSpacing: 0.6,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.toggle_on_outlined,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
+                  ),
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Terms and Conditions",
+                      style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Book-Antiqua',
                         fontSize: 14,
                         letterSpacing: 0.6,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.toggle_on_outlined,
-                        color: kBaseColor,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.gavel_rounded,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Wallet",
+                      style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: FaIcon(
+                          FontAwesomeIcons.handHoldingUsd,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
+                  ),
+                  const Divider(
                     height: 0.0,
                     thickness: 0.5,
                     indent: 18.0,
                     endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Terms and Conditions",
-                    style: TextStyle(
-                      color: kBaseColor,
-                      fontFamily: 'Book-Antiqua',
-                      fontSize: 14,
-                      letterSpacing: 0.6,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    color: kTitleTextColor,
                   ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.gavel_rounded,
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Job History",
+                      style: TextStyle(
                         color: kBaseColor,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.history_outlined,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "eCommerce Soon",
+                      style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.shopping_cart_outlined,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
+                  ),
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Online Jobs",
+                      style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.stream_outlined,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
+                  ),
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Notice",
+                      style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.receipt_long_outlined,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed('');
+                    },
+                  ),
+                  const Divider(
                     height: 0.0,
                     thickness: 0.5,
                     indent: 18.0,
                     endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Wallet",
-                    style: TextStyle(
-                      color: kBaseColor,
-                      fontFamily: 'Book-Antiqua',
-                      fontSize: 14,
-                      letterSpacing: 0.6,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    color: kTitleTextColor,
                   ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: FaIcon(
-                        FontAwesomeIcons.handHoldingUsd,
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
+                      "Sign Out",
+                      style: TextStyle(
                         color: kBaseColor,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                  height: 0.0,
-                  thickness: 0.5,
-                  indent: 18.0,
-                  endIndent: 0.0,
-                  color: kTitleTextColor,
-                ),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Job History",
-                    style: TextStyle(
-                      color: kBaseColor,
-                      fontFamily: 'Book-Antiqua',
-                      fontSize: 14,
-                      letterSpacing: 0.6,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.history_outlined,
-                        color: kBaseColor,
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.logout_rounded,
+                          color: kBaseColor,
+                        ),
                       ),
                     ),
+                    onTap: () {
+                      Navigator.of(context).pushNamed(SignIn.tag);
+                    },
                   ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "eCommerce Soon",
-                    style: TextStyle(
-                      color: kBaseColor,
-                      fontFamily: 'Book-Antiqua',
-                      fontSize: 14,
-                      letterSpacing: 0.6,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.shopping_cart_outlined,
-                        color: kBaseColor,
-                      ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Online Jobs",
-                    style: TextStyle(
-                      color: kBaseColor,
-                      fontFamily: 'Book-Antiqua',
-                      fontSize: 14,
-                      letterSpacing: 0.6,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.stream_outlined,
-                        color: kBaseColor,
-                      ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Notice",
-                    style: TextStyle(
-                      color: kBaseColor,
-                      fontFamily: 'Book-Antiqua',
-                      fontSize: 14,
-                      letterSpacing: 0.6,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.receipt_long_outlined,
-                        color: kBaseColor,
-                      ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed('');
-                  },
-                ),
-                const Divider(
-                  height: 0.0,
-                  thickness: 0.5,
-                  indent: 18.0,
-                  endIndent: 0.0,
-                  color: kTitleTextColor,
-                ),
-                ListTile(
-                  dense: true,
-                  horizontalTitleGap: 0.0,
-                  title: const Text(
-                    "Sign Out",
-                    style: TextStyle(
-                      color: kBaseColor,
-                      fontFamily: 'Book-Antiqua',
-                      fontSize: 14,
-                      letterSpacing: 0.6,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  leading: const CircleAvatar(
-                    backgroundColor: kWhiteShade,
-                    radius: 13,
-                    child: CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 12.0,
-                      child: Icon(
-                        Icons.logout_rounded,
-                        color: kBaseColor,
-                      ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).pushNamed(SignIn.tag);
-                  },
-                ),
-                const Divider(
-                    height: 0.0,
-                    thickness: 0.5,
-                    indent: 18.0,
-                    endIndent: 0.0,
-                    color: kTitleTextColor),
-              ],
-            ),
-          )
-        ],
+                  const Divider(
+                      height: 0.0,
+                      thickness: 0.5,
+                      indent: 18.0,
+                      endIndent: 0.0,
+                      color: kTitleTextColor),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
