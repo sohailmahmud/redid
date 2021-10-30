@@ -40,7 +40,7 @@ class _AppViewState extends State<AppView> {
               text: "Welcome to ",
               style: TextStyle(
                 fontFamily: 'Chiller',
-                fontSize: 30,
+                fontSize: 35,
                 color: kTextColor,
                 fontWeight: FontWeight.bold,
               ),
@@ -49,7 +49,7 @@ class _AppViewState extends State<AppView> {
               text: "redID",
               style: TextStyle(
                 fontFamily: 'Chiller',
-                fontSize: 30,
+                fontSize: 35,
                 color: kBaseColor,
                 fontWeight: FontWeight.bold,
               ),
@@ -58,7 +58,7 @@ class _AppViewState extends State<AppView> {
               text: "!",
               style: TextStyle(
                 fontFamily: 'Chiller',
-                fontSize: 30,
+                fontSize: 35,
                 color: kTextColor,
                 fontWeight: FontWeight.bold,
               ),
