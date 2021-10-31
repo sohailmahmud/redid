@@ -421,7 +421,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed(SignIn.tag);
+                      Navigator.of(context).pushNamed(SignIn.tag);
                     },
                   ),
                   const Divider(
