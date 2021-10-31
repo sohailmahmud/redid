@@ -18,8 +18,8 @@ class CustomDrawerState extends State<CustomDrawer> {
   bool showUserDetails = false;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.60,
+    return SafeArea(
+      //width: MediaQuery.of(context).size.width * 0.70,
       child: Drawer(
         elevation: 4.0,
         child: Column(

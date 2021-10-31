@@ -151,7 +151,7 @@ class DashboardState extends State<Dashboard> {
               padding: const EdgeInsets.all(2),
               icon: const FaIcon(
                 FontAwesomeIcons.bell,
-                size: 28,
+                size: 25,
                 color: kTextColor,
               ),
               splashRadius: Material.defaultSplashRadius / 2.2,
