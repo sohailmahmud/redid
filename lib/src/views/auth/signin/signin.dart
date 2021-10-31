@@ -160,13 +160,13 @@ class SignInState extends State<SignIn> {
                     style: TextStyle(
                       fontFamily: 'Book-Antiqua',
                       letterSpacing: 0.5,
-                      fontSize: 20,
+                      fontSize: 18,
                       color: Colors.black,
                     ),
                     textAlign: TextAlign.right,
                   ),
                   onTap: () {
-                    Navigator.of(context).pushNamed('');
+                    //Navigator.of(context).pushNamed('');
                   },
                 ),
               ),
