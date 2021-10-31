@@ -159,7 +159,7 @@ class SignInState extends State<SignIn> {
                     'Forgotten Password?',
                     style: TextStyle(
                       fontFamily: 'Book-Antiqua',
-                      letterSpacing: 0.5,
+                      letterSpacing: 0.2,
                       fontSize: 18,
                       color: Colors.black,
                     ),
