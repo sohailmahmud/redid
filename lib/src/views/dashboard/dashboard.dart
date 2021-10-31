@@ -473,7 +473,7 @@ class DashboardState extends State<Dashboard> {
               child: Container(),
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Container(
                 width: 120,
                 height: 120,
@@ -523,7 +523,7 @@ class DashboardState extends State<Dashboard> {
               ),
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Container(
                 width: 120,
                 height: 120,
