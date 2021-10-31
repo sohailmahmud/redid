@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:redid/src/app/appview.dart';
 import 'package:redid/src/configs/routes.dart';
-import 'package:redid/src/shared/splashscreen.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: const SplashScreen(),
+      home: const AppView(),
       routes: routes,
     );
   }
