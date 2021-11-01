@@ -6,6 +6,7 @@ import 'package:redid/src/styles/colors.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:redid/src/views/notifications/notificationscreen.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -156,7 +157,9 @@ class DashboardState extends State<Dashboard> {
               ),
               splashRadius: Material.defaultSplashRadius / 2.2,
               color: kTitleColor,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(NotificationScreen.tag);
+              },
             ),
           ),
         ),
@@ -473,7 +476,7 @@ class DashboardState extends State<Dashboard> {
               child: Container(),
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Container(
                 width: 120,
                 height: 120,
@@ -523,7 +526,7 @@ class DashboardState extends State<Dashboard> {
               ),
             ),
             Expanded(
-              flex: 2,
+              flex: 3,
               child: Container(
                 width: 120,
                 height: 120,
