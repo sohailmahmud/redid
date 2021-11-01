@@ -47,20 +47,20 @@ class UserProfileState extends State<UserProfile>
               Column(
                 children: <Widget>[
                   Container(
-                    height: 250.0,
+                    height: 160.0,
                     color: Colors.white,
                     child: Column(
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.only(top: 20.0),
+                          padding: const EdgeInsets.only(top: 10.0),
                           child: Stack(fit: StackFit.loose, children: <Widget>[
                             Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    width: 140.0,
-                                    height: 140.0,
+                                    width: 130.0,
+                                    height: 130.0,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
@@ -73,16 +73,23 @@ class UserProfileState extends State<UserProfile>
                             ),
                             Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 90.0, right: 100.0),
+                                    top: 80.0, left: 90.0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const <Widget>[
+                                  children: <Widget>[
                                     CircleAvatar(
                                       backgroundColor: Colors.red,
-                                      radius: 25.0,
-                                      child: Icon(
-                                        Icons.camera_alt,
-                                        color: Colors.white,
+                                      radius: 15.0,
+                                      child: IconButton(
+                                        padding: const EdgeInsets.all(2),
+                                        icon: const Icon(
+                                          Icons.camera_alt,
+                                          size: 20,
+                                        ),
+                                        splashRadius:
+                                            Material.defaultSplashRadius / 2.2,
+                                        color: kTitleColor,
+                                        onPressed: () {},
                                       ),
                                     )
                                   ],
@@ -95,14 +102,14 @@ class UserProfileState extends State<UserProfile>
                   Container(
                     color: kBackgroundColor,
                     child: Padding(
-                      padding: const EdgeInsets.only(bottom: 25.0),
+                      padding: const EdgeInsets.only(bottom: 5.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           Padding(
                               padding: const EdgeInsets.only(
-                                  left: 25.0, right: 25.0, top: 25.0),
+                                  left: 25.0, right: 25.0, top: 2.0),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -329,8 +336,15 @@ class UserProfileState extends State<UserProfile>
               padding: const EdgeInsets.only(right: 10.0),
               child: Container(
                 padding: EdgeInsets.zero,
-                child: ElevatedButton(
-                  child: const Text("Save"),
+                child: MaterialButton(
+                  highlightColor: Colors.transparent,
+                  color: kBaseColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0)),
+                  child: const Text(
+                    "Save",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   onPressed: () {
                     setState(() {
                       _status = true;
@@ -347,8 +361,15 @@ class UserProfileState extends State<UserProfile>
               padding: const EdgeInsets.only(left: 10.0),
               child: Container(
                 padding: EdgeInsets.zero,
-                child: ElevatedButton(
-                  child: const Text("Cancel"),
+                child: MaterialButton(
+                  highlightColor: Colors.transparent,
+                  color: kInfectedColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0)),
+                  child: const Text(
+                    "Cancel",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   onPressed: () {
                     setState(() {
                       _status = true;

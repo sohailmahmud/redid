@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/colors.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
+import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/views/notifications/notificationscreen.dart';
@@ -231,7 +232,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    //Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(UserWallet.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

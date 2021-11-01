@@ -10,7 +10,7 @@ class App extends StatelessWidget {
       title: 'redID',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        fontFamily: 'Chiller',
+        //fontFamily: 'Chiller',
         primarySwatch: Colors.pink,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
