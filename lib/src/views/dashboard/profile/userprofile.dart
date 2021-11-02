@@ -50,7 +50,7 @@ class UserProfileState extends State<UserProfile>
               Column(
                 children: <Widget>[
                   Container(
-                    height: 150.0,
+                    height: 140.0,
                     color: Colors.white,
                     child: Column(
                       children: <Widget>[
