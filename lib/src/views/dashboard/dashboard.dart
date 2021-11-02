@@ -3,6 +3,7 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
 import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
@@ -281,7 +282,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 10,
                   onPressed: () {
-                    //Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(JobHistory.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,

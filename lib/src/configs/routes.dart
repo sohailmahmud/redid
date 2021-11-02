@@ -6,6 +6,7 @@ import 'package:redid/src/views/auth/signup/setpassword.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
 import 'package:redid/src/views/auth/signup/verification.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
+import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
 import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
@@ -22,5 +23,6 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   CustomDrawer.tag: (context) => const CustomDrawer(),
   UserProfile.tag: (context) => const UserProfile(),
   UserWallet.tag: (context) => const UserWallet(),
+  JobHistory.tag: (context) => const JobHistory(),
   NotificationScreen.tag: (context) => const NotificationScreen(),
 };
