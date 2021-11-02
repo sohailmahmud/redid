@@ -1,6 +1,8 @@
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:redid/src/styles/colors.dart';
+import 'package:intl/intl.dart';
 
 class UserProfile extends StatefulWidget {
   const UserProfile({Key? key}) : super(key: key);
@@ -14,6 +16,7 @@ class UserProfileState extends State<UserProfile>
     with SingleTickerProviderStateMixin {
   bool _status = true;
   final FocusNode myFocusNode = FocusNode();
+  final format = DateFormat("dd-MM-yyyy");
 
   @override
   void initState() {
@@ -47,7 +50,7 @@ class UserProfileState extends State<UserProfile>
               Column(
                 children: <Widget>[
                   Container(
-                    height: 160.0,
+                    height: 140.0,
                     color: Colors.white,
                     child: Column(
                       children: <Widget>[
@@ -59,8 +62,8 @@ class UserProfileState extends State<UserProfile>
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Container(
-                                    width: 130.0,
-                                    height: 130.0,
+                                    width: 120.0,
+                                    height: 120.0,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
@@ -73,18 +76,18 @@ class UserProfileState extends State<UserProfile>
                             ),
                             Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 80.0, left: 90.0),
+                                    top: 70.0, left: 80.0),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
                                     CircleAvatar(
                                       backgroundColor: Colors.red,
-                                      radius: 15.0,
+                                      radius: 14.0,
                                       child: IconButton(
                                         padding: const EdgeInsets.all(2),
                                         icon: const Icon(
                                           Icons.camera_alt,
-                                          size: 20,
+                                          size: 18,
                                         ),
                                         splashRadius:
                                             Material.defaultSplashRadius / 2.2,
@@ -184,7 +187,7 @@ class UserProfileState extends State<UserProfile>
                                     mainAxisSize: MainAxisSize.min,
                                     children: const <Widget>[
                                       Text(
-                                        'Email ID',
+                                        'Email',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -219,7 +222,7 @@ class UserProfileState extends State<UserProfile>
                                     mainAxisSize: MainAxisSize.min,
                                     children: const <Widget>[
                                       Text(
-                                        'Mobile',
+                                        'Address',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -237,7 +240,7 @@ class UserProfileState extends State<UserProfile>
                                   Flexible(
                                     child: TextField(
                                       decoration: const InputDecoration(
-                                          hintText: "Enter Mobile Number"),
+                                          hintText: "Enter Address"),
                                       enabled: !_status,
                                     ),
                                   ),
@@ -254,19 +257,19 @@ class UserProfileState extends State<UserProfile>
                                     child: Container(
                                       padding: EdgeInsets.zero,
                                       child: const Text(
-                                        'Pin Code',
+                                        'Date of Birth',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
-                                    flex: 2,
+                                    flex: 3,
                                   ),
                                   Expanded(
                                     child: Container(
                                       padding: EdgeInsets.zero,
                                       child: const Text(
-                                        'State',
+                                        'City',
                                         style: TextStyle(
                                             fontSize: 16.0,
                                             fontWeight: FontWeight.bold),
@@ -287,18 +290,32 @@ class UserProfileState extends State<UserProfile>
                                     child: Padding(
                                       padding:
                                           const EdgeInsets.only(right: 10.0),
-                                      child: TextField(
+                                      child: DateTimeField(
+                                        format: format,
                                         decoration: const InputDecoration(
-                                            hintText: "Enter Pin Code"),
+                                          hintText: "Select Date",
+                                        ),
+                                        strutStyle: const StrutStyle(),
+                                        onShowPicker: (context, currentValue) {
+                                          return showDatePicker(
+                                            context: context,
+                                            firstDate: DateTime(1950),
+                                            initialDate:
+                                                currentValue ?? DateTime.now(),
+                                            lastDate: DateTime(2100),
+                                            initialDatePickerMode:
+                                                DatePickerMode.year,
+                                          );
+                                        },
                                         enabled: !_status,
                                       ),
                                     ),
-                                    flex: 2,
+                                    flex: 3,
                                   ),
                                   Flexible(
                                     child: TextField(
                                       decoration: const InputDecoration(
-                                          hintText: "Enter State"),
+                                          hintText: "Enter City Name"),
                                       enabled: !_status,
                                     ),
                                     flex: 2,
@@ -326,7 +343,7 @@ class UserProfileState extends State<UserProfile>
 
   Widget _getActionButtons() {
     return Padding(
-      padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 45.0),
+      padding: const EdgeInsets.only(left: 25.0, right: 25.0, top: 25.0),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -389,7 +406,7 @@ class UserProfileState extends State<UserProfile>
   Widget _getEditIcon() {
     return GestureDetector(
       child: const CircleAvatar(
-        backgroundColor: Colors.red,
+        backgroundColor: kBaseColor,
         radius: 14.0,
         child: Icon(
           Icons.edit,
