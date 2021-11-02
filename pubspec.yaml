@@ -20,6 +20,7 @@ dependencies:
   card_swiper: ^1.0.4
   google_fonts: ^2.1.0
   http: ^0.13.4
+  datetime_picker_formfield: ^2.0.0
 
 
 dev_dependencies:
