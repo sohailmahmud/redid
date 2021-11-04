@@ -123,7 +123,7 @@ class UserProfileState extends State<UserProfile>
                                     mainAxisSize: MainAxisSize.min,
                                     children: const <Widget>[
                                       Text(
-                                        'Parsonal Information',
+                                        'Personal Information',
                                         style: TextStyle(
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.bold),
@@ -141,7 +141,7 @@ class UserProfileState extends State<UserProfile>
                               )),
                           Padding(
                               padding: const EdgeInsets.only(
-                                  left: 25.0, right: 25.0, top: 25.0),
+                                  left: 25.0, right: 25.0, top: 20.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: <Widget>[

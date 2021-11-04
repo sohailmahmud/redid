@@ -182,7 +182,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     Navigator.of(context).pushNamed(UserProfile.tag);
                   },
@@ -231,7 +231,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     Navigator.of(context).pushNamed(UserWallet.tag);
                   },
@@ -280,7 +280,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     Navigator.of(context).pushNamed(JobHistory.tag);
                   },
@@ -333,7 +333,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
                   },
@@ -382,7 +382,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
                   },
@@ -431,7 +431,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
                   },
@@ -474,11 +474,7 @@ class DashboardState extends State<Dashboard> {
         Row(
           children: [
             Expanded(
-              flex: 1,
-              child: Container(),
-            ),
-            Expanded(
-              flex: 3,
+              flex: 2,
               child: Container(
                 width: 120,
                 height: 120,
@@ -489,7 +485,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
                   },
@@ -528,7 +524,7 @@ class DashboardState extends State<Dashboard> {
               ),
             ),
             Expanded(
-              flex: 3,
+              flex: 2,
               child: Container(
                 width: 120,
                 height: 120,
@@ -539,7 +535,7 @@ class DashboardState extends State<Dashboard> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   color: kBaseColor,
-                  elevation: 10,
+                  elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
                   },
@@ -578,7 +574,7 @@ class DashboardState extends State<Dashboard> {
               ),
             ),
             Expanded(
-              flex: 1,
+              flex: 2,
               child: Container(),
             ),
           ],
@@ -619,7 +615,7 @@ class DashboardState extends State<Dashboard> {
           padding: const EdgeInsets.only(top: 2.0),
           children: <Widget>[
             swiperIndicator,
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
             dashboardItem,
           ],
         ),
