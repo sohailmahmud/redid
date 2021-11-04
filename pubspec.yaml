@@ -1,7 +1,7 @@
 name: redid
 description: A new Flutter project.
 publish_to: 'none' 
-version: 1.0.1+5
+version: 1.0.2+25
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -21,6 +21,7 @@ dependencies:
   google_fonts: ^2.1.0
   http: ^0.13.4
   datetime_picker_formfield: ^2.0.0
+  fl_chart: ^0.40.2
 
 
 dev_dependencies:
