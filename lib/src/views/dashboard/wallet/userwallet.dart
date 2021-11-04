@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 
 class UserWallet extends StatefulWidget {
   const UserWallet({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/auth/signup/setpassword.dart';
 
 class Verification extends StatefulWidget {
@@ -84,13 +84,13 @@ class VerificationState extends State<Verification> {
               numberOfFields: 6,
               borderColor: kBaseColor,
               focusedBorderColor: kBaseColor,
-              fieldWidth: 50,
+              fieldWidth: 40,
               styles: otpTextStyles,
               /* textStyle: const TextStyle(
                   fontFamily: 'Book-Antiqua', fontSize: 20, color: kTextColor), 
                   */
               showFieldAsBox: false,
-              borderWidth: 4.0,
+              borderWidth: 1.5,
               onCodeChanged: (String code) {},
               onSubmit: (String verificationCode) {}, // end onSubmit
             ),

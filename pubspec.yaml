@@ -22,6 +22,7 @@ dependencies:
   http: ^0.13.4
   datetime_picker_formfield: ^2.0.0
   fl_chart: ^0.40.2
+  settings_ui: ^1.0.0
 
 
 dev_dependencies:

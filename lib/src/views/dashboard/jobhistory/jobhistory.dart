@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/dashboard/jobhistory/charts/lpchart.dart';
 import 'package:redid/src/views/dashboard/jobhistory/charts/twchart.dart';
 import 'package:redid/src/views/dashboard/jobhistory/charts/whchart.dart';

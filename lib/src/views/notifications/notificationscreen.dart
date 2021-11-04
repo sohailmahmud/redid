@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 
 class NotificationScreen extends StatefulWidget {
   const NotificationScreen({Key? key}) : super(key: key);
@@ -130,7 +130,6 @@ class NotificationScreenState extends State<NotificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
         backgroundColor: kBackgroundColor,
         centerTitle: true,
         toolbarHeight: 50,
@@ -138,12 +137,7 @@ class NotificationScreenState extends State<NotificationScreen> {
         iconTheme: const IconThemeData(color: kBaseColor),
         title: const Text(
           'Notifications',
-          style: TextStyle(
-            fontFamily: 'Chiller',
-            fontSize: 25,
-            color: kBaseColor,
-            fontWeight: FontWeight.w900,
-          ),
+          style: kAppBarTextStyle,
         ),
       ),
       body: Container(
