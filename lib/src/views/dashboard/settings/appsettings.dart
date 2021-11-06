@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/dashboard/settings/laguages_screen.dart';
 import 'package:settings_ui/settings_ui.dart';
@@ -54,26 +53,7 @@ class AppSettingsState extends State<AppSettings> {
                 ));
               },
             ),
-            // CustomTile(
-            //   child: Container(
-            //     color: const Color(0xFFEFEFF4),
-            //     padding: const EdgeInsetsDirectional.only(
-            //       start: 14,
-            //       top: 12,
-            //       bottom: 30,
-            //       end: 14,
-            //     ),
-            //     child: Text(
-            //       'You can setup the language you want',
-            //       style: TextStyle(
-            //         color: Colors.grey.shade700,
-            //         fontWeight: FontWeight.w400,
-            //         fontSize: 13.5,
-            //         letterSpacing: -0.5,
-            //       ),
-            //     ),
-            //   ),
-            // ),
+            
             const SettingsTile(
               title: 'Environment',
               subtitle: 'Production',
