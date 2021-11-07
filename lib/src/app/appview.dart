@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 
 class AppView extends StatefulWidget {
@@ -69,14 +70,10 @@ class _AppViewState extends State<AppView> {
     );
     final continueButton = Container(
       padding: const EdgeInsets.only(top: 10, bottom: 20),
-      child: MaterialButton(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
+      child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
-        padding: const EdgeInsets.fromLTRB(100, 8, 100, 8),
         color: kBaseColor,
         child: const Text(
           'Continue',
