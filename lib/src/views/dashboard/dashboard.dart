@@ -3,7 +3,10 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/views/dashboard/ecommerce/ecommerce.dart';
 import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
+import 'package:redid/src/views/dashboard/notice/notices.dart';
+import 'package:redid/src/views/dashboard/onlinejobs/onlinejobs.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
 import 'package:redid/src/views/dashboard/settings/appsettings.dart';
 import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
@@ -338,7 +341,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 5,
                   onPressed: () {
-                    //Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(ECommerce.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -387,7 +390,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 5,
                   onPressed: () {
-                    //Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(OnlineJobs.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -436,7 +439,7 @@ class DashboardState extends State<Dashboard> {
                   color: kBaseColor,
                   elevation: 5,
                   onPressed: () {
-                    //Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(Notices.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -487,7 +490,7 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
+                  color: Colors.pink.shade50,
                   elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
@@ -503,7 +506,7 @@ class DashboardState extends State<Dashboard> {
                           child: Icon(
                             Icons.live_help_outlined,
                             size: 40,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                           ),
                         ),
                       ),
@@ -514,7 +517,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.bold,
                           ),
@@ -537,7 +540,7 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
+                  color: Colors.pink.shade50,
                   elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
@@ -553,7 +556,7 @@ class DashboardState extends State<Dashboard> {
                           child: Icon(
                             Icons.info_outline,
                             size: 40,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                           ),
                         ),
                       ),
@@ -564,7 +567,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),

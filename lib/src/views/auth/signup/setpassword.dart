@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
 
 class SetPassword extends StatefulWidget {
@@ -86,18 +87,14 @@ class SetPasswordState extends State<SetPassword> {
 
     final newPassword = Container(
       padding: const EdgeInsets.only(top: 20, left: 35, bottom: 10, right: 35),
-      child: TextFormField(
+      child: customFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(40)],
         keyboardType: TextInputType.visiblePassword,
         onChanged: (val) => password = val,
         obscureText: !_passwordVisible,
         initialValue: '',
-        style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
-        decoration: InputDecoration(
+        decoration: customInputDecoration(
           hintText: 'Password',
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
             padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
             child: const FaIcon(
@@ -123,18 +120,14 @@ class SetPasswordState extends State<SetPassword> {
 
     final reTypePassword = Container(
       padding: const EdgeInsets.only(top: 10, left: 35, bottom: 25, right: 35),
-      child: TextFormField(
+      child: customFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(40)],
         keyboardType: TextInputType.visiblePassword,
         onChanged: (val) => password = val,
         obscureText: !_RetypePasswordVisible,
         initialValue: '',
-        style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
-        decoration: InputDecoration(
+        decoration: customInputDecoration(
           hintText: 'Re-Type Password',
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
             padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
             child: const FaIcon(
@@ -160,12 +153,7 @@ class SetPasswordState extends State<SetPassword> {
 
     final signInButton = Container(
       padding: const EdgeInsets.symmetric(horizontal: 55),
-      child: MaterialButton(
-        elevation: 5.0,
-        colorBrightness: Brightness.light,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
+      child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(Dashboard.tag);
         },

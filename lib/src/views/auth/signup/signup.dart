@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 import 'package:redid/src/views/auth/signup/verification.dart';
 
@@ -196,12 +197,7 @@ class SignUpState extends State<SignUp> {
     );
     final getOTPButton = Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: MaterialButton(
-        elevation: 5.0,
-        colorBrightness: Brightness.light,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
+      child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(Verification.tag);
         },
@@ -216,12 +212,7 @@ class SignUpState extends State<SignUp> {
     final signInButton = Padding(
       padding:
           const EdgeInsets.only(left: 25, top: 50.0, right: 25, bottom: 40),
-      child: MaterialButton(
-        elevation: 5.0,
-        colorBrightness: Brightness.light,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
+      child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
