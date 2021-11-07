@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
 
@@ -54,18 +55,16 @@ class SignInState extends State<SignIn> {
         obscureText: false,
         initialValue: '',
         style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 18, color: Colors.black),
-        autocorrect: true,
+            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Phone Number',
           contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
-            padding: EdgeInsets.fromLTRB(
-                6, 0, MediaQuery.of(context).size.width * 0.02, 0),
-            child: const Icon(
-              Icons.phone_android,
-              size: 28,
+            padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
+            child: const FaIcon(
+              FontAwesomeIcons.mobileAlt,
+              size: 26,
             ),
           ),
         ),
@@ -81,19 +80,16 @@ class SignInState extends State<SignIn> {
         obscureText: !_passwordVisible,
         initialValue: '',
         style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 18, color: Colors.black),
+            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Password',
           contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
-            height: 12,
-            width: 12,
-            padding: EdgeInsets.fromLTRB(
-                6, 0, MediaQuery.of(context).size.width * 0.02, 0),
-            child: const Icon(
-              Icons.lock,
-              size: 28,
+            padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
+            child: const FaIcon(
+              FontAwesomeIcons.unlockAlt,
+              size: 25,
             ),
           ),
           suffixIcon: IconButton(
@@ -122,17 +118,11 @@ class SignInState extends State<SignIn> {
         onPressed: () {
           Navigator.of(context).pushNamed(Dashboard.tag);
         },
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 13),
+        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
         child: const Text(
           'Sign in',
-          style: TextStyle(
-            fontFamily: "Book-Antiqua",
-            letterSpacing: 0.5,
-            fontSize: 24,
-            color: kTextColor,
-            fontWeight: FontWeight.bold,
-          ),
+          style: kButtonStyle,
         ),
       ),
     );
@@ -141,13 +131,22 @@ class SignInState extends State<SignIn> {
       child: Column(
         children: [
           Row(
-            children: [
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const SizedBox(
+                width: 30,
+              ),
               Container(
                 padding: const EdgeInsets.all(5.0),
-                child: CircleAvatar(
-                  radius: 12,
+                child: const CircleAvatar(
+                  radius: 10,
                   backgroundColor: Colors.transparent,
-                  child: Image.asset('assets/icons/forgotpass.png'),
+                  child: FaIcon(
+                    FontAwesomeIcons.userLock,
+                    color: kTitleTextColor,
+                    size: 18,
+                  ),
                 ),
               ),
               Expanded(
@@ -156,12 +155,13 @@ class SignInState extends State<SignIn> {
                   hoverColor: kBackgroundColor,
                   //splashColor: kBackgroundColor,
                   child: const Text(
-                    'Forgotten Password?',
+                    'Forgot Password?',
                     style: TextStyle(
                       fontFamily: 'Book-Antiqua',
                       letterSpacing: 0.2,
-                      fontSize: 18,
-                      color: Colors.black,
+                      fontSize: 16,
+                      color: kTitleTextColor,
+                      fontWeight: FontWeight.w600,
                     ),
                     textAlign: TextAlign.right,
                   ),
@@ -169,6 +169,9 @@ class SignInState extends State<SignIn> {
                     //Navigator.of(context).pushNamed('');
                   },
                 ),
+              ),
+              const SizedBox(
+                width: 30,
               ),
             ],
           ),
@@ -211,17 +214,11 @@ class SignInState extends State<SignIn> {
         onPressed: () {
           Navigator.of(context).pushNamed(SignUp.tag);
         },
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 13),
+        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
         child: const Text(
           'Create new Account',
-          style: TextStyle(
-            fontFamily: "Book-Antiqua",
-            letterSpacing: 0.5,
-            fontSize: 25,
-            color: kTextColor,
-            fontWeight: FontWeight.bold,
-          ),
+          style: kButtonStyle,
         ),
       ),
     );

@@ -2,9 +2,10 @@ import 'dart:ui';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
+import 'package:redid/src/views/dashboard/settings/appsettings.dart';
 import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -112,7 +113,9 @@ class DashboardState extends State<Dashboard> {
                     ),
                     splashRadius: 16,
                     color: kTitleColor,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppSettings.tag);
+                    },
                   ),
                 ),
               ),

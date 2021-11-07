@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 import 'package:redid/src/views/auth/signup/verification.dart';
 
@@ -205,18 +205,11 @@ class SignUpState extends State<SignUp> {
         onPressed: () {
           Navigator.of(context).pushNamed(Verification.tag);
         },
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 12),
+        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
         child: const Text(
           'GET OTP',
-          style: TextStyle(
-            fontFamily: "Book-Antiqua",
-            letterSpacing: 0.5,
-            fontSize: 22,
-            color: kTextColor,
-            fontWeight: FontWeight.w700,
-            fontStyle: FontStyle.italic,
-          ),
+          style: kButtonStyle,
         ),
       ),
     );
@@ -232,17 +225,11 @@ class SignUpState extends State<SignUp> {
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 12),
+        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
         child: const Text(
           'Sign in with password',
-          style: TextStyle(
-            fontFamily: "Book-Antiqua",
-            letterSpacing: 0.5,
-            fontSize: 25,
-            color: kTextColor,
-            fontWeight: FontWeight.bold,
-          ),
+          style: kButtonStyle,
         ),
       ),
     );

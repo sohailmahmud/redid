@@ -2,7 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
 
 class SetPassword extends StatefulWidget {
@@ -92,19 +93,16 @@ class SetPasswordState extends State<SetPassword> {
         obscureText: !_passwordVisible,
         initialValue: '',
         style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 18, color: Colors.black),
+            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Password',
           contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
-            height: 12,
-            width: 12,
-            padding: EdgeInsets.fromLTRB(
-                6, 0, MediaQuery.of(context).size.width * 0.02, 0),
-            child: const Icon(
-              Icons.lock,
-              size: 28,
+            padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
+            child: const FaIcon(
+              FontAwesomeIcons.unlockAlt,
+              size: 25,
             ),
           ),
           suffixIcon: IconButton(
@@ -132,19 +130,16 @@ class SetPasswordState extends State<SetPassword> {
         obscureText: !_RetypePasswordVisible,
         initialValue: '',
         style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 18, color: Colors.black),
+            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Re-Type Password',
           contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
-            height: 12,
-            width: 12,
-            padding: EdgeInsets.fromLTRB(
-                6, 0, MediaQuery.of(context).size.width * 0.02, 0),
-            child: const Icon(
-              Icons.lock,
-              size: 28,
+            padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
+            child: const FaIcon(
+              FontAwesomeIcons.redoAlt,
+              size: 25,
             ),
           ),
           suffixIcon: IconButton(
@@ -174,17 +169,11 @@ class SetPasswordState extends State<SetPassword> {
         onPressed: () {
           Navigator.of(context).pushNamed(Dashboard.tag);
         },
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 13),
+        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
         child: const Text(
           'Sign in',
-          style: TextStyle(
-            fontFamily: "Book-Antiqua",
-            letterSpacing: 0.5,
-            fontSize: 24,
-            color: kTextColor,
-            fontWeight: FontWeight.bold,
-          ),
+          style: kButtonStyle,
         ),
       ),
     );

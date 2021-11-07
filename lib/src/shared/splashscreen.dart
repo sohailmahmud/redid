@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:redid/src/app/appview.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

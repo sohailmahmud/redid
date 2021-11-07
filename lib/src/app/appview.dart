@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:redid/src/styles/colors.dart';
+import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 
 class AppView extends StatefulWidget {
@@ -76,17 +76,11 @@ class _AppViewState extends State<AppView> {
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
-        padding: const EdgeInsets.fromLTRB(100, 10, 100, 13),
+        padding: const EdgeInsets.fromLTRB(100, 8, 100, 8),
         color: kBaseColor,
         child: const Text(
           'Continue',
-          style: TextStyle(
-            fontFamily: "Book-Antiqua",
-            letterSpacing: 0.5,
-            fontSize: 26,
-            color: kTextColor,
-            fontWeight: FontWeight.bold,
-          ),
+          style: kButtonStyle,
         ),
       ),
     );
