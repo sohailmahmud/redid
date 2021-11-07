@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
 
@@ -45,7 +46,7 @@ class SignInState extends State<SignIn> {
     final phoneNo = Container(
       height: 70,
       padding: const EdgeInsets.only(bottom: 20),
-      child: TextFormField(
+      child: customFormField(
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,
           LengthLimitingTextInputFormatter(11)
@@ -54,12 +55,8 @@ class SignInState extends State<SignIn> {
         autofocus: false,
         obscureText: false,
         initialValue: '',
-        style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
         decoration: InputDecoration(
           hintText: 'Phone Number',
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
             padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
             child: const FaIcon(

@@ -53,7 +53,6 @@ class AppSettingsState extends State<AppSettings> {
                 ));
               },
             ),
-            
             const SettingsTile(
               title: 'Environment',
               subtitle: 'Production',
