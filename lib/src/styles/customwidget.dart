@@ -5,32 +5,55 @@ TextFormField customFormField({
   inputFormatters,
   keyboardType,
   onChanged,
-  bool autofocus = false,
   bool obscureText = false,
   String initialValue = '',
-  String hintText = '',
-  prefixIcon,
-  suffixIcon,
-  required InputDecoration decoration,
+  decoration,
 }) {
   return TextFormField(
     inputFormatters: inputFormatters,
     keyboardType: keyboardType,
     onChanged: onChanged,
-    autofocus: autofocus,
     obscureText: obscureText,
     initialValue: '',
     style: const TextStyle(
         fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
-    decoration: InputDecoration(
-      hintText: hintText,
-      contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-      prefixIcon: prefixIcon,
-      suffixIcon: suffixIcon,
-    ),
+    decoration: decoration,
   );
 }
+
+InputDecoration customInputDecoration({
+  String hintText = '',
+  prefix,
+  prefixIcon,
+  suffix,
+  suffixIcon,
+}) {
+  return InputDecoration(
+    hintText: hintText,
+    contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+    border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+    prefix: prefix,
+    prefixIcon: prefixIcon,
+    suffix: suffix,
+    suffixIcon: suffixIcon,
+  );
+}
+
+MaterialButton customMaterialButton({child, onPressed, padding, color}) {
+  return MaterialButton(
+    elevation: 1.0,
+    colorBrightness: Brightness.light,
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(30),
+    ),
+    onPressed: onPressed,
+    padding: padding,
+    color: color,
+    child: child,
+  );
+}
+
+// Optional part
 
 TextButton customTextButton() {
   return TextButton(
@@ -49,17 +72,5 @@ TextButton customTextButton() {
         fontSize: 18.0,
       ),
     ),
-  );
-}
-
-MaterialButton customMaterialButton({child, onPressed, color}) {
-  return MaterialButton(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(30),
-    ),
-    onPressed: onPressed,
-    padding: const EdgeInsets.fromLTRB(100, 8, 100, 8),
-    color: color,
-    child: child,
   );
 }

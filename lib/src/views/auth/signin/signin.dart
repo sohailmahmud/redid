@@ -52,10 +52,9 @@ class SignInState extends State<SignIn> {
           LengthLimitingTextInputFormatter(11)
         ],
         keyboardType: TextInputType.number,
-        autofocus: false,
         obscureText: false,
         initialValue: '',
-        decoration: InputDecoration(
+        decoration: customInputDecoration(
           hintText: 'Phone Number',
           prefixIcon: Container(
             padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
@@ -70,18 +69,14 @@ class SignInState extends State<SignIn> {
     final passwordField = Container(
       height: 70,
       padding: const EdgeInsets.only(bottom: 20),
-      child: TextFormField(
+      child: customFormField(
         inputFormatters: [LengthLimitingTextInputFormatter(40)],
         keyboardType: TextInputType.visiblePassword,
         onChanged: (val) => password = val,
         obscureText: !_passwordVisible,
         initialValue: '',
-        style: const TextStyle(
-            fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
-        decoration: InputDecoration(
+        decoration: customInputDecoration(
           hintText: 'Password',
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
           prefixIcon: Container(
             padding: const EdgeInsets.fromLTRB(15, 10, 12, 7),
             child: const FaIcon(
@@ -91,11 +86,9 @@ class SignInState extends State<SignIn> {
           ),
           suffixIcon: IconButton(
             icon: Icon(
-              // Based on passwordVisible state choose the icon
               _passwordVisible ? Icons.visibility : Icons.visibility_off,
             ),
             onPressed: () {
-              // Update the state i.e. toogle the state of passwordVisible variable
               setState(() {
                 _passwordVisible = !_passwordVisible;
               });
@@ -106,17 +99,12 @@ class SignInState extends State<SignIn> {
     );
     final signInButton = Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: MaterialButton(
-        elevation: 5.0,
-        colorBrightness: Brightness.light,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
+      child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(Dashboard.tag);
         },
-        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
+        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         child: const Text(
           'Sign in',
           style: kButtonStyle,
@@ -202,12 +190,7 @@ class SignInState extends State<SignIn> {
     );
     final createAccountButton = Padding(
       padding: const EdgeInsets.only(left: 20, top: 5.0, right: 20, bottom: 40),
-      child: MaterialButton(
-        elevation: 5.0,
-        colorBrightness: Brightness.light,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25),
-        ),
+      child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(SignUp.tag);
         },

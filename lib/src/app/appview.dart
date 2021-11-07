@@ -75,6 +75,7 @@ class _AppViewState extends State<AppView> {
           Navigator.of(context).pushNamed(SignIn.tag);
         },
         color: kBaseColor,
+        padding: const EdgeInsets.fromLTRB(100, 8, 100, 8),
         child: const Text(
           'Continue',
           style: kButtonStyle,

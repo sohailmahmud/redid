@@ -2,6 +2,7 @@ import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/auth/signup/setpassword.dart';
 
 class Verification extends StatefulWidget {
@@ -100,8 +101,9 @@ class VerificationState extends State<Verification> {
               child: ArgonTimerButton(
                 initialTimer: 10,
                 height: 25,
-                width: 100,
-                minWidth: 100,
+                width: 110,
+                minWidth: 110,
+                elevation: 1.0,
                 color: kBackgroundColor,
                 borderRadius: 30,
                 colorBrightness: Brightness.light,
@@ -139,12 +141,7 @@ class VerificationState extends State<Verification> {
             ),
             const SizedBox(height: 20),
             Center(
-              child: MaterialButton(
-                elevation: 5.0,
-                colorBrightness: Brightness.light,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
+              child: customMaterialButton(
                 onPressed: () {
                   Navigator.of(context).pushNamed(SetPassword.tag);
                 },
