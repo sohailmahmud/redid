@@ -1,8 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
+import 'package:redid/src/views/dashboard/dashboard.dart';
+import 'package:redid/src/views/dashboard/ecommerce/ecommerce.dart';
+import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
+import 'package:redid/src/views/dashboard/notice/notices.dart';
+import 'package:redid/src/views/dashboard/onlinejobs/onlinejobs.dart';
+import 'package:redid/src/views/dashboard/profile/userprofile.dart';
+import 'package:redid/src/views/dashboard/settings/appsettings.dart';
+import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
 
 class CustomDrawer extends StatefulWidget {
   static String tag = 'CustomDrawer';
@@ -16,6 +25,25 @@ class CustomDrawer extends StatefulWidget {
 
 class CustomDrawerState extends State<CustomDrawer> {
   bool showUserDetails = false;
+  ScrollController? _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController()
+      ..addListener(() {
+        setState(() {
+          // force a refresh so the app bar can be updated
+        });
+      });
+  }
+
+  @override
+  void dispose() {
+    _scrollController?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -81,7 +109,7 @@ class CustomDrawerState extends State<CustomDrawer> {
               flex: 40,
               child: ListView(
                 padding: EdgeInsets.zero,
-                shrinkWrap: false,
+                controller: _scrollController,
                 children: [
                   ListTile(
                     dense: true,
@@ -108,7 +136,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(Dashboard.tag);
                     },
                   ),
                   const Divider(
@@ -120,7 +148,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                   ListTile(
                     dense: true,
                     horizontalTitleGap: 0.0,
-                    title: const Text("Profile",
+                    title: const Text("My Profile",
                         style: TextStyle(
                             color: kBaseColor,
                             fontFamily: 'Book-Antiqua',
@@ -140,7 +168,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(UserProfile.tag);
                     },
                   ),
                   const Divider(
@@ -153,7 +181,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     dense: true,
                     horizontalTitleGap: 0.0,
                     title: const Text(
-                      "Active Status",
+                      "Activity Status",
                       style: TextStyle(
                           color: kBaseColor,
                           fontFamily: 'Book-Antiqua',
@@ -222,7 +250,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                     dense: true,
                     horizontalTitleGap: 0.0,
                     title: const Text(
-                      "Wallet",
+                      "My Wallet",
                       style: TextStyle(
                         color: kBaseColor,
                         fontFamily: 'Book-Antiqua',
@@ -244,7 +272,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(UserWallet.tag);
                     },
                   ),
                   const Divider(
@@ -280,7 +308,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(JobHistory.tag);
                     },
                   ),
                   const Divider(
@@ -315,7 +343,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(ECommerce.tag);
                     },
                   ),
                   const Divider(
@@ -350,7 +378,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(OnlineJobs.tag);
                     },
                   ),
                   const Divider(
@@ -385,7 +413,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(Notices.tag);
                     },
                   ),
                   const Divider(
@@ -421,7 +449,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(AppSettings.tag);
                     },
                   ),
                   const Divider(

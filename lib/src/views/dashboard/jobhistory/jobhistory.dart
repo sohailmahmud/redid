@@ -44,7 +44,7 @@ class JobHistoryState extends State<JobHistory>
             onPressed: () {
               isSelected = 1;
               setState(() {
-                showWorkHistory = !showWorkHistory;
+                showWorkHistory = true;
                 showTodaysWork = false;
                 showYesterdayWork = false;
                 showLifetimeWork = false;
@@ -79,7 +79,7 @@ class JobHistoryState extends State<JobHistory>
             onPressed: () {
               isSelected = 2;
               setState(() {
-                showTodaysWork = !showTodaysWork;
+                showTodaysWork = true;
                 showWorkHistory = false;
                 showYesterdayWork = false;
                 showLifetimeWork = false;
@@ -114,7 +114,7 @@ class JobHistoryState extends State<JobHistory>
             onPressed: () {
               isSelected = 3;
               setState(() {
-                showYesterdayWork = !showYesterdayWork;
+                showYesterdayWork = true;
                 showWorkHistory = false;
                 showTodaysWork = false;
                 showLifetimeWork = false;
@@ -149,7 +149,7 @@ class JobHistoryState extends State<JobHistory>
             onPressed: () {
               isSelected = 4;
               setState(() {
-                showLifetimeWork = !showLifetimeWork;
+                showLifetimeWork = true;
                 showWorkHistory = false;
                 showTodaysWork = false;
                 showYesterdayWork = false;

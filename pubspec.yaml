@@ -23,6 +23,7 @@ dependencies:
   datetime_picker_formfield: ^2.0.0
   fl_chart: ^0.40.2
   settings_ui: ^1.0.0
+  flutter_slidable: ^0.6.0
 
 
 dev_dependencies:
@@ -33,7 +34,7 @@ dev_dependencies:
 flutter_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icons/icon.png"
+  image_path: "assets/icons/logo.png"
 
 flutter:
   uses-material-design: true
