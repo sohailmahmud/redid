@@ -490,7 +490,7 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: Colors.pink.shade50,
+                  color: kBaseColor,
                   elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
@@ -506,7 +506,7 @@ class DashboardState extends State<Dashboard> {
                           child: Icon(
                             Icons.live_help_outlined,
                             size: 40,
-                            color: kBaseColor,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
@@ -517,7 +517,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBaseColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.bold,
                           ),
@@ -540,7 +540,7 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: Colors.pink.shade50,
+                  color: kBaseColor,
                   elevation: 5,
                   onPressed: () {
                     //Navigator.of(context).pushNamed('');
@@ -556,7 +556,7 @@ class DashboardState extends State<Dashboard> {
                           child: Icon(
                             Icons.info_outline,
                             size: 40,
-                            color: kBaseColor,
+                            color: kBackgroundColor,
                           ),
                         ),
                       ),
@@ -567,7 +567,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBaseColor,
+                            color: kBackgroundColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
