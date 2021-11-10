@@ -25,14 +25,12 @@ class SignUpState extends State<SignUp> {
   Widget build(BuildContext context) {
     final signUpLogo = Container(
       padding: const EdgeInsets.only(top: 80, bottom: 50),
-      child: const Text(
-        'redID',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Chiller',
-          fontSize: 70,
-          color: kBaseColor,
-          fontWeight: FontWeight.bold,
+      child: CircleAvatar(
+        backgroundColor: Colors.transparent,
+        radius: 50,
+        child: Image.asset(
+          'assets/icons/hlogo.png',
+          fit: BoxFit.cover,
         ),
       ),
     );

@@ -17,22 +17,18 @@ class _AppViewState extends State<AppView> {
   @override
   Widget build(BuildContext context) {
     final homeScreenLogo = Container(
-      padding: const EdgeInsets.only(top: 80, bottom: 140),
-      child: const Hero(
+      padding: const EdgeInsets.only(top: 50, bottom: 50),
+      child: Hero(
         tag: 'hero',
-        child: Text(
-          'redID',
-          style: TextStyle(
-            fontFamily: 'Chiller',
-            fontSize: 70,
-            color: kBaseColor,
-            fontWeight: FontWeight.bold,
-          ),
+        child: CircleAvatar(
+          backgroundColor: Colors.transparent,
+          radius: 140,
+          child: Image.asset('assets/icons/hlogo.png', fit: BoxFit.cover),
         ),
       ),
     );
     final welcomeMessage = Container(
-      padding: const EdgeInsets.only(bottom: 130),
+      padding: const EdgeInsets.only(bottom: 100),
       child: RichText(
         textAlign: TextAlign.center,
         text: const TextSpan(

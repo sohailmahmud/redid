@@ -21,7 +21,7 @@ class LPChartState extends State<LPChart> {
     return Stack(
       children: <Widget>[
         AspectRatio(
-          aspectRatio: 1.0,
+          aspectRatio: 1.1,
           child: Container(
             decoration: const BoxDecoration(
                 borderRadius: BorderRadius.all(

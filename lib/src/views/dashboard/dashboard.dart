@@ -3,7 +3,9 @@ import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/views/dashboard/about/about.dart';
 import 'package:redid/src/views/dashboard/ecommerce/ecommerce.dart';
+import 'package:redid/src/views/dashboard/help/helpsupport.dart';
 import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
 import 'package:redid/src/views/dashboard/notice/notices.dart';
 import 'package:redid/src/views/dashboard/onlinejobs/onlinejobs.dart';
@@ -29,49 +31,42 @@ class DashboardState extends State<Dashboard> {
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
-        "assets/icons/banner1.svg",
+        "assets/icons/b1.svg",
         fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
-        "assets/icons/banner2.svg",
+        "assets/icons/b2.svg",
         fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
-        "assets/icons/banner3.svg",
+        "assets/icons/b3.svg",
         fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
-        "assets/icons/banner4.svg",
+        "assets/icons/b4.svg",
         fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
-        "assets/icons/banner5.svg",
+        "assets/icons/b5.svg",
         fit: BoxFit.fill,
       ),
     ),
     Container(
       padding: EdgeInsets.zero,
       child: Image.asset(
-        "assets/icons/banner6.svg",
-        fit: BoxFit.fill,
-      ),
-    ),
-    Container(
-      padding: EdgeInsets.zero,
-      child: Image.asset(
-        "assets/icons/banner7.svg",
+        "assets/icons/b6.svg",
         fit: BoxFit.fill,
       ),
     ),
@@ -79,7 +74,7 @@ class DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      elevation: 10.0,
+      elevation: 4.0,
       titleSpacing: 0.0,
       backgroundColor: kBackgroundColor,
       iconTheme: const IconThemeData(color: kTextColor),
@@ -187,8 +182,8 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
                     Navigator.of(context).pushNamed(UserProfile.tag);
                   },
@@ -196,13 +191,13 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 25.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: FaIcon(
                             FontAwesomeIcons.userTie,
-                            size: 40,
+                            size: 34,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -214,7 +209,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -236,8 +231,8 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
                     Navigator.of(context).pushNamed(UserWallet.tag);
                   },
@@ -245,13 +240,13 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 25.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: FaIcon(
                             FontAwesomeIcons.handHoldingUsd,
-                            size: 40,
+                            size: 34,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -263,7 +258,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -285,8 +280,8 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
                     Navigator.of(context).pushNamed(JobHistory.tag);
                   },
@@ -294,13 +289,13 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 25.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: FaIcon(
                             FontAwesomeIcons.history,
-                            size: 40,
+                            size: 35,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -312,7 +307,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -338,8 +333,8 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
                     Navigator.of(context).pushNamed(ECommerce.tag);
                   },
@@ -347,13 +342,13 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 22.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: Icon(
                             Icons.shopping_cart_outlined,
-                            size: 40,
+                            size: 35,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -365,7 +360,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -387,8 +382,8 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
                     Navigator.of(context).pushNamed(OnlineJobs.tag);
                   },
@@ -396,13 +391,13 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 22.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: Icon(
                             Icons.stream_outlined,
-                            size: 40,
+                            size: 35,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -414,7 +409,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -436,8 +431,8 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
                     Navigator.of(context).pushNamed(Notices.tag);
                   },
@@ -445,13 +440,13 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 22.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: Icon(
                             Icons.receipt_long_outlined,
-                            size: 40,
+                            size: 35,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -463,7 +458,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -490,22 +485,22 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
-                    //Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(HelpSupport.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 22.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: Icon(
                             Icons.live_help_outlined,
-                            size: 40,
+                            size: 35,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -517,7 +512,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.bold,
                           ),
@@ -540,22 +535,22 @@ class DashboardState extends State<Dashboard> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  color: kBaseColor,
-                  elevation: 5,
+                  color: Colors.pink.shade50,
+                  elevation: 2,
                   onPressed: () {
-                    //Navigator.of(context).pushNamed('');
+                    Navigator.of(context).pushNamed(About.tag);
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: const EdgeInsets.only(top: 1),
                         child: const CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          radius: 22.0,
+                          backgroundColor: kBaseColor,
+                          radius: 30.0,
                           child: Icon(
                             Icons.info_outline,
-                            size: 40,
+                            size: 38,
                             color: kBackgroundColor,
                           ),
                         ),
@@ -567,7 +562,7 @@ class DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontFamily: 'Chiller',
                             fontSize: 16.0,
-                            color: kBackgroundColor,
+                            color: kBaseColor,
                             letterSpacing: 0.5,
                             fontWeight: FontWeight.w700,
                           ),
@@ -597,7 +592,7 @@ class DashboardState extends State<Dashboard> {
           return swiperBanner[index % swiperBanner.length];
         },
         pagination: const SwiperPagination(
-          margin: EdgeInsets.only(bottom: 5.0),
+          margin: EdgeInsets.only(bottom: 4.0),
           builder: SwiperPagination.dots,
           alignment: Alignment.bottomCenter,
         ),

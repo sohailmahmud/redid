@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/styles/light_color.dart';
@@ -13,14 +14,21 @@ class UserWallet extends StatefulWidget {
 
 class UserWalletState extends State<UserWallet> {
   Widget _operationsWidget() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[
-        _icon(Icons.transfer_within_a_station, "Transfer"),
-        _icon(Icons.phone, "Airtime"),
-        _icon(Icons.payment, "Pay Bills"),
-        _icon(Icons.code, "Qr Pay"),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          _icon(Icons.transfer_within_a_station, "Transfer"),
+          _icon(Icons.phone, "Airtime"),
+          _icon(Icons.payment, "Pay Bills"),
+          _icon(Icons.code, "QR Pay"),
+          _icon(Icons.transfer_within_a_station, "Transfer"),
+          _icon(Icons.phone, "Airtime"),
+          _icon(Icons.payment, "Pay Bills"),
+          _icon(Icons.code, "QR Pay"),
+        ],
+      ),
     );
   }
 
@@ -34,9 +42,9 @@ class UserWalletState extends State<UserWallet> {
           child: Container(
             height: 80,
             width: 80,
-            margin: const EdgeInsets.symmetric(vertical: 10),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 6),
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color(0xFFF8BBD0),
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 boxShadow: <BoxShadow>[
                   BoxShadow(
@@ -44,59 +52,81 @@ class UserWalletState extends State<UserWallet> {
                       offset: Offset(5, 5),
                       blurRadius: 10)
                 ]),
-            child: Icon(icon),
+            child: Icon(icon, color: kBaseColor),
           ),
         ),
-        Text(text,
-            style: GoogleFonts.mulish(
-                textStyle: Theme.of(context).textTheme.headline4,
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: const Color(0xff76797e))),
+        Text(
+          text,
+          style: GoogleFonts.mulish(
+            textStyle: Theme.of(context).textTheme.headline4,
+            fontSize: 15,
+            fontWeight: FontWeight.w600,
+            color: const Color(0xff76797e),
+          ),
+        ),
       ],
     );
   }
 
   Widget _transectionList() {
-    return Column(
-      children: <Widget>[
-        _transection("Flight Ticket", "23 Feb 2020"),
-        _transection("Electricity Bill", "25 Feb 2020"),
-        _transection("Flight Ticket", "03 Mar 2020"),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          _transection("Flight Ticket", "23 Feb 2021"),
+          _transection("Lorem Ipsum", "25 Feb 2021"),
+          _transection("Mob Ads", "23 Feb 2021"),
+          _transection("Affiliate Marketing", "25 Feb 2021"),
+          _transection("Online Store", "25 Feb 2021"),
+          _transection("Premium Membership", "03 Mar 2021"),
+          _transection("Online Starbucks", "25 Feb 2021"),
+          _transection("My Phone Bill", "03 Mar 2021"),
+        ],
+      ),
     );
   }
 
   Widget _transection(String text, String time) {
-    return ListTile(
-      leading: Container(
-        height: 50,
-        width: 50,
-        decoration: const BoxDecoration(
-          color: LightColor.navyBlue1,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-        ),
-        child: const Icon(Icons.hd, color: Colors.white),
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
       ),
-      contentPadding: const EdgeInsets.symmetric(),
-      title: TitleText(
-        text: text,
-        fontSize: 14,
-      ),
-      subtitle: Text(time),
-      trailing: Container(
-          height: 30,
-          width: 60,
-          alignment: Alignment.center,
-          decoration: const BoxDecoration(
-            color: LightColor.lightGrey,
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+      elevation: 2,
+      shadowColor: Colors.pink.shade100,
+      child: Container(
+        padding: const EdgeInsets.only(left: 5, right: 5),
+        child: ListTile(
+          leading: Container(
+            height: 50,
+            width: 50,
+            decoration: const BoxDecoration(
+              color: Color(0xFFF06292),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+            ),
+            child: const Icon(Icons.hd, color: Colors.white),
           ),
-          child: Text('-20 MLR',
-              style: GoogleFonts.mulish(
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
-                  color: LightColor.navyBlue2))),
+          contentPadding: const EdgeInsets.symmetric(),
+          title: TitleText(
+            text: text,
+            fontSize: 14,
+          ),
+          subtitle: Text(time),
+          trailing: Container(
+              height: 30,
+              width: 80,
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(
+                color: LightColor.lightGrey,
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+              ),
+              child: Text('-2000 BDT',
+                  style: GoogleFonts.mulish(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: LightColor.navyBlue2))),
+        ),
+      ),
     );
   }
 
@@ -149,25 +179,26 @@ class UserWalletState extends State<UserWallet> {
                     height: 10,
                   ),
                   Container(
-                      width: 85,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 5, vertical: 5),
-                      decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(12)),
-                          border: Border.all(color: Colors.white, width: 1)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const <Widget>[
-                          Icon(
-                            Icons.add,
-                            color: Colors.white,
-                            size: 20,
-                          ),
-                          SizedBox(width: 5),
-                          Text("Top up", style: TextStyle(color: Colors.white)),
-                        ],
-                      ))
+                    width: 85,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    decoration: BoxDecoration(
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(12)),
+                        border: Border.all(color: Colors.white, width: 1)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const <Widget>[
+                        Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                        SizedBox(width: 5),
+                        Text("Top Up", style: TextStyle(color: Colors.white)),
+                      ],
+                    ),
+                  ),
                 ],
               ),
               const Positioned(
@@ -212,23 +243,35 @@ class UserWalletState extends State<UserWallet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: SingleChildScrollView(
-      child: Container(
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        backgroundColor: kBackgroundColor,
+        centerTitle: true,
+        toolbarHeight: 50,
+        leadingWidth: 28,
+        iconTheme: const IconThemeData(color: kBaseColor),
+        title: const Text(
+          'Wallet',
+          style: TextStyle(
+            fontFamily: 'Chiller',
+            fontSize: 25,
+            color: kBaseColor,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+      ),
+      body: Center(
+        child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const SizedBox(
-                height: 40,
-              ),
-              const TitleText(text: "My wallet"),
-              const SizedBox(
-                height: 20,
+                height: 25,
               ),
               balanceCard(),
               const SizedBox(
-                height: 50,
+                height: 30,
               ),
               const TitleText(
                 text: "Operations",
@@ -238,15 +281,17 @@ class UserWalletState extends State<UserWallet> {
               ),
               _operationsWidget(),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
               const TitleText(
                 text: "Transactions",
               ),
-              _transectionList(),
+              Expanded(child: _transectionList()),
             ],
-          )),
-    )));
+          ),
+        ),
+      ),
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 name: redid
 description: A new Flutter project.
 publish_to: 'none' 
-version: 1.0.2+25
+version: 1.0.4+35
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -41,17 +41,18 @@ flutter:
   
   assets:
     - assets/
+    - assets/icons/logo.png
     - assets/icons/forgotpass.png
     - assets/icons/otp.svg
     - assets/icons/accountpass.svg
     - assets/icons/wallet.svg
-    - assets/icons/banner1.svg
-    - assets/icons/banner2.svg
-    - assets/icons/banner3.svg
-    - assets/icons/banner4.svg
-    - assets/icons/banner5.svg
-    - assets/icons/banner6.svg
-    - assets/icons/banner7.svg
+    - assets/icons/hlogo.png
+    - assets/icons/b1.svg
+    - assets/icons/b2.svg
+    - assets/icons/b3.svg
+    - assets/icons/b4.svg
+    - assets/icons/b5.svg
+    - assets/icons/b6.svg
 
   fonts:
     - family: Chiller

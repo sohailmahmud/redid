@@ -39,33 +39,48 @@ class ECommerceState extends State<ECommerce>
             Column(
               children: <Widget>[
                 Container(
-                  height: 140.0,
                   color: Colors.white,
                   child: Column(
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.only(top: 10.0),
-                        child: Stack(fit: StackFit.loose, children: <Widget>[
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                  width: 130.0,
-                                  height: 130.0,
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    image: DecorationImage(
-                                      image: ExactAssetImage(
-                                          'assets/icons/wallet.svg'),
-                                      fit: BoxFit.cover,
+                        child: Stack(
+                          fit: StackFit.loose,
+                          children: <Widget>[
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  padding: const EdgeInsets.only(top: 20),
+                                  child: const CircleAvatar(
+                                    backgroundColor: kBaseColor,
+                                    radius: 60,
+                                    child: Icon(
+                                      Icons.shopping_cart_outlined,
+                                      color: kBackgroundColor,
+                                      size: 60,
                                     ),
-                                  )),
-                            ],
-                          ),
-                        ]),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       )
                     ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(10),
+                  child: const Text(
+                    'Coming Soon...',
+                    style: TextStyle(
+                      fontFamily: 'Chiller',
+                      fontSize: 35,
+                      fontWeight: FontWeight.w900,
+                      color: kBaseColor,
+                    ),
                   ),
                 ),
               ],

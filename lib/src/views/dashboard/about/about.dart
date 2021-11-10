@@ -2,16 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:redid/src/styles/constants.dart';
 
-class OnlineJobs extends StatefulWidget {
-  const OnlineJobs({Key? key}) : super(key: key);
-  static String tag = 'OnlineJobs';
+class About extends StatefulWidget {
+  const About({Key? key}) : super(key: key);
+  static String tag = 'About';
 
   @override
-  OnlineJobsState createState() => OnlineJobsState();
+  AboutState createState() => AboutState();
 }
 
-class OnlineJobsState extends State<OnlineJobs>
-    with SingleTickerProviderStateMixin {
+class AboutState extends State<About> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +22,7 @@ class OnlineJobsState extends State<OnlineJobs>
         leadingWidth: 28,
         iconTheme: const IconThemeData(color: kBaseColor),
         title: const Text(
-          'Online Jobs',
+          'About redID',
           style: TextStyle(
             fontFamily: 'Chiller',
             fontSize: 25,
@@ -55,7 +54,7 @@ class OnlineJobsState extends State<OnlineJobs>
                                   backgroundColor: kBaseColor,
                                   radius: 60,
                                   child: Icon(
-                                    Icons.stream_outlined,
+                                    Icons.info_outline,
                                     color: kBackgroundColor,
                                     size: 60,
                                   ),
