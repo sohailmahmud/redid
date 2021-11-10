@@ -5,8 +5,10 @@ import 'package:redid/src/views/auth/signin/signin.dart';
 import 'package:redid/src/views/auth/signup/setpassword.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
 import 'package:redid/src/views/auth/signup/verification.dart';
+import 'package:redid/src/views/dashboard/about/about.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
 import 'package:redid/src/views/dashboard/ecommerce/ecommerce.dart';
+import 'package:redid/src/views/dashboard/help/helpsupport.dart';
 import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
 import 'package:redid/src/views/dashboard/jobhistory/workhistory.dart';
 import 'package:redid/src/views/dashboard/notice/notices.dart';
@@ -35,4 +37,6 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   ECommerce.tag: (context) => const ECommerce(),
   OnlineJobs.tag: (context) => const OnlineJobs(),
   Notices.tag: (context) => const Notices(),
+  HelpSupport.tag: (context) => const HelpSupport(),
+  About.tag: (context) => const About(),
 };

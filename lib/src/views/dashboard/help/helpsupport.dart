@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:redid/src/styles/constants.dart';
 
-class OnlineJobs extends StatefulWidget {
-  const OnlineJobs({Key? key}) : super(key: key);
-  static String tag = 'OnlineJobs';
+class HelpSupport extends StatefulWidget {
+  const HelpSupport({Key? key}) : super(key: key);
+  static String tag = 'HelpSupport';
 
   @override
-  OnlineJobsState createState() => OnlineJobsState();
+  HelpSupportState createState() => HelpSupportState();
 }
 
-class OnlineJobsState extends State<OnlineJobs>
+class HelpSupportState extends State<HelpSupport>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class OnlineJobsState extends State<OnlineJobs>
         leadingWidth: 28,
         iconTheme: const IconThemeData(color: kBaseColor),
         title: const Text(
-          'Online Jobs',
+          'Help & Support',
           style: TextStyle(
             fontFamily: 'Chiller',
             fontSize: 25,
@@ -55,7 +55,7 @@ class OnlineJobsState extends State<OnlineJobs>
                                   backgroundColor: kBaseColor,
                                   radius: 60,
                                   child: Icon(
-                                    Icons.stream_outlined,
+                                    Icons.live_help_outlined,
                                     color: kBackgroundColor,
                                     size: 60,
                                   ),

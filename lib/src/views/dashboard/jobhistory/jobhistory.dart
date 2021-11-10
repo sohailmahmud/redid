@@ -173,7 +173,7 @@ class JobHistoryState extends State<JobHistory>
       ],
     );
     final workHistoryWidget = Container(
-      height: MediaQuery.of(context).size.height * 0.58,
+      height: MediaQuery.of(context).size.height * 0.55,
       padding: const EdgeInsets.all(10),
       child: Container(
         decoration: BoxDecoration(
@@ -189,7 +189,7 @@ class JobHistoryState extends State<JobHistory>
       ),
     );
     final todaysWorkWidget = Container(
-      height: MediaQuery.of(context).size.height * 0.58,
+      height: MediaQuery.of(context).size.height * 0.55,
       padding: const EdgeInsets.all(10),
       child: Container(
         decoration: BoxDecoration(
@@ -234,7 +234,7 @@ class JobHistoryState extends State<JobHistory>
       ),
     );
     final lifetimeWorkWidget = Container(
-      height: MediaQuery.of(context).size.height * 0.58,
+      height: MediaQuery.of(context).size.height * 0.55,
       padding: const EdgeInsets.all(10),
       child: Container(
         decoration: BoxDecoration(

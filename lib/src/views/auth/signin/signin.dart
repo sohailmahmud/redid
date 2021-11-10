@@ -31,14 +31,12 @@ class SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     final signinLogo = Container(
       padding: const EdgeInsets.only(top: 80, bottom: 80),
-      child: const Text(
-        'redID',
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Chiller',
-          fontSize: 70,
-          color: kBaseColor,
-          fontWeight: FontWeight.bold,
+      child: CircleAvatar(
+        backgroundColor: Colors.transparent,
+        radius: 50,
+        child: Image.asset(
+          'assets/icons/hlogo.png',
+          fit: BoxFit.cover,
         ),
       ),
     );
@@ -120,7 +118,7 @@ class SignInState extends State<SignIn> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const SizedBox(
-                width: 30,
+                width: 25,
               ),
               Container(
                 padding: const EdgeInsets.all(5.0),
@@ -156,7 +154,7 @@ class SignInState extends State<SignIn> {
                 ),
               ),
               const SizedBox(
-                width: 30,
+                width: 25,
               ),
             ],
           ),
