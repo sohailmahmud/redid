@@ -73,6 +73,11 @@ class DashboardState extends State<Dashboard> {
   ];
   @override
   Widget build(BuildContext context) {
+    final Shader linearGradient = const LinearGradient(
+      colors: <Color>[kBaseColor, kButtonColor],
+    ).createShader(
+      const Rect.fromLTWH(170.0, 10.0, 50.0, 15.0),
+    );
     final appBar = AppBar(
       elevation: 4.0,
       titleSpacing: 0.0,
@@ -122,14 +127,15 @@ class DashboardState extends State<Dashboard> {
               ),
               Container(
                 padding: EdgeInsets.zero,
-                child: const Text(
-                  'Home',
+                child: Text(
+                  'redID',
                   style: TextStyle(
                     fontFamily: 'Chiller',
-                    fontSize: 25,
+                    fontSize: 30,
                     letterSpacing: 0.8,
-                    color: kBaseColor,
+                    //color: kBaseColor,
                     fontWeight: FontWeight.w900,
+                    foreground: Paint()..shader = linearGradient,
                     /* shadows: [
                       Shadow(
                         color: kBaseColor,
@@ -191,7 +197,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
@@ -240,7 +246,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
@@ -289,7 +295,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
@@ -342,7 +348,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
@@ -391,7 +397,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
@@ -440,7 +446,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
@@ -494,7 +500,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
@@ -544,7 +550,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Container(
-                        padding: const EdgeInsets.only(top: 1),
+                        padding: const EdgeInsets.only(top: 2, bottom: 2),
                         child: const CircleAvatar(
                           backgroundColor: kBaseColor,
                           radius: 30.0,
