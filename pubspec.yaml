@@ -53,6 +53,10 @@ flutter:
     - assets/icons/b4.svg
     - assets/icons/b5.svg
     - assets/icons/b6.svg
+    - assets/icons/help.svg
+    - assets/icons/helpchat.svg
+    - assets/icons/helpemail.svg
+    - assets/icons/helpfaq.svg
 
   fonts:
     - family: Chiller
@@ -62,4 +66,10 @@ flutter:
     - family: Book-Antiqua
       fonts:
         - asset: assets/fonts/book-antiqua.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto.ttf
+    - family: Roboto-Bold
+      fonts:
+        - asset: assets/fonts/Roboto-Bold.ttf
 

@@ -13,6 +13,243 @@ class About extends StatefulWidget {
 class AboutState extends State<About> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
+    final aboutTitle = Container(
+      padding: const EdgeInsets.only(top: 10.0),
+      child: Row(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width * 0.015,
+            height: MediaQuery.of(context).size.width * 0.1,
+            color: kBaseColor,
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width * 0.91,
+            height: MediaQuery.of(context).size.width * 0.1,
+            color: kBaseLightColor,
+            alignment: Alignment.center,
+            child: const Text(
+              'What is redID?',
+              style: TextStyle(
+                fontSize: 20.0,
+                fontFamily: 'Book-Antiqua',
+                color: kTextColor,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+    final aboutInfo = Container(
+      padding:
+          const EdgeInsets.only(left: 30.0, top: 40, right: 30.0, bottom: 10),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.1,
+                padding: const EdgeInsets.only(top: 8.0),
+                alignment: Alignment.topCenter,
+                child: const Icon(
+                  Icons.circle,
+                  color: kBaseColor,
+                  size: 12.0,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.60,
+                height: MediaQuery.of(context).size.width * 0.10,
+                alignment: Alignment.center,
+                child: const Text(
+                  'redID is a third-party digital advertising platform.',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'Book-Antiqua',
+                    color: kTextColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.1,
+                //padding: const EdgeInsets.only(top: 5.0),
+                alignment: Alignment.topCenter,
+                child: const Icon(
+                  Icons.circle,
+                  color: kBaseColor,
+                  size: 12.0,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.60,
+                height: MediaQuery.of(context).size.width * 0.150,
+                alignment: Alignment.center,
+                child: const Text(
+                  'It\'s helps both parties to establish a relationship with one advertising agency and another brand promoter.',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'Book-Antiqua',
+                    color: kTextColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.1,
+                padding: const EdgeInsets.only(top: 8.0),
+                alignment: Alignment.topCenter,
+                child: const Icon(
+                  Icons.circle,
+                  color: kBaseColor,
+                  size: 12.0,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.60,
+                height: MediaQuery.of(context).size.width * 0.10,
+                alignment: Alignment.center,
+                child: const Text(
+                  'You can earn more money every day from redID.',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'Book-Antiqua',
+                    color: kTextColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.1,
+                padding: const EdgeInsets.only(top: 8.0),
+                alignment: Alignment.topCenter,
+                child: const Icon(
+                  Icons.circle,
+                  color: kBaseColor,
+                  size: 12.0,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.60,
+                height: MediaQuery.of(context).size.width * 0.10,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Do small investments and grow rich within a short time.',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'Book-Antiqua',
+                    color: kTextColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.1,
+                padding: const EdgeInsets.only(top: 8.0),
+                alignment: Alignment.topCenter,
+                child: const Icon(
+                  Icons.circle,
+                  color: kBaseColor,
+                  size: 12.0,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.60,
+                height: MediaQuery.of(context).size.width * 0.10,
+                alignment: Alignment.center,
+                child: const Text(
+                  'Provide help and get 30% extra money every single month.',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'Book-Antiqua',
+                    color: kTextColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.1,
+                height: MediaQuery.of(context).size.width * 0.1,
+                padding: const EdgeInsets.only(top: 8.0),
+                alignment: Alignment.topCenter,
+                child: const Icon(
+                  Icons.circle,
+                  color: kBaseColor,
+                  size: 12.0,
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.60,
+                height: MediaQuery.of(context).size.width * 0.10,
+                alignment: Alignment.center,
+                child: const Text(
+                  'This redID is used to be very easy to access and simple.',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    fontFamily: 'Book-Antiqua',
+                    color: kTextColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+    final regardInfo = Container(
+      padding: const EdgeInsets.only(left: 45.0, top: 40.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          const Text(
+            'Regards!',
+            style: TextStyle(
+              fontFamily: 'Book-Antiqua',
+              fontSize: 16.0,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 8.0, left: 2.0),
+            child: const Text(
+              'redID',
+              style: TextStyle(
+                fontFamily: 'Chiller',
+                fontSize: 22.0,
+                color: kBaseColor,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -31,44 +268,13 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
           ),
         ),
       ),
-      body: Container(
-        color: Colors.white,
+      body: Center(
         child: ListView(
+          padding: const EdgeInsets.all(15.0),
           children: <Widget>[
-            Column(
-              children: <Widget>[
-                Container(
-                  color: Colors.white,
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
-                        child: Stack(fit: StackFit.loose, children: <Widget>[
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                padding: const EdgeInsets.only(top: 20),
-                                child: const CircleAvatar(
-                                  backgroundColor: kBaseColor,
-                                  radius: 60,
-                                  child: Icon(
-                                    Icons.info_outline,
-                                    color: kBackgroundColor,
-                                    size: 60,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ]),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            aboutTitle,
+            aboutInfo,
+            regardInfo,
           ],
         ),
       ),
