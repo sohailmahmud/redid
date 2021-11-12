@@ -171,7 +171,7 @@ class SignInState extends State<SignIn> {
                   " or ",
                   style: TextStyle(
                     fontFamily: 'Book-Antiqua',
-                    fontSize: 26,
+                    fontSize: 22,
                     color: kBaseColor,
                   ),
                 ),

@@ -14,21 +14,36 @@ class UserWallet extends StatefulWidget {
 
 class UserWalletState extends State<UserWallet> {
   Widget _operationsWidget() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          _icon(Icons.transfer_within_a_station, "Transfer"),
-          _icon(Icons.phone, "Airtime"),
-          _icon(Icons.payment, "Pay Bills"),
-          _icon(Icons.code, "QR Pay"),
-          _icon(Icons.transfer_within_a_station, "Transfer"),
-          _icon(Icons.phone, "Airtime"),
-          _icon(Icons.payment, "Pay Bills"),
-          _icon(Icons.code, "QR Pay"),
-        ],
-      ),
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            _icon(Icons.transfer_within_a_station, "Transfer"),
+            _icon(Icons.phone, "Airtime"),
+            _icon(Icons.payment, "Pay Bills"),
+            _icon(Icons.code, "QR Pay"),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            _icon(Icons.style, "Tickets"),
+            _icon(Icons.family_restroom, "Insurance"),
+            _icon(Icons.shopping_cart, "Shopping"),
+            _icon(Icons.restaurant, "Food"),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            _icon(Icons.travel_explore, "Travel"),
+            _icon(Icons.savings, "Savings"),
+            _icon(Icons.sports_esports, "Games"),
+            _icon(Icons.volunteer_activism, "Donation"),
+          ],
+        ),
+      ],
     );
   }
 
@@ -68,68 +83,6 @@ class UserWalletState extends State<UserWallet> {
     );
   }
 
-  Widget _transectionList() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          _transection("Flight Ticket", "23 Feb 2021"),
-          _transection("Lorem Ipsum", "25 Feb 2021"),
-          _transection("Mob Ads", "23 Feb 2021"),
-          _transection("Affiliate Marketing", "25 Feb 2021"),
-          _transection("Online Store", "25 Feb 2021"),
-          _transection("Premium Membership", "03 Mar 2021"),
-          _transection("Online Starbucks", "25 Feb 2021"),
-          _transection("My Phone Bill", "03 Mar 2021"),
-        ],
-      ),
-    );
-  }
-
-  Widget _transection(String text, String time) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      elevation: 2,
-      shadowColor: Colors.pink.shade100,
-      child: Container(
-        padding: const EdgeInsets.only(left: 5, right: 5),
-        child: ListTile(
-          leading: Container(
-            height: 50,
-            width: 50,
-            decoration: const BoxDecoration(
-              color: Color(0xFFF06292),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            child: const Icon(Icons.hd, color: Colors.white),
-          ),
-          contentPadding: const EdgeInsets.symmetric(),
-          title: TitleText(
-            text: text,
-            fontSize: 14,
-          ),
-          subtitle: Text(time),
-          trailing: Container(
-              height: 30,
-              width: 80,
-              alignment: Alignment.center,
-              decoration: const BoxDecoration(
-                color: LightColor.lightGrey,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-              ),
-              child: Text('-2000 BDT',
-                  style: GoogleFonts.mulish(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: LightColor.navyBlue2))),
-        ),
-      ),
-    );
-  }
-
   Widget balanceCard() {
     return Container(
       padding: EdgeInsets.zero,
@@ -137,7 +90,7 @@ class UserWalletState extends State<UserWallet> {
         borderRadius: const BorderRadius.all(Radius.circular(40)),
         child: Container(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height * .27,
+          height: MediaQuery.of(context).size.height * .25,
           color: kBaseColor,
           child: Stack(
             fit: StackFit.expand,
@@ -195,7 +148,7 @@ class UserWalletState extends State<UserWallet> {
                           size: 20,
                         ),
                         SizedBox(width: 5),
-                        Text("Top Up", style: TextStyle(color: Colors.white)),
+                        Text("TopUp", style: TextStyle(color: Colors.white)),
                       ],
                     ),
                   ),
@@ -263,15 +216,14 @@ class UserWalletState extends State<UserWallet> {
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: <Widget>[
               const SizedBox(
-                height: 25,
+                height: 20,
               ),
               balanceCard(),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               const TitleText(
                 text: "Operations",
@@ -283,10 +235,6 @@ class UserWalletState extends State<UserWallet> {
               const SizedBox(
                 height: 30,
               ),
-              const TitleText(
-                text: "Transactions",
-              ),
-              Expanded(child: _transectionList()),
             ],
           ),
         ),

@@ -36,6 +36,7 @@ class ECommerceState extends State<ECommerce>
         color: Colors.white,
         child: ListView(
           children: <Widget>[
+            const SizedBox(height: 50),
             Column(
               children: <Widget>[
                 Container(
