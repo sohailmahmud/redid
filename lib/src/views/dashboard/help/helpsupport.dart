@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:redid/src/styles/constants.dart';
@@ -14,6 +16,295 @@ class HelpSupportState extends State<HelpSupport>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
+    final helpTemplate = Container(
+      height: MediaQuery.of(context).size.height * 0.32,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/icons/help.svg"),
+          fit: BoxFit.fitHeight,
+        ),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(100),
+          bottomRight: Radius.circular(100),
+        ),
+        color: kBaseLightColor,
+      ),
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.only(top: 20, bottom: 6),
+            child: const Text(
+              'Need help?',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 14,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 0.5,
+                color: kBaseColor,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(bottom: 1.0),
+            child: const Text(
+              '24/7',
+              style: TextStyle(
+                fontFamily: 'Roboto-Bold',
+                fontSize: 17,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 0.5,
+                color: kBaseColor,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(bottom: 5),
+            child: const Text(
+              'Help Centre',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 22,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 0.5,
+                color: kBaseColor,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+    final helpTag = Container(
+      padding: EdgeInsets.zero,
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.only(left: 40, top: 15, right: 40),
+            child: const Text(
+              'Tell us how we can help 👋',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                fontSize: 18,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 0.5,
+                color: kBaseColor,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 40, top: 2, right: 40),
+            alignment: Alignment.center,
+            child: Column(
+              children: const [
+                Text(
+                  'Our crew of superheroes are standing by',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 14,
+                    color: kTextLightColor,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+                Text(
+                  'for service & support!',
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontSize: 12,
+                    color: kTextLightColor,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.5,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+    final helpItems = Container(
+      padding: const EdgeInsets.only(top: 10),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: MaterialButton(
+              onPressed: () {},
+              color: kBaseLightColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              minWidth: double.infinity,
+              child: Container(
+                padding: const EdgeInsets.only(
+                    left: 2, right: 12, top: 12, bottom: 12),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 4, left: 1, right: 1),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.pink.shade300,
+                      ),
+                      child: Image.asset(
+                        'assets/icons/helpchat.svg',
+                        scale: 3,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Chat',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
+                          const Text(
+                            'Start a conversation now!',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w900,
+                              color: kTextLightColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: MaterialButton(
+              onPressed: () {},
+              color: kBaseLightColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              minWidth: double.infinity,
+              child: Container(
+                padding: const EdgeInsets.only(
+                    left: 2, right: 12, top: 12, bottom: 12),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 8, left: 2, right: 2),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.pink.shade300,
+                      ),
+                      child: Image.asset(
+                        'assets/icons/helpfaq.svg',
+                        scale: 3.5,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'FAQs',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
+                          const Text(
+                            'Find intelligent answers instantly',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w900,
+                              color: kTextLightColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            child: MaterialButton(
+              onPressed: () {},
+              color: kBaseLightColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
+              ),
+              minWidth: double.infinity,
+              child: Container(
+                padding: const EdgeInsets.only(
+                    left: 2, right: 12, top: 12, bottom: 12),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top: 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.pink.shade300,
+                      ),
+                      child: Image.asset(
+                        'assets/icons/helpemail.svg',
+                        scale: 3.5,
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: const Text(
+                              'Email',
+                              style: TextStyle(
+                                fontFamily: 'Roboto',
+                                fontSize: 17,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
+                          const Text(
+                            'Get solutions beamed to your inbox',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              fontSize: 14,
+                              fontWeight: FontWeight.w900,
+                              color: kTextLightColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
@@ -32,44 +323,12 @@ class HelpSupportState extends State<HelpSupport>
           ),
         ),
       ),
-      body: Container(
-        color: Colors.white,
+      body: Center(
         child: ListView(
           children: <Widget>[
-            Column(
-              children: <Widget>[
-                Container(
-                  color: Colors.white,
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
-                        child: Stack(fit: StackFit.loose, children: <Widget>[
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                padding: const EdgeInsets.only(top: 20),
-                                child: const CircleAvatar(
-                                  backgroundColor: kBaseColor,
-                                  radius: 60,
-                                  child: Icon(
-                                    Icons.live_help_outlined,
-                                    color: kBackgroundColor,
-                                    size: 60,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ]),
-                      )
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            helpTemplate,
+            helpTag,
+            helpItems,
           ],
         ),
       ),

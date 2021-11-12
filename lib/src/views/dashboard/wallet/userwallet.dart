@@ -232,9 +232,6 @@ class UserWalletState extends State<UserWallet> {
                 height: 10,
               ),
               _operationsWidget(),
-              const SizedBox(
-                height: 30,
-              ),
             ],
           ),
         ),
