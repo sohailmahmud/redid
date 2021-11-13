@@ -28,7 +28,7 @@ class OnlineJobsState extends State<OnlineJobs>
   @override
   Widget build(BuildContext context) {
     final packageItems = Container(
-      padding: const EdgeInsets.only(top: 10),
+      padding: const EdgeInsets.only(top: 20),
       child: Column(
         children: [
           Container(
@@ -73,7 +73,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               color: Colors.pink.shade300,
                             ),
                             child: const Text(
-                              'Silver 12,000/-',
+                              'Silver 12,000/=',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 17,
@@ -176,7 +176,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               color: Colors.pink.shade300,
                             ),
                             child: const Text(
-                              'Gold 24,000/-',
+                              'Gold 24,000/=',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 17,
@@ -200,7 +200,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               child: Row(
                                 children: <Widget>[
                                   const Text(
-                                    '100 Ads',
+                                    '200 Ads',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -217,7 +217,7 @@ class OnlineJobsState extends State<OnlineJobs>
                                     ),
                                   ),
                                   const Text(
-                                    '15,000 redID points',
+                                    '30,000 redID points',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -279,7 +279,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               color: Colors.pink.shade300,
                             ),
                             child: const Text(
-                              'Platinum 36,000/-',
+                              'Platinum 36,000/=',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 17,
@@ -303,7 +303,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               child: Row(
                                 children: <Widget>[
                                   const Text(
-                                    '100 Ads',
+                                    '300 Ads',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -320,7 +320,7 @@ class OnlineJobsState extends State<OnlineJobs>
                                     ),
                                   ),
                                   const Text(
-                                    '15,000 redID points',
+                                    '45,000 redID points',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -382,7 +382,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               color: Colors.pink.shade300,
                             ),
                             child: const Text(
-                              'Bronze 48,000/-',
+                              'Bronze 48,000/=',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 17,
@@ -406,7 +406,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               child: Row(
                                 children: <Widget>[
                                   const Text(
-                                    '100 Ads',
+                                    '400 Ads',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -423,7 +423,7 @@ class OnlineJobsState extends State<OnlineJobs>
                                     ),
                                   ),
                                   const Text(
-                                    '15,000 redID points',
+                                    '60,000 redID points',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -485,7 +485,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               color: Colors.pink.shade300,
                             ),
                             child: const Text(
-                              'Crown 60,000/-',
+                              'Crown 60,000/=',
                               style: TextStyle(
                                 fontFamily: 'Roboto',
                                 fontSize: 17,
@@ -510,7 +510,7 @@ class OnlineJobsState extends State<OnlineJobs>
                               child: Row(
                                 children: <Widget>[
                                   const Text(
-                                    '100 Ads',
+                                    '500 Ads',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -527,7 +527,7 @@ class OnlineJobsState extends State<OnlineJobs>
                                     ),
                                   ),
                                   const Text(
-                                    '15,000 redID points',
+                                    '75,000 redID points',
                                     style: TextStyle(
                                       fontFamily: 'Roboto',
                                       fontSize: 14,
@@ -593,20 +593,21 @@ class OnlineJobsState extends State<OnlineJobs>
                       labelColor: kBackgroundColor,
                       indicatorSize: TabBarIndicatorSize.tab,
                       indicator: BoxDecoration(
-                          gradient: const LinearGradient(
-                              colors: [kBaseColor, kBaseColor]),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: kBaseColor,
-                            width: 1,
-                          ),
-                          boxShadow: const [
-                            BoxShadow(
-                              color: kBaseLightColor,
-                              blurRadius: 2,
-                              offset: Offset(0, 2),
-                            )
-                          ]),
+                        gradient: const LinearGradient(
+                            colors: [kBaseColor, kBaseColor]),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: kBaseColor,
+                          width: 1,
+                        ),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: kBaseLightColor,
+                            blurRadius: 2,
+                            offset: Offset(0, 2),
+                          )
+                        ],
+                      ),
                       tabs: [
                         Tab(
                           child: Container(
