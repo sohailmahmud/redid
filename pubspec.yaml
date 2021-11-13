@@ -57,6 +57,11 @@ flutter:
     - assets/icons/helpchat.svg
     - assets/icons/helpemail.svg
     - assets/icons/helpfaq.svg
+    - assets/icons/silver.svg
+    - assets/icons/gold.svg
+    - assets/icons/platinum.svg
+    - assets/icons/bronze.svg
+    - assets/icons/crown.svg
 
   fonts:
     - family: Chiller
