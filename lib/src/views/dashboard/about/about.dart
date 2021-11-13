@@ -25,8 +25,14 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
           Container(
             width: MediaQuery.of(context).size.width * 0.91,
             height: MediaQuery.of(context).size.width * 0.1,
-            color: kBaseLightColor,
             alignment: Alignment.center,
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
+              color: kBaseLightColor,
+            ),
             child: const Text(
               'What is redID?',
               style: TextStyle(
@@ -34,6 +40,7 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
                 fontFamily: 'Book-Antiqua',
                 color: kTextColor,
                 fontWeight: FontWeight.w900,
+                letterSpacing: 0.8,
               ),
             ),
           ),
