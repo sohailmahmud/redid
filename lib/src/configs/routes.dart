@@ -12,6 +12,7 @@ import 'package:redid/src/views/dashboard/help/helpsupport.dart';
 import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
 import 'package:redid/src/views/dashboard/jobhistory/workhistory.dart';
 import 'package:redid/src/views/dashboard/notice/notices.dart';
+import 'package:redid/src/views/dashboard/onlinejobs/cuopon.dart';
 import 'package:redid/src/views/dashboard/onlinejobs/onlinejobs.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
 import 'package:redid/src/views/dashboard/settings/appsettings.dart';
@@ -39,4 +40,5 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   Notices.tag: (context) => const Notices(),
   HelpSupport.tag: (context) => const HelpSupport(),
   About.tag: (context) => const About(),
+  Coupon.tag: (context) => const Coupon(),
 };

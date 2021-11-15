@@ -4,8 +4,10 @@ import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
+import 'package:redid/src/views/dashboard/about/about.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
 import 'package:redid/src/views/dashboard/ecommerce/ecommerce.dart';
+import 'package:redid/src/views/dashboard/help/helpsupport.dart';
 import 'package:redid/src/views/dashboard/jobhistory/jobhistory.dart';
 import 'package:redid/src/views/dashboard/notice/notices.dart';
 import 'package:redid/src/views/dashboard/onlinejobs/onlinejobs.dart';
@@ -449,7 +451,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(About.tag);
                     },
                   ),
                   const Divider(
@@ -521,7 +523,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed('');
+                      Navigator.of(context).pushNamed(HelpSupport.tag);
                     },
                   ),
                   const Divider(

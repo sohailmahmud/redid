@@ -32,6 +32,7 @@ class UserProfileState extends State<UserProfile>
           centerTitle: true,
           toolbarHeight: 50,
           leadingWidth: 28,
+          elevation: 0.0,
           iconTheme: const IconThemeData(color: kBaseColor),
           title: const Text(
             'My Profile',
