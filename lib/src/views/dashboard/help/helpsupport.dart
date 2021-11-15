@@ -17,26 +17,26 @@ class HelpSupportState extends State<HelpSupport>
   @override
   Widget build(BuildContext context) {
     final helpTemplate = Container(
-      height: MediaQuery.of(context).size.height * 0.32,
+      height: MediaQuery.of(context).size.height * 0.35,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage("assets/icons/help.svg"),
           fit: BoxFit.fitHeight,
         ),
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(100),
-          bottomRight: Radius.circular(100),
+          bottomLeft: Radius.circular(80),
+          bottomRight: Radius.circular(80),
         ),
         color: kBaseLightColor,
       ),
       child: Column(
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.only(top: 20, bottom: 6),
+            padding: const EdgeInsets.only(top: 15, bottom: 4),
             child: const Text(
               'Need help?',
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: 'Helvetica-Bold',
                 fontSize: 14,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 0.5,
@@ -50,7 +50,7 @@ class HelpSupportState extends State<HelpSupport>
               '24/7',
               style: TextStyle(
                 fontFamily: 'Roboto-Bold',
-                fontSize: 17,
+                fontSize: 16,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 0.5,
                 color: kBaseColor,
@@ -62,7 +62,7 @@ class HelpSupportState extends State<HelpSupport>
             child: const Text(
               'Help Centre',
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: 'Helvetica-Bold',
                 fontSize: 22,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 0.5,
@@ -74,7 +74,7 @@ class HelpSupportState extends State<HelpSupport>
       ),
     );
     final helpTag = Container(
-      padding: EdgeInsets.zero,
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: Column(
         children: [
           Container(
@@ -82,7 +82,7 @@ class HelpSupportState extends State<HelpSupport>
             child: const Text(
               'Tell us how we can help 👋',
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: 'Helvetica',
                 fontSize: 18,
                 fontWeight: FontWeight.w900,
                 letterSpacing: 0.5,
@@ -98,7 +98,7 @@ class HelpSupportState extends State<HelpSupport>
                 Text(
                   'Our crew of superheroes are standing by',
                   style: TextStyle(
-                    fontFamily: 'Roboto',
+                    fontFamily: 'Helvetica',
                     fontSize: 14,
                     color: kTextLightColor,
                     fontWeight: FontWeight.w800,
@@ -108,8 +108,8 @@ class HelpSupportState extends State<HelpSupport>
                 Text(
                   'for service & support!',
                   style: TextStyle(
-                    fontFamily: 'Roboto',
-                    fontSize: 12,
+                    fontFamily: 'Helvetica',
+                    fontSize: 14,
                     color: kTextLightColor,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 0.5,
@@ -126,7 +126,7 @@ class HelpSupportState extends State<HelpSupport>
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
               onPressed: () {},
               color: kBaseLightColor,
@@ -161,7 +161,7 @@ class HelpSupportState extends State<HelpSupport>
                             child: const Text(
                               'Chat',
                               style: TextStyle(
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Helvetica',
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
                               ),
@@ -170,10 +170,10 @@ class HelpSupportState extends State<HelpSupport>
                           const Text(
                             'Start a conversation now!',
                             style: TextStyle(
-                              fontFamily: 'Roboto',
+                              fontFamily: 'Helvetica',
                               fontSize: 14,
                               fontWeight: FontWeight.w900,
-                              color: kTextLightColor,
+                              color: kBodyTextColor,
                             ),
                           ),
                         ],
@@ -185,7 +185,7 @@ class HelpSupportState extends State<HelpSupport>
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
               onPressed: () {},
               color: kBaseLightColor,
@@ -220,7 +220,7 @@ class HelpSupportState extends State<HelpSupport>
                             child: const Text(
                               'FAQs',
                               style: TextStyle(
-                                fontFamily: 'Roboto',
+                                fontFamily: 'Helvetica',
                                 fontSize: 18,
                                 fontWeight: FontWeight.w900,
                               ),
@@ -229,10 +229,10 @@ class HelpSupportState extends State<HelpSupport>
                           const Text(
                             'Find intelligent answers instantly',
                             style: TextStyle(
-                              fontFamily: 'Roboto',
+                              fontFamily: 'Helvetica',
                               fontSize: 14,
                               fontWeight: FontWeight.w900,
-                              color: kTextLightColor,
+                              color: kBodyTextColor,
                             ),
                           ),
                         ],
@@ -244,7 +244,7 @@ class HelpSupportState extends State<HelpSupport>
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
               onPressed: () {},
               color: kBaseLightColor,
@@ -291,7 +291,7 @@ class HelpSupportState extends State<HelpSupport>
                               fontFamily: 'Roboto',
                               fontSize: 14,
                               fontWeight: FontWeight.w900,
-                              color: kTextLightColor,
+                              color: kBodyTextColor,
                             ),
                           ),
                         ],

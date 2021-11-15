@@ -1,6 +1,8 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/views/dashboard/onlinejobs/cuopon.dart';
 
 class OnlineJobs extends StatefulWidget {
   const OnlineJobs({Key? key}) : super(key: key);
@@ -34,7 +36,9 @@ class OnlineJobsState extends State<OnlineJobs>
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Coupon.tag);
+              },
               color: kBaseLightColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -137,7 +141,9 @@ class OnlineJobsState extends State<OnlineJobs>
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Coupon.tag);
+              },
               color: kBaseLightColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -240,7 +246,9 @@ class OnlineJobsState extends State<OnlineJobs>
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Coupon.tag);
+              },
               color: kBaseLightColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -343,7 +351,9 @@ class OnlineJobsState extends State<OnlineJobs>
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Coupon.tag);
+              },
               color: kBaseLightColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -446,7 +456,9 @@ class OnlineJobsState extends State<OnlineJobs>
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: MaterialButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(Coupon.tag);
+              },
               color: kBaseLightColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
@@ -550,16 +562,486 @@ class OnlineJobsState extends State<OnlineJobs>
         ],
       ),
     );
+    final workPlaceHeader = Container(
+      height: MediaQuery.of(context).size.height * 0.20,
+      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(30),
+          bottomRight: Radius.circular(30),
+        ),
+        color: Color(0xFF880E4F),
+      ),
+      child: Stack(
+        clipBehavior: Clip.none,
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.only(top: 2, bottom: 2),
+            alignment: Alignment.topCenter,
+            child: CircleAvatar(
+              backgroundColor: kBaseLightColor,
+              radius: 40,
+              child: Image.asset(
+                'assets/icons/workplace.svg',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          Positioned(
+            right: 0,
+            left: 0,
+            bottom: -20,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 120),
+              child: MaterialButton(
+                onPressed: () {},
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                color: kBaseLightColor,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: const EdgeInsets.only(top: 10, bottom: 1),
+                      child: const Text(
+                        'Cash Balance',
+                        style: TextStyle(
+                          fontFamily: 'Roboto-Bold',
+                          letterSpacing: 0.2,
+                          fontSize: 15,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.only(top: 1, bottom: 10),
+                      child: const Text(
+                        '2500 BDT',
+                        style: TextStyle(
+                          fontFamily: 'Roboto-Bold',
+                          fontSize: 15,
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+    final workPlaceSegment = Container(
+      padding: const EdgeInsets.only(top: 35, left: 15, bottom: 5, right: 15),
+      child: Column(
+        children: [
+          Container(
+            padding:
+                const EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
+            child: MaterialButton(
+              onPressed: () {},
+              color: kBaseLightColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    child: CircleAvatar(
+                      backgroundColor: kBaseColor,
+                      radius: 35,
+                      child: CircleAvatar(
+                        backgroundColor: kBaseColor,
+                        radius: 32,
+                        child: Image.asset(
+                          'assets/icons/watch.svg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 80,
+                    padding: EdgeInsets.zero,
+                    child: const VerticalDivider(
+                      color: kBackgroundColor,
+                      thickness: 1,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(left: 15, right: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(top: 10, bottom: 3),
+                          child: const Text(
+                            'Watch Video',
+                            style: TextStyle(
+                              fontFamily: 'Helvetica-Bold',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(top: 3, bottom: 10),
+                          child: const Text(
+                            'Watch video and earn',
+                            style: TextStyle(
+                              fontFamily: 'Roboto-Bold',
+                              letterSpacing: 0.2,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          color: Colors.pink.shade500,
+                          child: Container(
+                            padding: const EdgeInsets.only(
+                              top: 8,
+                              left: 10,
+                              bottom: 8,
+                              right: 10,
+                            ),
+                            child: const Text(
+                              'Watch Video',
+                              style: TextStyle(
+                                fontFamily: 'Helvetica-Bold',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: kCardTitleColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Container(
+            padding:
+                const EdgeInsets.only(left: 10, top: 5, right: 10, bottom: 5),
+            child: MaterialButton(
+              onPressed: () {},
+              color: kBaseLightColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    child: CircleAvatar(
+                      backgroundColor: kBaseColor,
+                      radius: 35,
+                      child: CircleAvatar(
+                        backgroundColor: kBaseColor,
+                        radius: 31,
+                        child: Image.asset(
+                          'assets/icons/affiliate.svg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 80,
+                    padding: EdgeInsets.zero,
+                    child: const VerticalDivider(
+                      color: kBackgroundColor,
+                      thickness: 1,
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(left: 15, right: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(top: 10, bottom: 3),
+                          child: const Text(
+                            'Affiliate Marketing',
+                            style: TextStyle(
+                              fontFamily: 'Helvetica-Bold',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(top: 3, bottom: 10),
+                          child: const Text(
+                            'Link share and earn',
+                            style: TextStyle(
+                              fontFamily: 'Roboto-Bold',
+                              letterSpacing: 0.2,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                        ),
+                        MaterialButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          color: Colors.pink.shade500,
+                          child: Container(
+                            padding: const EdgeInsets.only(
+                              top: 8,
+                              left: 30,
+                              bottom: 8,
+                              right: 30,
+                            ),
+                            child: const Text(
+                              'Affiliate',
+                              style: TextStyle(
+                                fontFamily: 'Helvetica-Bold',
+                                fontSize: 14,
+                                fontWeight: FontWeight.w700,
+                                color: kCardTitleColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+    final referSection = Container(
+      padding: const EdgeInsets.only(left: 25, top: 2, right: 25, bottom: 2),
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.only(top: 15, bottom: 15),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.pink.shade50,
+            ),
+            child: const Text(
+              'Refer Code',
+              style: TextStyle(
+                fontFamily: 'Helvetica-Bold',
+                fontSize: 15,
+                fontWeight: FontWeight.w800,
+                color: accentPurpleColor,
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(top: 10),
+            child: DottedBorder(
+              borderType: BorderType.RRect,
+              dashPattern: const [6, 2],
+              strokeWidth: 1,
+              radius: const Radius.circular(12),
+              padding: const EdgeInsets.all(4),
+              child: ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(12)),
+                child: Container(
+                  height: 60,
+                  width: 180,
+                  color: Colors.pink.shade900,
+                  alignment: Alignment.center,
+                  child: const Text(
+                    'REDIDC5987',
+                    style: TextStyle(
+                      fontFamily: 'Roboto-Bold',
+                      fontSize: 16,
+                      color: kTextLightColor,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+    final activitiesButton = Container(
+      padding: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 55),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 5, bottom: 5),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: kBackgroundColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: const BorderSide(
+                          color: kTextColor,
+                        ),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: const Icon(
+                            Icons.content_copy_outlined,
+                            color: kTextColor,
+                            size: 20,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 16, top: 10, bottom: 10),
+                          child: const Text(
+                            'Copy',
+                            style: TextStyle(
+                              fontFamily: 'Roboto-Bold',
+                              fontSize: 14,
+                              color: kTextColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 5, bottom: 5),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      primary: kBackgroundColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        side: const BorderSide(
+                          color: kTextColor,
+                        ),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: const Icon(
+                            Icons.share_outlined,
+                            color: kTextColor,
+                            size: 20,
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 16, top: 10, bottom: 10),
+                          child: const Text(
+                            'Share',
+                            style: TextStyle(
+                              fontFamily: 'Roboto-Bold',
+                              fontSize: 14,
+                              color: kTextColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 55),
+            child: Row(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 5, bottom: 5),
+                  child: MaterialButton(
+                    onPressed: () {},
+                    color: Colors.teal.shade700,
+                    colorBrightness: Brightness.light,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.only(
+                          left: 26, right: 26, top: 10, bottom: 10),
+                      child: const Text(
+                        'Withdraw',
+                        style: TextStyle(
+                          fontFamily: 'Roboto-Bold',
+                          fontSize: 14,
+                          color: kBackgroundColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(
+                      left: 10, right: 10, top: 5, bottom: 5),
+                  child: MaterialButton(
+                    onPressed: () {},
+                    color: Colors.deepOrange.shade800,
+                    colorBrightness: Brightness.light,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.only(
+                          left: 26, right: 26, top: 10, bottom: 10),
+                      child: const Text(
+                        'Summary',
+                        style: TextStyle(
+                          fontFamily: 'Roboto-Bold',
+                          fontSize: 14,
+                          color: kBackgroundColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
     return Material(
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            automaticallyImplyLeading: true,
             backgroundColor: kBackgroundColor,
             centerTitle: true,
             toolbarHeight: 50,
             leadingWidth: 28,
+            elevation: 0,
             iconTheme: const IconThemeData(color: kBaseColor),
             title: const Text(
               'Online Jobs',
@@ -635,7 +1117,7 @@ class OnlineJobsState extends State<OnlineJobs>
                             child: const Align(
                               alignment: Alignment.center,
                               child: Text(
-                                "Workplace",
+                                "Work Place",
                                 style: TextStyle(
                                   fontFamily: 'Roboto-Bold',
                                   fontSize: 15,
@@ -664,12 +1146,13 @@ class OnlineJobsState extends State<OnlineJobs>
                       ),
                       Container(
                         padding: EdgeInsets.zero,
-                        child: Column(
+                        child: ListView(
+                          clipBehavior: Clip.hardEdge,
                           children: <Widget>[
-                            Container(
-                              padding: EdgeInsets.zero,
-                              child: const Text('Workplace'),
-                            )
+                            workPlaceHeader,
+                            workPlaceSegment,
+                            referSection,
+                            activitiesButton,
                           ],
                         ),
                       )

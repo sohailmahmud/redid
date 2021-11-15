@@ -79,7 +79,7 @@ class DashboardState extends State<Dashboard> {
       const Rect.fromLTWH(170.0, 10.0, 50.0, 15.0),
     );
     final appBar = AppBar(
-      elevation: 4.0,
+      elevation: 0,
       titleSpacing: 0.0,
       backgroundColor: kBackgroundColor,
       iconTheme: const IconThemeData(color: kTextColor),
