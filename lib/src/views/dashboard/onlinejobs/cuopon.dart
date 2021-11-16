@@ -47,7 +47,7 @@ class CouponState extends State<Coupon> {
       children: <Widget>[
         Container(
           padding:
-              const EdgeInsets.only(left: 20, top: 50, right: 20, bottom: 15),
+              const EdgeInsets.only(left: 9, top: 60, right: 9, bottom: 15),
           margin: const EdgeInsets.only(top: 45),
           decoration: BoxDecoration(
               shape: BoxShape.rectangle,
@@ -65,17 +65,18 @@ class CouponState extends State<Coupon> {
                 child: const Text(
                   'Do you have a redID coupon?',
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: kBaseColor,
                     fontFamily: 'Helvetica',
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 0.4,
                   ),
                 ),
               ),
               const Text(
                 'Enter it and get the benifits!',
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 14,
                   color: kTextLightColor,
                   fontFamily: 'Roboto',
                   fontWeight: FontWeight.w700,
@@ -85,9 +86,9 @@ class CouponState extends State<Coupon> {
                 height: 15,
               ),
               Container(
-                height: 40,
+                height: 70,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
                 child: TextFormField(
                   inputFormatters: [LengthLimitingTextInputFormatter(20)],
                   keyboardType: TextInputType.visiblePassword,
@@ -99,16 +100,21 @@ class CouponState extends State<Coupon> {
                   ),
                   decoration: InputDecoration(
                     hintText: 'Enter your coupon/gift code',
+                    hintStyle: const TextStyle(
+                      fontFamily: "Book-Antiqua",
+                      fontSize: 14,
+                      color: kTextColor,
+                    ),
                     prefixIcon: Container(
                       padding: const EdgeInsets.only(
-                          left: 10, top: 5, right: 2, bottom: 5),
+                          left: 10, top: 10, right: 5, bottom: 10),
                       child: const FaIcon(
                         FontAwesomeIcons.tags,
-                        size: 18,
+                        size: 24,
                       ),
                     ),
                     contentPadding:
-                        const EdgeInsets.fromLTRB(2.0, 2.0, 2.0, 2.0),
+                        const EdgeInsets.fromLTRB(4.0, 4.0, 4.0, 4.0),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
@@ -128,43 +134,42 @@ class CouponState extends State<Coupon> {
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.only(right: 2, left: 2),
+                      padding: const EdgeInsets.only(right: 10, left: 10),
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
                         style: ElevatedButton.styleFrom(
-                          primary: kBackgroundColor,
+                          primary: kBaseColor,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25),
-                              side: const BorderSide(
-                                color: kBaseColor,
-                              )),
+                            borderRadius: BorderRadius.circular(25),
+                          ),
                         ),
                         child: const Text(
-                          'Available Coupon',
+                          'Add Coupon',
                           style: TextStyle(
                             fontFamily: 'Book-Antiqua',
                             fontSize: 12,
-                            color: kBaseColor,
+                            color: kBackgroundColor,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.only(right: 5, left: 5),
-                      child: ElevatedButton(
                         onPressed: () => Dialogs.materialDialog(
                           barrierDismissible: false,
                           barrierColor: Colors.black,
                           color: Colors.white,
-                          msg: 'You got 15% discount on your membership.',
-                          title: 'Congratulations',
+                          title: 'Congratulations!',
+                          titleStyle: const TextStyle(
+                            fontFamily: 'Roboto-Bold',
+                            fontSize: 20,
+                          ),
+                          msg: 'You got 10% discount on your membership.',
+                          msgStyle: const TextStyle(
+                            fontFamily: 'Roboto',
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
                           lottieBuilder: Lottie.asset(
                             'assets/congratulations.json',
                             fit: BoxFit.contain,
@@ -173,27 +178,23 @@ class CouponState extends State<Coupon> {
                           actions: [
                             Container(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 100),
+                                  const EdgeInsets.symmetric(horizontal: 50),
                               child: IconsButton(
                                 onPressed: () => Dialogs.materialDialog(
                                   barrierDismissible: false,
                                   barrierColor: Colors.black,
                                   color: Colors.white,
                                   useSafeArea: true,
-                                  title: null,
                                   msg:
                                       'Note: This message will be directly sent to the admin for review. So be careful about the legal information.',
                                   msgStyle: const TextStyle(
                                     fontFamily: 'Book-Antiqua',
                                     fontSize: 12,
-                                    fontWeight: FontWeight.normal,
-                                    letterSpacing: 0.4,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                   customView: Container(
                                     padding: const EdgeInsets.symmetric(
-                                      horizontal: 10,
-                                      vertical: 10,
-                                    ),
+                                        horizontal: 10),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
@@ -252,6 +253,11 @@ class CouponState extends State<Coupon> {
                                             ),
                                             decoration: InputDecoration(
                                               hintText: 'Write your message',
+                                              hintStyle: const TextStyle(
+                                                fontFamily: "Book-Antiqua",
+                                                fontSize: 14,
+                                                color: kTextColor,
+                                              ),
                                               contentPadding:
                                                   const EdgeInsets.fromLTRB(
                                                       10.0, 15.0, 10.0, 15.0),
@@ -303,53 +309,53 @@ class CouponState extends State<Coupon> {
                             ),
                           ],
                         ),
-                        style: ElevatedButton.styleFrom(
-                          primary: kBaseColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                        ),
-                        child: const Text(
-                          'Add Coupon',
-                          style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
-                            fontSize: 12,
-                            color: kBackgroundColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.only(left: 2),
+                      padding: const EdgeInsets.only(left: 10, right: 10),
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: kBackgroundColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                            side: const BorderSide(
+                              color: kBaseColor,
+                            ),
+                          ),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 5, right: 5),
+                          child: const Text(
+                            'Skip',
+                            style: TextStyle(
+                              fontFamily: 'Book-Antiqua',
+                              fontSize: 12,
+                              color: kInfectedColor,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
                         onPressed: () => Dialogs.materialDialog(
                           barrierDismissible: false,
                           barrierColor: Colors.black,
                           color: Colors.white,
                           useSafeArea: true,
-                          title: null,
                           msg:
-                              'N.B.: This message will be directly sent to the admin for review. So be careful about the legal information.',
+                              'Note: This message will be directly sent to the admin for review. So be careful about the legal information.',
                           msgStyle: const TextStyle(
                             fontFamily: 'Book-Antiqua',
                             fontSize: 12,
-                            fontWeight: FontWeight.normal,
-                            letterSpacing: 0.4,
+                            fontWeight: FontWeight.w500,
                           ),
                           customView: Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 5,
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               mainAxisSize: MainAxisSize.min,
                               children: [
                                 Container(
-                                  padding: const EdgeInsets.only(
-                                      top: 20, bottom: 40),
+                                  padding: EdgeInsets.zero,
                                   child: Text(
                                     'redID',
                                     style: TextStyle(
@@ -431,24 +437,6 @@ class CouponState extends State<Coupon> {
                               ),
                             ),
                           ],
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          primary: kBackgroundColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
-                            side: const BorderSide(
-                              color: kBaseColor,
-                            ),
-                          ),
-                        ),
-                        child: const Text(
-                          'Skip',
-                          style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
-                            fontSize: 12,
-                            color: kInfectedColor,
-                            fontWeight: FontWeight.w600,
-                          ),
                         ),
                       ),
                     ),

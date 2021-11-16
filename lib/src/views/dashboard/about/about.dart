@@ -264,6 +264,7 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
         centerTitle: true,
         toolbarHeight: 50,
         leadingWidth: 28,
+        elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
         title: const Text(
           'About redID',
@@ -275,6 +276,7 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
           ),
         ),
       ),
+      backgroundColor: kBackgroundColor,
       body: Center(
         child: ListView(
           padding: const EdgeInsets.all(15.0),

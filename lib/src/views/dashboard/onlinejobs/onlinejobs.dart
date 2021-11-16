@@ -619,7 +619,7 @@ class OnlineJobsState extends State<OnlineJobs>
                     Container(
                       padding: const EdgeInsets.only(top: 1, bottom: 10),
                       child: const Text(
-                        '2500 BDT',
+                        '6,354 BDT',
                         style: TextStyle(
                           fontFamily: 'Roboto-Bold',
                           fontSize: 15,
@@ -648,7 +648,7 @@ class OnlineJobsState extends State<OnlineJobs>
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               child: Row(
                 children: [
                   Container(
@@ -743,7 +743,7 @@ class OnlineJobsState extends State<OnlineJobs>
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               child: Row(
                 children: [
                   Container(
@@ -883,150 +883,143 @@ class OnlineJobsState extends State<OnlineJobs>
         ],
       ),
     );
-    final activitiesButton = Container(
-      padding: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-      child: Column(
+    final copyShareButton = Container(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 55),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(
-                      left: 10, right: 10, top: 5, bottom: 5),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: kBackgroundColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: const BorderSide(
-                          color: kTextColor,
-                        ),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.only(left: 16),
-                          child: const Icon(
-                            Icons.content_copy_outlined,
-                            color: kTextColor,
-                            size: 20,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 10, right: 16, top: 10, bottom: 10),
-                          child: const Text(
-                            'Copy',
-                            style: TextStyle(
-                              fontFamily: 'Roboto-Bold',
-                              fontSize: 14,
-                              color: kTextColor,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+            padding:
+                const EdgeInsets.only(left: 10, right: 10, top: 2, bottom: 2),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: kBackgroundColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: const BorderSide(
+                    color: kTextColor,
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                      left: 10, right: 10, top: 5, bottom: 5),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: kBackgroundColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: const BorderSide(
-                          color: kTextColor,
-                        ),
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          padding: const EdgeInsets.only(left: 16),
-                          child: const Icon(
-                            Icons.share_outlined,
-                            color: kTextColor,
-                            size: 20,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.only(
-                              left: 10, right: 16, top: 10, bottom: 10),
-                          child: const Text(
-                            'Share',
-                            style: TextStyle(
-                              fontFamily: 'Roboto-Bold',
-                              fontSize: 14,
-                              color: kTextColor,
-                            ),
-                          ),
-                        ),
-                      ],
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: const Icon(
+                      Icons.content_copy_outlined,
+                      color: kTextColor,
+                      size: 20,
                     ),
                   ),
-                ),
-              ],
+                  Container(
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 24, top: 10, bottom: 10),
+                    child: const Text(
+                      'Copy',
+                      style: TextStyle(
+                        fontFamily: 'Roboto-Bold',
+                        fontSize: 14,
+                        color: kTextColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 55),
-            child: Row(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(
-                      left: 10, right: 10, top: 5, bottom: 5),
-                  child: MaterialButton(
-                    onPressed: () {},
-                    color: Colors.teal.shade700,
-                    colorBrightness: Brightness.light,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
+            padding:
+                const EdgeInsets.only(left: 10, right: 10, top: 2, bottom: 2),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: kBackgroundColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: const BorderSide(
+                    color: kTextColor,
+                  ),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 24),
+                    child: const Icon(
+                      Icons.share_outlined,
+                      color: kTextColor,
+                      size: 20,
                     ),
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 26, right: 26, top: 10, bottom: 10),
-                      child: const Text(
-                        'Withdraw',
-                        style: TextStyle(
-                          fontFamily: 'Roboto-Bold',
-                          fontSize: 14,
-                          color: kBackgroundColor,
-                        ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 24, top: 10, bottom: 10),
+                    child: const Text(
+                      'Share',
+                      style: TextStyle(
+                        fontFamily: 'Roboto-Bold',
+                        fontSize: 14,
+                        color: kTextColor,
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(
-                      left: 10, right: 10, top: 5, bottom: 5),
-                  child: MaterialButton(
-                    onPressed: () {},
-                    color: Colors.deepOrange.shade800,
-                    colorBrightness: Brightness.light,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Container(
-                      padding: const EdgeInsets.only(
-                          left: 26, right: 26, top: 10, bottom: 10),
-                      child: const Text(
-                        'Summary',
-                        style: TextStyle(
-                          fontFamily: 'Roboto-Bold',
-                          fontSize: 14,
-                          color: kBackgroundColor,
-                        ),
-                      ),
-                    ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+    final withdrawSummaryButton = Container(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: Row(
+        children: [
+          Container(
+            padding:
+                const EdgeInsets.only(left: 10, right: 10, top: 2, bottom: 5),
+            child: MaterialButton(
+              onPressed: () {},
+              color: Colors.teal.shade700,
+              colorBrightness: Brightness.light,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Container(
+                padding: const EdgeInsets.only(
+                    left: 26, right: 26, top: 10, bottom: 10),
+                child: const Text(
+                  'Withdraw',
+                  style: TextStyle(
+                    fontFamily: 'Roboto-Bold',
+                    fontSize: 14,
+                    color: kBackgroundColor,
                   ),
                 ),
-              ],
+              ),
+            ),
+          ),
+          Container(
+            padding:
+                const EdgeInsets.only(left: 10, right: 10, top: 2, bottom: 5),
+            child: MaterialButton(
+              onPressed: () {},
+              color: Colors.deepOrange.shade800,
+              colorBrightness: Brightness.light,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Container(
+                padding: const EdgeInsets.only(
+                    left: 26, right: 26, top: 10, bottom: 10),
+                child: const Text(
+                  'Summary',
+                  style: TextStyle(
+                    fontFamily: 'Roboto-Bold',
+                    fontSize: 14,
+                    color: kBackgroundColor,
+                  ),
+                ),
+              ),
             ),
           ),
         ],
@@ -1053,6 +1046,7 @@ class OnlineJobsState extends State<OnlineJobs>
               ),
             ),
           ),
+          backgroundColor: kBackgroundColor,
           body: Center(
             child: Column(
               children: [
@@ -1147,12 +1141,12 @@ class OnlineJobsState extends State<OnlineJobs>
                       Container(
                         padding: EdgeInsets.zero,
                         child: ListView(
-                          clipBehavior: Clip.hardEdge,
                           children: <Widget>[
                             workPlaceHeader,
                             workPlaceSegment,
                             referSection,
-                            activitiesButton,
+                            copyShareButton,
+                            withdrawSummaryButton,
                           ],
                         ),
                       )
