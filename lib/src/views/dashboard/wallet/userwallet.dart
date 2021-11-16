@@ -17,7 +17,6 @@ class UserWalletState extends State<UserWallet> {
     return Column(
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             _icon(Icons.transfer_within_a_station, "Transfer"),
             _icon(Icons.phone, "Airtime"),
@@ -26,7 +25,6 @@ class UserWalletState extends State<UserWallet> {
           ],
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             _icon(Icons.style, "Tickets"),
             _icon(Icons.family_restroom, "Insurance"),
@@ -35,7 +33,6 @@ class UserWalletState extends State<UserWallet> {
           ],
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             _icon(Icons.travel_explore, "Travel"),
             _icon(Icons.savings, "Savings"),
@@ -214,6 +211,7 @@ class UserWalletState extends State<UserWallet> {
           ),
         ),
       ),
+      backgroundColor: kBackgroundColor,
       body: Center(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),

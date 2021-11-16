@@ -134,6 +134,7 @@ class NotificationScreenState extends State<NotificationScreen> {
         centerTitle: true,
         toolbarHeight: 50,
         leadingWidth: 28,
+        elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
         title: const Text(
           'Notifications',

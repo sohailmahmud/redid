@@ -312,6 +312,7 @@ class HelpSupportState extends State<HelpSupport>
         centerTitle: true,
         toolbarHeight: 50,
         leadingWidth: 28,
+        elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
         title: const Text(
           'Help & Support',
@@ -323,6 +324,7 @@ class HelpSupportState extends State<HelpSupport>
           ),
         ),
       ),
+      backgroundColor: kBackgroundColor,
       body: Center(
         child: ListView(
           children: <Widget>[
