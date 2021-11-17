@@ -563,13 +563,13 @@ class OnlineJobsState extends State<OnlineJobs>
       ),
     );
     final workPlaceHeader = Container(
-      height: MediaQuery.of(context).size.height * 0.20,
+      height: MediaQuery.of(context).size.height * 0.22,
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.symmetric(horizontal: 15),
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30),
-          bottomRight: Radius.circular(30),
+          bottomLeft: Radius.circular(40),
+          bottomRight: Radius.circular(40),
         ),
         color: Color(0xFF880E4F),
       ),
@@ -580,11 +580,12 @@ class OnlineJobsState extends State<OnlineJobs>
             padding: const EdgeInsets.only(top: 2, bottom: 2),
             alignment: Alignment.topCenter,
             child: CircleAvatar(
-              backgroundColor: kBaseLightColor,
-              radius: 40,
+              backgroundColor: Colors.pink.withOpacity(0.5),
+              radius: 44,
               child: Image.asset(
                 'assets/icons/workplace.svg',
                 fit: BoxFit.cover,
+                scale: 4,
               ),
             ),
           ),
@@ -593,14 +594,13 @@ class OnlineJobsState extends State<OnlineJobs>
             left: 0,
             bottom: -20,
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 120),
+              alignment: Alignment.center,
               child: MaterialButton(
                 onPressed: () {},
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                padding: const EdgeInsets.only(left: 25, right: 25),
                 color: kBaseLightColor,
                 child: Column(
                   children: <Widget>[
@@ -610,7 +610,6 @@ class OnlineJobsState extends State<OnlineJobs>
                         'Cash Balance',
                         style: TextStyle(
                           fontFamily: 'Roboto-Bold',
-                          letterSpacing: 0.2,
                           fontSize: 15,
                           fontWeight: FontWeight.w800,
                         ),
@@ -833,12 +832,14 @@ class OnlineJobsState extends State<OnlineJobs>
       ),
     );
     final referSection = Container(
-      padding: const EdgeInsets.only(left: 25, top: 2, right: 25, bottom: 2),
+      padding: EdgeInsets.zero,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.only(top: 15, bottom: 15),
+            padding: const EdgeInsets.only(
+                top: 15, left: 120, bottom: 15, right: 120),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.pink.shade50,
@@ -864,10 +865,13 @@ class OnlineJobsState extends State<OnlineJobs>
               child: ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(12)),
                 child: Container(
-                  height: 60,
-                  width: 180,
+                  padding: const EdgeInsets.only(
+                    top: 20,
+                    bottom: 20,
+                    left: 40,
+                    right: 40,
+                  ),
                   color: Colors.pink.shade900,
-                  alignment: Alignment.center,
                   child: const Text(
                     'REDIDC5987',
                     style: TextStyle(
@@ -884,8 +888,9 @@ class OnlineJobsState extends State<OnlineJobs>
       ),
     );
     final copyShareButton = Container(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
+      padding: EdgeInsets.zero,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             padding:
@@ -971,8 +976,9 @@ class OnlineJobsState extends State<OnlineJobs>
       ),
     );
     final withdrawSummaryButton = Container(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
+      padding: EdgeInsets.zero,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             padding:
