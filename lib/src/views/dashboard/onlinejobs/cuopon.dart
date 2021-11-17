@@ -34,8 +34,6 @@ class CouponState extends State<Coupon> {
         borderRadius: BorderRadius.circular(20),
       ),
       elevation: 0,
-      insetAnimationCurve: Curves.decelerate,
-      insetAnimationDuration: const Duration(milliseconds: 100),
       backgroundColor: Colors.transparent,
       clipBehavior: Clip.none,
       child: contentBox(context),
@@ -63,9 +61,9 @@ class CouponState extends State<Coupon> {
               Container(
                 padding: const EdgeInsets.only(bottom: 2),
                 child: const Text(
-                  'Do you have a redID coupon?',
+                  'Do you have a redID referral code?',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: kBaseColor,
                     fontFamily: 'Helvetica',
                     fontWeight: FontWeight.w800,
@@ -82,13 +80,9 @@ class CouponState extends State<Coupon> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              const SizedBox(
-                height: 15,
-              ),
               Container(
-                height: 70,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
                 child: TextFormField(
                   inputFormatters: [LengthLimitingTextInputFormatter(20)],
                   keyboardType: TextInputType.visiblePassword,
@@ -99,7 +93,7 @@ class CouponState extends State<Coupon> {
                     color: kTextColor,
                   ),
                   decoration: InputDecoration(
-                    hintText: 'Enter your coupon/gift code',
+                    hintText: 'Enter your referral/gift code',
                     hintStyle: const TextStyle(
                       fontFamily: "Book-Antiqua",
                       fontSize: 14,
@@ -121,24 +115,25 @@ class CouponState extends State<Coupon> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 8,
-              ),
-              const Text(
-                'Note: If you don\'t have any coupons then skip, please.',
-                style: TextStyle(
-                  fontSize: 10,
-                  color: kTextLightColor,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w600,
+              Container(
+                padding: const EdgeInsets.only(top: 5, bottom: 5),
+                child: const Text(
+                  'Note: If you don\'t have any referrals then skip, please.',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: kTextLightColor,
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 50),
+                padding: EdgeInsets.zero,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      padding: const EdgeInsets.only(right: 10, left: 10),
+                      padding: const EdgeInsets.only(right: 10, left: 5),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: kBaseColor,
@@ -146,13 +141,16 @@ class CouponState extends State<Coupon> {
                             borderRadius: BorderRadius.circular(25),
                           ),
                         ),
-                        child: const Text(
-                          'Add Coupon',
-                          style: TextStyle(
-                            fontFamily: 'Book-Antiqua',
-                            fontSize: 12,
-                            color: kBackgroundColor,
-                            fontWeight: FontWeight.w600,
+                        child: Container(
+                          padding: const EdgeInsets.only(left: 10, right: 10),
+                          child: const Text(
+                            'Add Referral',
+                            style: TextStyle(
+                              fontFamily: 'Helvetica-Bold',
+                              fontSize: 12,
+                              color: kBackgroundColor,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                         onPressed: () => Dialogs.materialDialog(
@@ -180,16 +178,26 @@ class CouponState extends State<Coupon> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 50),
                               child: IconsButton(
+                                text: 'Claim',
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                color: kBaseColor,
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: 'Helvetica',
+                                ),
+                                iconColor: Colors.white,
                                 onPressed: () => Dialogs.materialDialog(
                                   barrierDismissible: false,
                                   barrierColor: Colors.black,
                                   color: Colors.white,
                                   useSafeArea: true,
                                   msg:
-                                      'Note: This message will be directly sent to the admin for review. So be careful about the legal information.',
+                                      'Note: This message will be directly sent to the redID system for review. So be careful about the legal information.',
                                   msgStyle: const TextStyle(
                                     fontFamily: 'Book-Antiqua',
-                                    fontSize: 12,
+                                    fontSize: 10,
                                     fontWeight: FontWeight.w500,
                                   ),
                                   customView: Container(
@@ -284,7 +292,7 @@ class CouponState extends State<Coupon> {
                                         text: 'Send Request',
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
-                                              BorderRadius.circular(15),
+                                              BorderRadius.circular(20),
                                         ),
                                         color: kBaseColor,
                                         textStyle: const TextStyle(
@@ -295,16 +303,6 @@ class CouponState extends State<Coupon> {
                                     ),
                                   ],
                                 ),
-                                text: 'Claim',
-                                iconData: Icons.done,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                color: kBaseColor,
-                                textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: 'Helvetica'),
-                                iconColor: Colors.white,
                               ),
                             ),
                           ],
@@ -312,7 +310,7 @@ class CouponState extends State<Coupon> {
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      padding: const EdgeInsets.only(left: 5, right: 10),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: kBackgroundColor,
@@ -324,14 +322,14 @@ class CouponState extends State<Coupon> {
                           ),
                         ),
                         child: Container(
-                          padding: const EdgeInsets.only(left: 5, right: 5),
+                          padding: const EdgeInsets.only(left: 15, right: 15),
                           child: const Text(
                             'Skip',
                             style: TextStyle(
-                              fontFamily: 'Book-Antiqua',
+                              fontFamily: 'Helvetica-Bold',
                               fontSize: 12,
                               color: kInfectedColor,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w800,
                             ),
                           ),
                         ),
@@ -341,10 +339,10 @@ class CouponState extends State<Coupon> {
                           color: Colors.white,
                           useSafeArea: true,
                           msg:
-                              'Note: This message will be directly sent to the admin for review. So be careful about the legal information.',
+                              'Note: This message will be directly sent to the redID system for review. So be careful about the legal information.',
                           msgStyle: const TextStyle(
                             fontFamily: 'Book-Antiqua',
-                            fontSize: 12,
+                            fontSize: 11,
                             fontWeight: FontWeight.w500,
                           ),
                           customView: Container(
@@ -427,7 +425,7 @@ class CouponState extends State<Coupon> {
                                 },
                                 text: 'Send Request',
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15),
+                                  borderRadius: BorderRadius.circular(20),
                                 ),
                                 color: kBaseColor,
                                 textStyle: const TextStyle(
