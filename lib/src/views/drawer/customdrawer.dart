@@ -501,6 +501,42 @@ class CustomDrawerState extends State<CustomDrawer> {
                     dense: true,
                     horizontalTitleGap: 0.0,
                     title: const Text(
+                      "Rate Us",
+                      style: TextStyle(
+                        color: kBaseColor,
+                        fontFamily: 'Book-Antiqua',
+                        fontSize: 14,
+                        letterSpacing: 0.6,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    leading: const CircleAvatar(
+                      backgroundColor: kWhiteShade,
+                      radius: 13,
+                      child: CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: 12.0,
+                        child: Icon(
+                          Icons.star_half_outlined,
+                          color: kBaseColor,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      //Navigator.of(context).pushNamed();
+                    },
+                  ),
+                  const Divider(
+                    height: 0.0,
+                    thickness: 0.5,
+                    indent: 18.0,
+                    endIndent: 0.0,
+                    color: kTitleTextColor,
+                  ),
+                  ListTile(
+                    dense: true,
+                    horizontalTitleGap: 0.0,
+                    title: const Text(
                       "Help & Support",
                       style: TextStyle(
                         color: kBaseColor,

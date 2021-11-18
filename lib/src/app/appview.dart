@@ -65,7 +65,7 @@ class _AppViewState extends State<AppView> {
       ),
     );
     final continueButton = Container(
-      padding: const EdgeInsets.only(top: 10, bottom: 20),
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);

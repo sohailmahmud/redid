@@ -110,77 +110,67 @@ class SignInState extends State<SignIn> {
       ),
     );
     final forgotPasswordLabel = Container(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 60),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const SizedBox(
-                width: 25,
-              ),
-              Container(
-                padding: const EdgeInsets.all(5.0),
-                child: const CircleAvatar(
-                  radius: 10,
-                  backgroundColor: Colors.transparent,
-                  child: FaIcon(
-                    FontAwesomeIcons.userLock,
-                    color: kTitleTextColor,
-                    size: 18,
-                  ),
+      padding: const EdgeInsets.only(top: 30, bottom: 25),
+      child: InkWell(
+        highlightColor: kBackgroundColor,
+        hoverColor: kBackgroundColor,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.all(5.0),
+              child: const CircleAvatar(
+                radius: 10,
+                backgroundColor: Colors.transparent,
+                child: FaIcon(
+                  FontAwesomeIcons.userLock,
+                  color: kBodyTextColor,
+                  size: 18,
                 ),
               ),
-              Expanded(
-                child: InkWell(
-                  highlightColor: kBackgroundColor,
-                  hoverColor: kBackgroundColor,
-                  //splashColor: kBackgroundColor,
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      fontFamily: 'Book-Antiqua',
-                      letterSpacing: 0.2,
-                      fontSize: 16,
-                      color: kTitleTextColor,
-                      fontWeight: FontWeight.w600,
-                    ),
-                    textAlign: TextAlign.right,
-                  ),
-                  onTap: () {
-                    //Navigator.of(context).pushNamed('');
-                  },
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 10),
+              child: const Text(
+                'Forgot Password?',
+                style: TextStyle(
+                  fontFamily: 'Book-Antiqua',
+                  letterSpacing: 0.2,
+                  fontSize: 16,
+                  color: kBodyTextColor,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
-              const SizedBox(
-                width: 25,
-              ),
-            ],
+            ),
+          ],
+        ),
+        onTap: () {
+          //Navigator.of(context).pushNamed();
+        },
+      ),
+    );
+    final orLabel = Container(
+      padding: const EdgeInsets.only(bottom: 25),
+      child: Row(
+        children: const <Widget>[
+          Expanded(
+            child: Divider(
+              thickness: 2,
+              indent: 25,
+            ),
           ),
-          Container(
-            padding: const EdgeInsets.only(top: 20),
-            child: Row(
-              children: const <Widget>[
-                Expanded(
-                  child: Divider(
-                    thickness: 2,
-                  ),
-                ),
-                Text(
-                  " or ",
-                  style: TextStyle(
-                    fontFamily: 'Book-Antiqua',
-                    fontSize: 22,
-                    color: kBaseColor,
-                  ),
-                ),
-                Expanded(
-                  child: Divider(
-                    thickness: 2,
-                  ),
-                ),
-              ],
+          Text(
+            " or ",
+            style: TextStyle(
+              fontFamily: 'Book-Antiqua',
+              fontSize: 22,
+              color: kBaseColor,
+            ),
+          ),
+          Expanded(
+            child: Divider(
+              thickness: 2,
+              endIndent: 25,
             ),
           ),
         ],
@@ -213,6 +203,7 @@ class SignInState extends State<SignIn> {
             passwordField,
             signInButton,
             forgotPasswordLabel,
+            orLabel,
             createAccountButton,
           ],
         ),
