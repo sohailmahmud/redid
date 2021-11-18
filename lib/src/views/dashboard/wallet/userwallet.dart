@@ -17,6 +17,8 @@ class UserWalletState extends State<UserWallet> {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             _icon(Icons.transfer_within_a_station, "Transfer"),
             _icon(Icons.phone, "Airtime"),
@@ -25,6 +27,8 @@ class UserWalletState extends State<UserWallet> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             _icon(Icons.style, "Tickets"),
             _icon(Icons.family_restroom, "Insurance"),
@@ -33,9 +37,11 @@ class UserWalletState extends State<UserWallet> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             _icon(Icons.travel_explore, "Travel"),
-            _icon(Icons.savings, "Savings"),
+            _icon(Icons.home_work, "Savings"),
             _icon(Icons.sports_esports, "Games"),
             _icon(Icons.volunteer_activism, "Donation"),
           ],
@@ -47,23 +53,26 @@ class UserWalletState extends State<UserWallet> {
   Widget _icon(IconData icon, String text) {
     return Column(
       children: <Widget>[
-        GestureDetector(
+        InkWell(
           onTap: () {
             //Navigator.pushNamed(context, '/transfer');
           },
+          splashColor: kBackgroundColor,
+          borderRadius: BorderRadius.circular(20),
           child: Container(
-            height: 80,
+            height: 75,
             width: 80,
             margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 6),
             decoration: const BoxDecoration(
-                color: Color(0xFFF8BBD0),
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                      color: Color(0xfff3f3f3),
-                      offset: Offset(5, 5),
-                      blurRadius: 10)
-                ]),
+              color: Color(0xFFF8BBD0),
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    color: Color(0xfff3f3f3),
+                    offset: Offset(5, 5),
+                    blurRadius: 10)
+              ],
+            ),
             child: Icon(icon, color: kBaseColor),
           ),
         ),
@@ -71,7 +80,7 @@ class UserWalletState extends State<UserWallet> {
           text,
           style: GoogleFonts.mulish(
             textStyle: Theme.of(context).textTheme.headline4,
-            fontSize: 15,
+            fontSize: 14,
             fontWeight: FontWeight.w600,
             color: const Color(0xff76797e),
           ),
@@ -82,7 +91,7 @@ class UserWalletState extends State<UserWallet> {
 
   Widget balanceCard() {
     return Container(
-      padding: EdgeInsets.zero,
+      padding: const EdgeInsets.only(left: 25, right: 25),
       child: ClipRRect(
         borderRadius: const BorderRadius.all(Radius.circular(40)),
         child: Container(
@@ -96,11 +105,12 @@ class UserWalletState extends State<UserWallet> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  const Text(
+                  Text(
                     'Total Balance,',
-                    style: TextStyle(
+                    style: GoogleFonts.mulish(
+                      textStyle: Theme.of(context).textTheme.headline4,
                       fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                       color: kBackgroundColor,
                     ),
                   ),
@@ -138,14 +148,22 @@ class UserWalletState extends State<UserWallet> {
                         border: Border.all(color: Colors.white, width: 1)),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const <Widget>[
-                        Icon(
+                      children: <Widget>[
+                        const Icon(
                           Icons.add,
                           color: Colors.white,
                           size: 20,
                         ),
-                        SizedBox(width: 5),
-                        Text("TopUp", style: TextStyle(color: Colors.white)),
+                        const SizedBox(width: 5),
+                        Text(
+                          "TopUp",
+                          style: GoogleFonts.mulish(
+                            textStyle: Theme.of(context).textTheme.headline4,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                            color: kWhiteShadow,
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -213,26 +231,26 @@ class UserWalletState extends State<UserWallet> {
       ),
       backgroundColor: kBackgroundColor,
       body: Center(
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: ListView(
-            children: <Widget>[
-              const SizedBox(
-                height: 20,
-              ),
-              balanceCard(),
-              const SizedBox(
-                height: 20,
-              ),
-              const TitleText(
+        child: ListView(
+          children: <Widget>[
+            const SizedBox(
+              height: 20,
+            ),
+            balanceCard(),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: const EdgeInsets.only(left: 20),
+              child: const TitleText(
                 text: "Operations",
               ),
-              const SizedBox(
-                height: 10,
-              ),
-              _operationsWidget(),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            _operationsWidget(),
+          ],
         ),
       ),
     );

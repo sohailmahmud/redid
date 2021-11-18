@@ -248,7 +248,7 @@ class AboutState extends State<About> with SingleTickerProviderStateMixin {
               'redID',
               style: TextStyle(
                 fontFamily: 'Chiller',
-                fontSize: 22.0,
+                fontSize: 24.0,
                 color: kBaseColor,
                 fontWeight: FontWeight.w900,
               ),

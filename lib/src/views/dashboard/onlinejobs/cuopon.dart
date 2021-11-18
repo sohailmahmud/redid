@@ -82,7 +82,7 @@ class CouponState extends State<Coupon> {
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
                 child: TextFormField(
                   inputFormatters: [LengthLimitingTextInputFormatter(20)],
                   keyboardType: TextInputType.visiblePassword,
@@ -93,7 +93,7 @@ class CouponState extends State<Coupon> {
                     color: kTextColor,
                   ),
                   decoration: InputDecoration(
-                    hintText: 'Enter your referral/gift code',
+                    hintText: 'Enter your referral code',
                     hintStyle: const TextStyle(
                       fontFamily: "Book-Antiqua",
                       fontSize: 14,
@@ -165,7 +165,7 @@ class CouponState extends State<Coupon> {
                           msg: 'You got 10% discount on your membership.',
                           msgStyle: const TextStyle(
                             fontFamily: 'Roboto',
-                            fontSize: 14,
+                            fontSize: 12,
                             fontWeight: FontWeight.w600,
                           ),
                           lottieBuilder: Lottie.asset(

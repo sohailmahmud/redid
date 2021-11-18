@@ -97,12 +97,13 @@ class VerificationState extends State<Verification> {
             ),
             const SizedBox(height: 40),
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 130),
+              padding: const EdgeInsets.only(left: 25, right: 25),
               child: ArgonTimerButton(
-                initialTimer: 10,
+                initialTimer: 29,
                 height: 25,
-                width: 110,
-                minWidth: 110,
+                width: 200,
+                minWidth: 180,
+                padding: const EdgeInsets.fromLTRB(25, 0.0, 25, 0.0),
                 elevation: 1.0,
                 color: kBackgroundColor,
                 borderRadius: 30,
@@ -134,7 +135,7 @@ class VerificationState extends State<Verification> {
                 },
                 onTap: (startTimer, btnState) {
                   if (btnState == ButtonState.Idle) {
-                    startTimer(10);
+                    startTimer(29);
                   }
                 },
               ),
