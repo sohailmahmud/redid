@@ -595,6 +595,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
+                      Navigator.of(context).pop();
                       Navigator.of(context).pushNamed(SignIn.tag);
                     },
                   ),

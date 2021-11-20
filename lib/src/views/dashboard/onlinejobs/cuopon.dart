@@ -286,6 +286,7 @@ class CouponState extends State<Coupon> {
                                           horizontal: 50),
                                       child: IconsButton(
                                         onPressed: () {
+                                          Navigator.of(context).pop();
                                           Navigator.of(context)
                                               .pushNamed(Dashboard.tag);
                                         },
@@ -420,6 +421,7 @@ class CouponState extends State<Coupon> {
                                   const EdgeInsets.symmetric(horizontal: 50),
                               child: IconsButton(
                                 onPressed: () {
+                                  Navigator.of(context).pop();
                                   Navigator.of(context)
                                       .pushNamed(Dashboard.tag);
                                 },

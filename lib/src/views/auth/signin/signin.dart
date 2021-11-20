@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customvalidator.dart';
 import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/auth/signup/signup.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
@@ -10,27 +11,43 @@ class SignIn extends StatefulWidget {
   const SignIn({Key? key, this.title}) : super(key: key);
   final String? title;
   static String tag = 'SignIn';
+
   @override
   SignInState createState() => SignInState();
 }
 
 class SignInState extends State<SignIn> {
-  final TextEditingController mobileController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController phoneNumberController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   late String password;
-  bool showvalue = false;
   late bool _passwordVisible;
+
   @override
   void initState() {
     super.initState();
     _passwordVisible = false;
   }
 
+  void signInValidate() {
+    if (_formKey.currentState != null && _formKey.currentState!.validate()) {
+      // ignore: avoid_print
+      print('Validated.');
+      Navigator.of(context).pop();
+      Navigator.of(context).pushNamed(Dashboard.tag);
+    } else {
+      // ignore: avoid_print
+      print('Not Validated.');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final signinLogo = Container(
-      padding: const EdgeInsets.only(top: 80, bottom: 80),
+      width: MediaQuery.of(context).size.width * 0.65,
+      height: MediaQuery.of(context).size.height * 0.32,
+      padding: const EdgeInsets.only(bottom: 2.0),
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 50,
@@ -41,17 +58,9 @@ class SignInState extends State<SignIn> {
       ),
     );
 
-    final phoneNo = Container(
-      height: 70,
-      padding: const EdgeInsets.only(bottom: 20),
+    final phoneNumberField = Container(
+      padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: customFormField(
-        inputFormatters: [
-          FilteringTextInputFormatter.digitsOnly,
-          LengthLimitingTextInputFormatter(11)
-        ],
-        keyboardType: TextInputType.number,
-        obscureText: false,
-        initialValue: '',
         decoration: customInputDecoration(
           hintText: 'Phone Number',
           prefixIcon: Container(
@@ -62,17 +71,20 @@ class SignInState extends State<SignIn> {
             ),
           ),
         ),
+        validator: phoneNumberValidator,
+        inputFormatters: [
+          FilteringTextInputFormatter.digitsOnly,
+          LengthLimitingTextInputFormatter(11)
+        ],
+        keyboardType: TextInputType.number,
+        obscureText: false,
+        autofocus: false,
+        controller: phoneNumberController,
       ),
     );
     final passwordField = Container(
-      height: 70,
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(top: 10, bottom: 15),
       child: customFormField(
-        inputFormatters: [LengthLimitingTextInputFormatter(40)],
-        keyboardType: TextInputType.visiblePassword,
-        onChanged: (val) => password = val,
-        obscureText: !_passwordVisible,
-        initialValue: '',
         decoration: customInputDecoration(
           hintText: 'Password',
           prefixIcon: Container(
@@ -93,13 +105,21 @@ class SignInState extends State<SignIn> {
             },
           ),
         ),
+        validator: passwordValidator,
+        inputFormatters: [LengthLimitingTextInputFormatter(40)],
+        keyboardType: TextInputType.visiblePassword,
+        onChanged: (val) => password = val,
+        obscureText: !_passwordVisible,
+        autofocus: false,
+        controller: passwordController,
       ),
     );
     final signInButton = Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      width: MediaQuery.of(context).size.width * 0.70,
+      padding: const EdgeInsets.only(top: 10),
       child: customMaterialButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(Dashboard.tag);
+          signInValidate();
         },
         color: kBaseColor,
         padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
@@ -150,13 +170,13 @@ class SignInState extends State<SignIn> {
       ),
     );
     final orLabel = Container(
-      padding: const EdgeInsets.only(bottom: 25),
+      padding: const EdgeInsets.only(bottom: 15),
       child: Row(
         children: const <Widget>[
           Expanded(
             child: Divider(
               thickness: 2,
-              indent: 25,
+              indent: 30,
             ),
           ),
           Text(
@@ -170,16 +190,18 @@ class SignInState extends State<SignIn> {
           Expanded(
             child: Divider(
               thickness: 2,
-              endIndent: 25,
+              endIndent: 30,
             ),
           ),
         ],
       ),
     );
-    final createAccountButton = Padding(
-      padding: const EdgeInsets.only(left: 20, top: 5.0, right: 20, bottom: 40),
+    final createAccountButton = Container(
+      width: MediaQuery.of(context).size.width * 0.70,
+      padding: const EdgeInsets.only(top: 10),
       child: customMaterialButton(
         onPressed: () {
+          Navigator.of(context).pop();
           Navigator.of(context).pushNamed(SignUp.tag);
         },
         padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
@@ -192,22 +214,29 @@ class SignInState extends State<SignIn> {
     );
 
     return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: Center(
-        child: ListView(
-          shrinkWrap: true,
-          padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-          children: <Widget>[
-            signinLogo,
-            phoneNo,
-            passwordField,
-            signInButton,
-            forgotPasswordLabel,
-            orLabel,
-            createAccountButton,
-          ],
-        ),
-      ),
-    );
+        backgroundColor: kBackgroundColor,
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          clipBehavior: Clip.hardEdge,
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  signinLogo,
+                  phoneNumberField,
+                  passwordField,
+                  signInButton,
+                  forgotPasswordLabel,
+                  orLabel,
+                  createAccountButton,
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }

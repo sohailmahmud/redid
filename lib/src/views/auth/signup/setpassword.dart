@@ -1,9 +1,8 @@
-// ignore_for_file: non_constant_identifier_names
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customvalidator.dart';
 import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/dashboard/dashboard.dart';
 
@@ -16,16 +15,42 @@ class SetPassword extends StatefulWidget {
 }
 
 class SetPasswordState extends State<SetPassword> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController retypePasswordController =
+      TextEditingController();
+
   late String password;
-  bool showvalue = false;
+  late String retypePassword;
   late bool _passwordVisible;
-  late bool _RetypePasswordVisible;
+  late bool _retypePasswordVisible;
 
   @override
   void initState() {
     super.initState();
     _passwordVisible = false;
-    _RetypePasswordVisible = false;
+    _retypePasswordVisible = false;
+  }
+
+  String? retypePasswordValidator(String? retypePassword) {
+    if (retypePassword!.isEmpty) {
+      return 'Please enter confirm password';
+    } else if (retypePassword != password) {
+      return 'Password does not match';
+    }
+    return null;
+  }
+
+  void newSignInValidate() {
+    if (formKey.currentState != null && formKey.currentState!.validate()) {
+      // ignore: avoid_print
+      print('Validated.');
+      Navigator.of(context).pop();
+      Navigator.of(context).pushNamed(Dashboard.tag);
+    } else {
+      // ignore: avoid_print
+      print('Not Validated.');
+    }
   }
 
   @override
@@ -42,7 +67,7 @@ class SetPasswordState extends State<SetPassword> {
       ),
     );
 
-    final forgotPasswordTitle = Container(
+    final accountPasswordTitle = Container(
       //height: 35,
       padding: const EdgeInsets.only(bottom: 5),
       child: const Text(
@@ -69,7 +94,7 @@ class SetPasswordState extends State<SetPassword> {
       ),
     );
 
-    final forgotPassInstructions = Container(
+    final accountPassInstructions = Container(
       padding: const EdgeInsets.only(
           top: 20.0, left: 20.0, bottom: 60.0, right: 20.0),
       child: const Text(
@@ -86,13 +111,8 @@ class SetPasswordState extends State<SetPassword> {
     );
 
     final newPassword = Container(
-      padding: const EdgeInsets.only(top: 20, left: 35, bottom: 10, right: 35),
+      padding: const EdgeInsets.only(top: 20, left: 25, bottom: 10, right: 25),
       child: customFormField(
-        inputFormatters: [LengthLimitingTextInputFormatter(40)],
-        keyboardType: TextInputType.visiblePassword,
-        onChanged: (val) => password = val,
-        obscureText: !_passwordVisible,
-        initialValue: '',
         decoration: customInputDecoration(
           hintText: 'Password',
           prefixIcon: Container(
@@ -115,17 +135,19 @@ class SetPasswordState extends State<SetPassword> {
             },
           ),
         ),
+        validator: passwordValidator,
+        inputFormatters: [LengthLimitingTextInputFormatter(40)],
+        keyboardType: TextInputType.text,
+        onChanged: (val) => password = val,
+        obscureText: !_passwordVisible,
+        autofocus: false,
+        controller: passwordController,
       ),
     );
 
     final reTypePassword = Container(
-      padding: const EdgeInsets.only(top: 10, left: 35, bottom: 25, right: 35),
+      padding: const EdgeInsets.only(top: 10, left: 25, bottom: 25, right: 25),
       child: customFormField(
-        inputFormatters: [LengthLimitingTextInputFormatter(40)],
-        keyboardType: TextInputType.visiblePassword,
-        onChanged: (val) => password = val,
-        obscureText: !_RetypePasswordVisible,
-        initialValue: '',
         decoration: customInputDecoration(
           hintText: 'Re-Type Password',
           prefixIcon: Container(
@@ -138,24 +160,32 @@ class SetPasswordState extends State<SetPassword> {
           suffixIcon: IconButton(
             icon: Icon(
               // Based on passwordVisible state choose the icon
-              _RetypePasswordVisible ? Icons.visibility : Icons.visibility_off,
+              _retypePasswordVisible ? Icons.visibility : Icons.visibility_off,
             ),
             onPressed: () {
               // Update the state i.e. toogle the state of passwordVisible variable
               setState(() {
-                _RetypePasswordVisible = !_RetypePasswordVisible;
+                _retypePasswordVisible = !_retypePasswordVisible;
               });
             },
           ),
         ),
+        validator: retypePasswordValidator,
+        inputFormatters: [LengthLimitingTextInputFormatter(40)],
+        keyboardType: TextInputType.text,
+        onChanged: (val) => retypePassword = val,
+        obscureText: !_retypePasswordVisible,
+        autofocus: false,
+        controller: retypePasswordController,
       ),
     );
 
     final signInButton = Container(
-      padding: const EdgeInsets.symmetric(horizontal: 55),
+      width: MediaQuery.of(context).size.width * 0.70,
+      padding: const EdgeInsets.only(top: 10),
       child: customMaterialButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(Dashboard.tag);
+          newSignInValidate();
         },
         padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
@@ -168,18 +198,27 @@ class SetPasswordState extends State<SetPassword> {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Center(
-        child: ListView(
-          shrinkWrap: false,
-          children: <Widget>[
-            newAccountPasswordLogo,
-            forgotPasswordTitle,
-            verticalDivider,
-            forgotPassInstructions,
-            newPassword,
-            reTypePassword,
-            signInButton,
-          ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        clipBehavior: Clip.hardEdge,
+        child: Container(
+          padding: EdgeInsets.zero,
+          child: Form(
+            key: formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                newAccountPasswordLogo,
+                accountPasswordTitle,
+                verticalDivider,
+                accountPassInstructions,
+                newPassword,
+                reTypePassword,
+                signInButton,
+              ],
+            ),
+          ),
         ),
       ),
     );
