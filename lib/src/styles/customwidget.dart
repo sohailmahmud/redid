@@ -2,19 +2,23 @@ import 'package:flutter/material.dart';
 
 TextFormField customFormField({
   String labelText = '',
+  validator,
+  controller,
   inputFormatters,
   keyboardType,
   onChanged,
   bool obscureText = false,
-  String initialValue = '',
+  bool autofocus = false,
   decoration,
 }) {
   return TextFormField(
+    validator: validator,
+    controller: controller,
     inputFormatters: inputFormatters,
     keyboardType: keyboardType,
     onChanged: onChanged,
     obscureText: obscureText,
-    initialValue: '',
+    autofocus: autofocus,
     style: const TextStyle(
         fontFamily: "Book-Antiqua", fontSize: 17, color: Colors.black),
     decoration: decoration,

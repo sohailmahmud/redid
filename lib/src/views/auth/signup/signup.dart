@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:redid/src/styles/constants.dart';
+import 'package:redid/src/styles/customvalidator.dart';
 import 'package:redid/src/styles/customwidget.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 import 'package:redid/src/views/auth/signup/verification.dart';
@@ -16,15 +17,36 @@ class SignUp extends StatefulWidget {
 
 class SignUpState extends State<SignUp> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController phoneNumberController = TextEditingController();
   String initialCountry = 'BD';
   PhoneNumber number = PhoneNumber(isoCode: 'BD');
 
   bool showvalue = false;
+
+  @override
+  void dispose() {
+    phoneNumberController.dispose();
+    super.dispose();
+  }
+
+  void otpValidate() {
+    if (formKey.currentState != null && formKey.currentState!.validate()) {
+      // ignore: avoid_print
+      print('Validated.');
+      Navigator.of(context).pop();
+      Navigator.of(context).pushNamed(Verification.tag);
+    } else {
+      // ignore: avoid_print
+      print('Not Validated.');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final signUpLogo = Container(
-      padding: const EdgeInsets.only(top: 80, bottom: 50),
+      width: MediaQuery.of(context).size.width * 0.65,
+      height: MediaQuery.of(context).size.height * 0.32,
+      padding: const EdgeInsets.only(bottom: 2.0),
       child: CircleAvatar(
         backgroundColor: Colors.transparent,
         radius: 50,
@@ -51,71 +73,58 @@ class SignUpState extends State<SignUp> {
     );
     final phoneNumber = Container(
       padding: const EdgeInsets.only(left: 15, top: 15, right: 15, bottom: 15),
-      child: Form(
-        key: formKey,
-        child: Container(
-          padding: EdgeInsets.zero,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              InternationalPhoneNumberInput(
-                onInputChanged: (PhoneNumber number) {
-                  // ignore: avoid_print
-                  print(number.phoneNumber);
-                },
-                onInputValidated: (bool value) {
-                  // ignore: avoid_print
-                  print(value);
-                },
-                selectorConfig: const SelectorConfig(
-                  selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                ),
-                textStyle: const TextStyle(
-                  fontFamily: "Book-Antiqua",
-                  fontSize: 18,
-                  color: Colors.black,
-                ),
-                selectorTextStyle: const TextStyle(
-                  fontFamily: "Book-Antiqua",
-                  fontSize: 18,
-                  color: Colors.black,
-                ),
-                inputDecoration: InputDecoration(
-                  hintText: 'Phone Number',
-                  contentPadding:
-                      const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                ),
-                searchBoxDecoration: InputDecoration(
-                  hintText: 'Search by country or phone number',
-                  contentPadding:
-                      const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0)),
-                ),
-                spaceBetweenSelectorAndTextField: 0,
-                ignoreBlank: false,
-                initialValue: number,
-                textFieldController: controller,
-                formatInput: false,
-                keyboardType: const TextInputType.numberWithOptions(
-                  signed: true,
-                  decimal: true,
-                ),
-                inputBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                onSaved: (PhoneNumber number) {
-                  // ignore: avoid_print
-                  print('On Saved: $number');
-                },
-              ),
-            ],
-          ),
+      child: InternationalPhoneNumberInput(
+        validator: phoneNumberValidator,
+        onInputChanged: (PhoneNumber number) {
+          // ignore: avoid_print
+          print(number.phoneNumber);
+        },
+        onInputValidated: (bool value) {
+          // ignore: avoid_print
+          print(value);
+        },
+        selectorConfig: const SelectorConfig(
+          selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
         ),
+        textStyle: const TextStyle(
+          fontFamily: "Book-Antiqua",
+          fontSize: 18,
+          color: Colors.black,
+        ),
+        selectorTextStyle: const TextStyle(
+          fontFamily: "Book-Antiqua",
+          fontSize: 18,
+          color: Colors.black,
+        ),
+        inputDecoration: InputDecoration(
+          hintText: 'Phone Number',
+          contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+        ),
+        searchBoxDecoration: InputDecoration(
+          hintText: 'Search by country or phone number',
+          contentPadding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+        ),
+        spaceBetweenSelectorAndTextField: 0,
+        autoFocus: false,
+        ignoreBlank: false,
+        initialValue: number,
+        textFieldController: phoneNumberController,
+        formatInput: false,
+        keyboardType: const TextInputType.numberWithOptions(
+          signed: true,
+          decimal: true,
+        ),
+        inputBorder:
+            OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+        onSaved: (PhoneNumber number) {
+          // ignore: avoid_print
+          print('On Saved: $number');
+        },
       ),
     );
-    final agreementCheck = Container(
+    final agreementCheck = Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
       child: Row(
         children: [
@@ -193,11 +202,12 @@ class SignUpState extends State<SignUp> {
         ],
       ),
     );
-    final getOTPButton = Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
+    final getOTPButton = Container(
+      width: MediaQuery.of(context).size.width * 0.70,
+      padding: const EdgeInsets.only(top: 10),
       child: customMaterialButton(
         onPressed: () {
-          Navigator.of(context).pushNamed(Verification.tag);
+          otpValidate();
         },
         padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
         color: kBaseColor,
@@ -207,9 +217,9 @@ class SignUpState extends State<SignUp> {
         ),
       ),
     );
-    final signInButton = Padding(
-      padding:
-          const EdgeInsets.only(left: 25, top: 50.0, right: 25, bottom: 40),
+    final signInButton = Container(
+      width: MediaQuery.of(context).size.width * 0.70,
+      padding: const EdgeInsets.only(top: 50),
       child: customMaterialButton(
         onPressed: () {
           Navigator.of(context).pushNamed(SignIn.tag);
@@ -225,18 +235,26 @@ class SignUpState extends State<SignUp> {
 
     return Scaffold(
       backgroundColor: kBackgroundColor,
-      body: Center(
-        child: ListView(
-          shrinkWrap: true,
-          padding: const EdgeInsets.all(15),
-          children: <Widget>[
-            signUpLogo,
-            fieldTitle,
-            phoneNumber,
-            agreementCheck,
-            getOTPButton,
-            signInButton,
-          ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        clipBehavior: Clip.hardEdge,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Form(
+            key: formKey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                signUpLogo,
+                fieldTitle,
+                phoneNumber,
+                agreementCheck,
+                getOTPButton,
+                signInButton,
+              ],
+            ),
+          ),
         ),
       ),
     );
@@ -260,11 +278,5 @@ class SignUpState extends State<SignUp> {
     setState(() {
       this.number = number;
     });
-  }
-
-  @override
-  void dispose() {
-    controller.dispose();
-    super.dispose();
   }
 }

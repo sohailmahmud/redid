@@ -28,7 +28,7 @@ class _AppViewState extends State<AppView> {
       ),
     );
     final welcomeMessage = Container(
-      padding: const EdgeInsets.only(bottom: 100),
+      padding: const EdgeInsets.only(bottom: 80),
       child: RichText(
         textAlign: TextAlign.center,
         text: const TextSpan(
