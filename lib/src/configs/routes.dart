@@ -18,6 +18,7 @@ import 'package:redid/src/views/dashboard/profile/userprofile.dart';
 import 'package:redid/src/views/dashboard/settings/appsettings.dart';
 import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
 import 'package:redid/src/views/drawer/customdrawer.dart';
+import 'package:redid/src/views/drawer/rateus.dart';
 import 'package:redid/src/views/notifications/notificationscreen.dart';
 
 final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
@@ -41,4 +42,5 @@ final Map<String, WidgetBuilder> routes = <String, WidgetBuilder>{
   HelpSupport.tag: (context) => const HelpSupport(),
   About.tag: (context) => const About(),
   Coupon.tag: (context) => const Coupon(),
+  RateUs.tag: (context) => const RateUs(),
 };
