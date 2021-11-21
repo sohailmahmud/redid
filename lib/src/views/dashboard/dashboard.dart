@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:badges/badges.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -89,6 +90,7 @@ class DashboardState extends State<Dashboard> {
         builder: (BuildContext context) {
           return IconButton(
             icon: const Icon(Icons.menu_open, size: 28),
+            splashRadius: 25,
             onPressed: () {
               Scaffold.of(context).openDrawer();
             },
@@ -134,7 +136,7 @@ class DashboardState extends State<Dashboard> {
                     fontSize: 30,
                     letterSpacing: 0.8,
                     //color: kBaseColor,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w600,
                     foreground: Paint()..shader = linearGradient,
                     /* shadows: [
                       Shadow(
@@ -159,10 +161,26 @@ class DashboardState extends State<Dashboard> {
             width: 35,
             child: IconButton(
               padding: const EdgeInsets.all(2),
-              icon: const FaIcon(
-                FontAwesomeIcons.bell,
-                size: 25,
-                color: kTextColor,
+              icon: Badge(
+                badgeContent: const Padding(
+                  padding:
+                      EdgeInsets.only(left: 2, right: 2, bottom: 4, top: 2),
+                  child: Text(
+                    '25',
+                    style: TextStyle(
+                      fontSize: 9,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                padding: const EdgeInsets.all(2),
+                badgeColor: kBaseColor,
+                child: const FaIcon(
+                  FontAwesomeIcons.bell,
+                  size: 25,
+                  color: kTextColor,
+                ),
               ),
               splashRadius: Material.defaultSplashRadius / 2.2,
               color: kTitleColor,

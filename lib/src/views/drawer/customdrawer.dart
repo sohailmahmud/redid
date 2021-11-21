@@ -14,6 +14,7 @@ import 'package:redid/src/views/dashboard/onlinejobs/onlinejobs.dart';
 import 'package:redid/src/views/dashboard/profile/userprofile.dart';
 import 'package:redid/src/views/dashboard/settings/appsettings.dart';
 import 'package:redid/src/views/dashboard/wallet/userwallet.dart';
+import 'package:redid/src/views/drawer/rateus.dart';
 
 class CustomDrawer extends StatefulWidget {
   static String tag = 'CustomDrawer';
@@ -523,7 +524,7 @@ class CustomDrawerState extends State<CustomDrawer> {
                       ),
                     ),
                     onTap: () {
-                      //Navigator.of(context).pushNamed();
+                      Navigator.of(context).pushNamed(RateUs.tag);
                     },
                   ),
                   const Divider(
