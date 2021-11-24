@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/dashboard/onlinejobs/cuopon.dart';
 
@@ -12,18 +13,22 @@ class OnlineJobs extends StatefulWidget {
   OnlineJobsState createState() => OnlineJobsState();
 }
 
-class OnlineJobsState extends State<OnlineJobs>
-    with SingleTickerProviderStateMixin {
-  TabController? _controller;
+class OnlineJobsState extends State<OnlineJobs> with TickerProviderStateMixin {
+  TabController? _newController;
+  TabController? _existingController;
+  bool isExistingUser = false;
+
   @override
   void initState() {
     super.initState();
-    _controller = TabController(length: 2, vsync: this);
+    _newController = TabController(length: 2, vsync: this);
+    _existingController = TabController(length: 1, vsync: this);
   }
 
   @override
   void dispose() {
-    _controller!.dispose();
+    _newController!.dispose();
+    _existingController!.dispose();
     super.dispose();
   }
 
@@ -1032,138 +1037,255 @@ class OnlineJobsState extends State<OnlineJobs>
       ),
     );
     return Material(
-      child: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: kBackgroundColor,
-            centerTitle: true,
-            toolbarHeight: 50,
-            leadingWidth: 28,
-            elevation: 0,
-            iconTheme: const IconThemeData(color: kBaseColor),
-            title: const Text(
-              'Online Jobs',
-              style: TextStyle(
-                fontFamily: 'Chiller',
-                fontSize: 25,
-                color: kBaseColor,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
-          ),
-          backgroundColor: kBackgroundColor,
-          body: Center(
-            child: Column(
-              children: [
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-                  child: Container(
-                    height: 35,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: kBaseColor,
-                        width: 0.5,
-                      ),
-                      color: kBaseLightColor,
-                    ),
-                    child: TabBar(
-                      controller: _controller,
-                      unselectedLabelColor: kBaseColor,
-                      labelColor: kBackgroundColor,
-                      indicatorSize: TabBarIndicatorSize.tab,
-                      indicator: BoxDecoration(
-                        gradient: const LinearGradient(
-                            colors: [kBaseColor, kBaseColor]),
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: kBaseColor,
-                          width: 1,
-                        ),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: kBaseLightColor,
-                            blurRadius: 2,
-                            offset: Offset(0, 2),
-                          )
-                        ],
-                      ),
-                      tabs: [
-                        Tab(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: const Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Packages",
-                                style: TextStyle(
-                                  fontFamily: 'Roboto-Bold',
-                                  fontSize: 15,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Tab(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: const Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Work Place",
-                                style: TextStyle(
-                                  fontFamily: 'Roboto-Bold',
-                                  fontSize: 15,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+      child: isExistingUser
+          ? DefaultTabController(
+              length: 1,
+              child: Scaffold(
+                appBar: AppBar(
+                  automaticallyImplyLeading: false,
+                  backgroundColor: kBackgroundColor,
+                  centerTitle: true,
+                  toolbarHeight: 50,
+                  elevation: 0,
+                  iconTheme: const IconThemeData(color: kBaseColor),
+                  leading: IconButton(
+                    icon: const FaIcon(FontAwesomeIcons.chevronCircleLeft),
+                    splashRadius: 25,
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                  title: const Text(
+                    'Online Jobs',
+                    style: TextStyle(
+                      fontFamily: 'Chiller',
+                      fontSize: 25,
+                      color: kBaseColor,
+                      fontWeight: FontWeight.w900,
                     ),
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: TabBarView(
-                    controller: _controller,
+                backgroundColor: kBackgroundColor,
+                body: Center(
+                  child: Column(
                     children: [
                       Container(
-                        padding: EdgeInsets.zero,
-                        child: ListView(
-                          children: <Widget>[
-                            packageItems,
-                          ],
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 10),
+                        child: Container(
+                          height: 35,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: kBaseColor,
+                              width: 0.5,
+                            ),
+                            color: kBaseLightColor,
+                          ),
+                          child: TabBar(
+                            controller: _existingController,
+                            unselectedLabelColor: kBaseColor,
+                            labelColor: kBackgroundColor,
+                            indicatorSize: TabBarIndicatorSize.tab,
+                            indicator: BoxDecoration(
+                              gradient: const LinearGradient(
+                                  colors: [kBaseColor, kBaseColor]),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: kBaseColor,
+                                width: 1,
+                              ),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: kBaseLightColor,
+                                  blurRadius: 2,
+                                  offset: Offset(0, 2),
+                                )
+                              ],
+                            ),
+                            tabs: [
+                              Tab(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: const Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "Work Place",
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto-Bold',
+                                        fontSize: 15,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
-                      Container(
-                        padding: EdgeInsets.zero,
-                        child: ListView(
-                          children: <Widget>[
-                            workPlaceHeader,
-                            workPlaceSegment,
-                            referSection,
-                            copyShareButton,
-                            withdrawSummaryButton,
+                      Expanded(
+                        flex: 1,
+                        child: TabBarView(
+                          controller: _existingController,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.zero,
+                              child: ListView(
+                                children: <Widget>[
+                                  workPlaceHeader,
+                                  workPlaceSegment,
+                                  referSection,
+                                  copyShareButton,
+                                  withdrawSummaryButton,
+                                ],
+                              ),
+                            )
                           ],
                         ),
                       )
                     ],
                   ),
-                )
-              ],
+                ),
+              ),
+            )
+          : DefaultTabController(
+              length: 2,
+              child: Scaffold(
+                appBar: AppBar(
+                  automaticallyImplyLeading: false,
+                  backgroundColor: kBackgroundColor,
+                  centerTitle: true,
+                  toolbarHeight: 50,
+                  elevation: 0,
+                  iconTheme: const IconThemeData(color: kBaseColor),
+                  leading: IconButton(
+                    icon: const FaIcon(FontAwesomeIcons.chevronCircleLeft),
+                    splashRadius: 25,
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                  title: const Text(
+                    'Online Jobs',
+                    style: TextStyle(
+                      fontFamily: 'Chiller',
+                      fontSize: 25,
+                      color: kBaseColor,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+                backgroundColor: kBackgroundColor,
+                body: Center(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 15, vertical: 10),
+                        child: Container(
+                          height: 35,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: kBaseColor,
+                              width: 0.5,
+                            ),
+                            color: kBaseLightColor,
+                          ),
+                          child: TabBar(
+                            controller: _newController,
+                            unselectedLabelColor: kBaseColor,
+                            labelColor: kBackgroundColor,
+                            indicatorSize: TabBarIndicatorSize.tab,
+                            indicator: BoxDecoration(
+                              gradient: const LinearGradient(
+                                  colors: [kBaseColor, kBaseColor]),
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                color: kBaseColor,
+                                width: 1,
+                              ),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: kBaseLightColor,
+                                  blurRadius: 2,
+                                  offset: Offset(0, 2),
+                                )
+                              ],
+                            ),
+                            tabs: [
+                              Tab(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: const Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "Packages",
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto-Bold',
+                                        fontSize: 15,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Tab(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: const Align(
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                      "Work Place",
+                                      style: TextStyle(
+                                        fontFamily: 'Roboto-Bold',
+                                        fontSize: 15,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: TabBarView(
+                          controller: _newController,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.zero,
+                              child: ListView(
+                                children: <Widget>[
+                                  packageItems,
+                                ],
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.zero,
+                              child: ListView(
+                                children: <Widget>[
+                                  workPlaceHeader,
+                                  workPlaceSegment,
+                                  referSection,
+                                  copyShareButton,
+                                  withdrawSummaryButton,
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-        ),
-      ),
     );
   }
 }

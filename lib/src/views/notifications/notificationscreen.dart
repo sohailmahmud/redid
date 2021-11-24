@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:redid/src/styles/constants.dart';
@@ -131,16 +132,22 @@ class NotificationScreenState extends State<NotificationScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBackgroundColor,
+        automaticallyImplyLeading: false,
         centerTitle: true,
         toolbarHeight: 50,
-        leadingWidth: 28,
         elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
+        leading: IconButton(
+          icon: const FaIcon(FontAwesomeIcons.chevronCircleLeft),
+          splashRadius: 25,
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: const Text(
           'Notifications',
           style: kAppBarTextStyle,
         ),
       ),
+      backgroundColor: kBackgroundColor,
       body: Container(
         padding: const EdgeInsets.only(top: 10.0),
         child: _buildList(),

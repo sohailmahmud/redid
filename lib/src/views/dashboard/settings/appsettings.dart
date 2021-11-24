@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/auth/signin/signin.dart';
 import 'package:redid/src/views/dashboard/settings/laguages_screen.dart';
@@ -21,17 +22,23 @@ class AppSettingsState extends State<AppSettings> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBackgroundColor,
+        automaticallyImplyLeading: false,
         centerTitle: true,
         toolbarHeight: 50,
-        leadingWidth: 28,
         elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
+        leading: IconButton(
+          icon: const FaIcon(FontAwesomeIcons.chevronCircleLeft),
+          splashRadius: 25,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           'App Settings',
           style: kAppBarTextStyle,
         ),
       ),
-      
       backgroundColor: kBackgroundColor,
       body: buildSettingsList(),
     );

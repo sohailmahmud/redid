@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
 
 class Notices extends StatefulWidget {
@@ -46,13 +47,19 @@ class NoticesState extends State<Notices> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         backgroundColor: kBackgroundColor,
         centerTitle: true,
         toolbarHeight: 50,
-        leadingWidth: 28,
         elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
+        leading: IconButton(
+          icon: const FaIcon(FontAwesomeIcons.chevronCircleLeft),
+          splashRadius: 25,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: const Text(
           'Noticeboard',
           style: TextStyle(
