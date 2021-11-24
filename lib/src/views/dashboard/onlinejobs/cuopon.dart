@@ -247,12 +247,21 @@ class CouponState extends State<Coupon> {
                                           child: TextFormField(
                                             maxLines: 5,
                                             minLines: 5,
-                                            inputFormatters: [
-                                              LengthLimitingTextInputFormatter(
-                                                  20)
-                                            ],
+                                            maxLength: 500,
                                             keyboardType:
-                                                TextInputType.visiblePassword,
+                                                TextInputType.multiline,
+                                            inputFormatters: <
+                                                TextInputFormatter>[
+                                              LengthLimitingTextInputFormatter(
+                                                  500),
+                                              FilteringTextInputFormatter.allow(
+                                                RegExp(
+                                                    r'([#@&.a-z A-Z á-ú Á-Ú 0-9 \.\,\s\()])'),
+                                              ),
+                                              FilteringTextInputFormatter.deny(
+                                                RegExp(r'[/\\!]'),
+                                              ),
+                                            ],
                                             initialValue: '',
                                             style: const TextStyle(
                                               fontFamily: "Book-Antiqua",
@@ -390,9 +399,29 @@ class CouponState extends State<Coupon> {
                                   child: TextFormField(
                                     maxLines: 5,
                                     minLines: 5,
-                                    inputFormatters: [
-                                      LengthLimitingTextInputFormatter(20)
+                                    maxLength: 500,
+                                    inputFormatters: <TextInputFormatter>[
+                                      LengthLimitingTextInputFormatter(500),
+                                      FilteringTextInputFormatter.allow(
+                                        RegExp(
+                                            r'([#@&.a-z A-Z á-ú Á-Ú 0-9 \.\,\s\()])'),
+                                      ),
+                                      FilteringTextInputFormatter.deny(
+                                        RegExp(r'[/\\!]'),
+                                      ),
                                     ],
+                                    validator: (text) {
+                                      if (text!.isEmpty) {
+                                        return 'Please write something';
+                                      }
+                                      if (text.length < 10) {
+                                        return 'Your comment is too short';
+                                      }
+                                      if (text.length < 20) {
+                                        return 'Please write more than 20 characters';
+                                      }
+                                      return null;
+                                    },
                                     keyboardType: TextInputType.visiblePassword,
                                     initialValue: '',
                                     style: const TextStyle(
@@ -422,8 +451,11 @@ class CouponState extends State<Coupon> {
                               child: IconsButton(
                                 onPressed: () {
                                   Navigator.of(context).pop();
-                                  Navigator.of(context)
-                                      .pushNamed(Dashboard.tag);
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) => const Dashboard(),
+                                    ),
+                                  );
                                 },
                                 text: 'Send Request',
                                 shape: RoundedRectangleBorder(

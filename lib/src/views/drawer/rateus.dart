@@ -85,20 +85,28 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
         automaticallyImplyLeading: false,
         backgroundColor: kBackgroundColor,
         centerTitle: true,
-        toolbarHeight: 50,
+        toolbarHeight: 40,
         leadingWidth: 28,
         elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
         actions: [
           IconButton(
             icon: const FaIcon(FontAwesomeIcons.solidTimesCircle),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => const Dashboard(),
+                ),
+              );
+            },
             splashRadius: 18,
           ),
         ],
       ),
       backgroundColor: kBackgroundColor,
       body: SingleChildScrollView(
+        reverse: true,
         child: Container(
           padding: const EdgeInsets.only(left: 5, right: 5),
           child: Form(
@@ -109,8 +117,8 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
               children: <Widget>[
                 Container(
                   width: MediaQuery.of(context).size.width * 0.85,
-                  height: MediaQuery.of(context).size.height * 0.24,
-                  padding: const EdgeInsets.only(top: 15, bottom: 15),
+                  height: MediaQuery.of(context).size.height * 0.20,
+                  padding: const EdgeInsets.only(top: 5, bottom: 15),
                   child: Hero(
                     tag: 'logo',
                     child: Image.asset(
@@ -221,7 +229,7 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
                         return 'Please write something';
                       }
                       if (text.length < 10) {
-                        return 'Your comments is too short';
+                        return 'Your comment is too short';
                       }
                       if (text.length < 20) {
                         return 'Please write more than 20 characters';
@@ -264,7 +272,7 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(top: 5),
                   child: TextButton(
                     onPressed: () {
                       Navigator.of(context).pop();
@@ -286,9 +294,8 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
                     ),
                   ),
                 ),
-                const SizedBox(height: 50),
                 Container(
-                  padding: const EdgeInsets.only(top: 20, bottom: 10),
+                  padding: const EdgeInsets.only(top: 50),
                   child: Text(
                     'Love, from the redID team.',
                     style: GoogleFonts.mulish(

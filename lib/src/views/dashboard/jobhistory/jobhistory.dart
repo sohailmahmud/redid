@@ -251,13 +251,19 @@ class JobHistoryState extends State<JobHistory>
     );
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: true,
+        automaticallyImplyLeading: false,
         backgroundColor: kBackgroundColor,
         centerTitle: true,
         toolbarHeight: 50,
-        leadingWidth: 28,
         elevation: 0.0,
         iconTheme: const IconThemeData(color: kBaseColor),
+        leading: IconButton(
+          icon: const FaIcon(FontAwesomeIcons.chevronCircleLeft),
+          splashRadius: 25,
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
         title: const Text(
           'Job History',
           style: TextStyle(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:settings_ui/settings_ui.dart';
 
@@ -17,10 +18,16 @@ class _LanguagesScreenState extends State<LanguagesScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBackgroundColor,
+        automaticallyImplyLeading: false,
         centerTitle: true,
         toolbarHeight: 50,
-        leadingWidth: 28,
+        elevation: 0,
         iconTheme: const IconThemeData(color: kBaseColor),
+        leading: IconButton(
+          icon: const FaIcon(FontAwesomeIcons.chevronCircleLeft),
+          splashRadius: 25,
+          onPressed: () => Navigator.of(context).pop(),
+        ),
         title: const Text(
           'Languages',
           style: kAppBarTextStyle,
