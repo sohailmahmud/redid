@@ -13,8 +13,7 @@ class UserProfile extends StatefulWidget {
   UserProfileState createState() => UserProfileState();
 }
 
-class UserProfileState extends State<UserProfile>
-    with SingleTickerProviderStateMixin {
+class UserProfileState extends State<UserProfile>{
   bool _status = true;
   final FocusNode myFocusNode = FocusNode();
   final format = DateFormat("dd-MM-yyyy");

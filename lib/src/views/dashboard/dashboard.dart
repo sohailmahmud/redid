@@ -91,8 +91,8 @@ class DashboardState extends State<Dashboard> {
       leading: Builder(
         builder: (BuildContext context) {
           return IconButton(
-            icon: const Icon(Icons.menu_open, size: 28),
-            splashRadius: 25,
+            icon: const Icon(Icons.menu_open, size: 30),
+            splashRadius: 20,
             onPressed: () {
               Scaffold.of(context).openDrawer();
             },
@@ -164,12 +164,13 @@ class DashboardState extends State<Dashboard> {
               icon: Badge(
                 badgeContent: const Padding(
                   padding:
-                      EdgeInsets.only(left: 2, right: 2.5, bottom: 2, top: 2),
+                      EdgeInsets.only(left: 2, right: 2, bottom: 2, top: 2),
                   child: Text(
                     '9+',
                     style: TextStyle(
                       fontSize: 10,
                       color: kWhiteShadow,
+                      fontWeight: FontWeight.w600,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -177,7 +178,7 @@ class DashboardState extends State<Dashboard> {
                 showBadge: notificationCount == 0 ? false : true,
                 animationDuration: const Duration(milliseconds: 300),
                 animationType: BadgeAnimationType.scale,
-                position: const BadgePosition(top: -6, end: -15),
+                position: const BadgePosition(top: -5, end: -15),
                 padding: const EdgeInsets.all(2),
                 badgeColor: kBaseColor,
                 child: const FaIcon(
