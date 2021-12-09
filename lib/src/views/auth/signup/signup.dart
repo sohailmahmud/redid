@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/styles/customvalidator.dart';
