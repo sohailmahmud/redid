@@ -1,7 +1,5 @@
-import 'dart:ui';
 import 'package:badges/badges.dart';
 import 'package:card_swiper/card_swiper.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/constants.dart';
 import 'package:redid/src/views/dashboard/about/about.dart';
