@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -170,6 +171,48 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
                     onRatingUpdate: (rating) {
                       // ignore: avoid_print
                       print(rating);
+                    },
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 10, bottom: 10),
+                  child: RatingBar.builder(
+                    initialRating: 0,
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      switch (index) {
+                        case 0:
+                          return const Icon(
+                            Icons.sentiment_very_dissatisfied,
+                            color: Colors.red,
+                          );
+                        case 1:
+                          return const Icon(
+                            Icons.sentiment_dissatisfied,
+                            color: Colors.redAccent,
+                          );
+                        case 2:
+                          return const Icon(
+                            Icons.sentiment_neutral,
+                            color: Colors.amber,
+                          );
+                        case 3:
+                          return const Icon(
+                            Icons.sentiment_satisfied,
+                            color: Colors.lightGreen,
+                          );
+                        case 4:
+                          return const Icon(
+                            Icons.sentiment_very_satisfied,
+                            color: Colors.green,
+                          );
+                      }
+                      return throw '';
+                    },
+                    onRatingUpdate: (rating) {
+                      if (kDebugMode) {
+                        print(rating);
+                      }
                     },
                   ),
                 ),
