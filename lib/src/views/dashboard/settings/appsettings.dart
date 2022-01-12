@@ -46,16 +46,16 @@ class AppSettingsState extends State<AppSettings> {
 
   Widget buildSettingsList() {
     return SettingsList(
-      backgroundColor: kBackgroundColor,
+      brightness: Brightness.light,
       contentPadding: const EdgeInsets.only(top: 15),
       physics: const BouncingScrollPhysics(),
       sections: [
         SettingsSection(
-          title: 'Common',
+          title: const Text('Common'),
           tiles: [
             SettingsTile(
-              title: 'Language',
-              subtitle: 'English',
+              title: const Text('Language'),
+              value: const Text('English'),
               leading: const Icon(Icons.language),
               onPressed: (context) {
                 Navigator.of(context).push(MaterialPageRoute(
@@ -63,21 +63,23 @@ class AppSettingsState extends State<AppSettings> {
                 ));
               },
             ),
-            const SettingsTile(
-              title: 'Environment',
-              subtitle: 'Production',
-              leading: Icon(Icons.cloud_queue),
+            SettingsTile(
+              title: const Text('Environment'),
+              value: const Text('Production'),
+              leading: const Icon(Icons.cloud_queue),
             ),
           ],
         ),
         SettingsSection(
-          title: 'Account',
+          title: const Text('Account'),
           tiles: [
-            const SettingsTile(
-                title: 'Phone number', leading: Icon(Icons.phone)),
-            const SettingsTile(title: 'Email', leading: Icon(Icons.email)),
             SettingsTile(
-              title: 'Sign out',
+                title: const Text('Phone number'),
+                leading: const Icon(Icons.phone)),
+            SettingsTile(
+                title: const Text('Email'), leading: const Icon(Icons.email)),
+            SettingsTile(
+              title: const Text('Sign out'),
               leading: const Icon(Icons.exit_to_app),
               onPressed: (context) {
                 Navigator.of(context).pushNamed(SignIn.tag);
@@ -86,71 +88,72 @@ class AppSettingsState extends State<AppSettings> {
           ],
         ),
         SettingsSection(
-          title: 'Security',
+          title: const Text('Security'),
           tiles: [
             SettingsTile.switchTile(
-              title: 'Lock app in background',
+              title: const Text('Lock app in background'),
               leading: const Icon(Icons.phonelink_lock),
-              switchValue: lockInBackground,
               onToggle: (bool value) {
                 setState(() {
                   lockInBackground = value;
                   notificationsEnabled = value;
                 });
               },
+              initialValue: lockInBackground,
             ),
             SettingsTile.switchTile(
-              title: 'Use fingerprint',
-              subtitle: 'Allow application to access stored fingerprint IDs.',
+              title: const Text('Use fingerprint'),
+              description: const Text(
+                  'Allow application to access stored fingerprint IDs.'),
               leading: const Icon(Icons.fingerprint),
               onToggle: (bool value) {},
-              switchValue: false,
+              initialValue: false,
             ),
             SettingsTile.switchTile(
-              title: 'Change password',
+              title: const Text('Change password'),
               leading: const Icon(Icons.lock),
-              switchValue: true,
               onToggle: (bool value) {},
+              initialValue: true,
             ),
             SettingsTile.switchTile(
-              title: 'Enable Notifications',
-              enabled: notificationsEnabled,
+              title: const Text('Enable Notifications'),
               leading: const Icon(Icons.notifications_active),
-              switchValue: true,
               onToggle: (value) {},
+              initialValue: true,
             ),
           ],
         ),
         SettingsSection(
-          title: 'Misc',
-          tiles: const [
+          title: const Text('Misc'),
+          tiles: [
             SettingsTile(
-                title: 'Terms of Service', leading: Icon(Icons.description)),
+                title: const Text('Terms of Service'),
+                leading: const Icon(Icons.description)),
             SettingsTile(
-                title: 'Open source licenses',
-                leading: Icon(Icons.collections_bookmark)),
+                title: const Text('Open source licenses'),
+                leading: const Icon(Icons.collections_bookmark)),
           ],
         ),
-        CustomSection(
-          child: Column(
-            children: const [
-              Padding(
-                padding: EdgeInsets.only(top: 22, bottom: 4),
-                child: Text(
-                  'redID',
-                  style: kAppBarTextStyle,
-                ),
-              ),
-              Text(
-                'Version: 1.0.2_d15',
-                style: TextStyle(color: Color(0xFF777777)),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-            ],
-          ),
-        ),
+        // CustomSection(
+        //   child: Column(
+        //     children: const [
+        //       Padding(
+        //         padding: EdgeInsets.only(top: 22, bottom: 4),
+        //         child: Text(
+        //           'redID',
+        //           style: kAppBarTextStyle,
+        //         ),
+        //       ),
+        //       Text(
+        //         'Version: 1.0.2_d15',
+        //         style: TextStyle(color: Color(0xFF777777)),
+        //       ),
+        //       SizedBox(
+        //         height: 10,
+        //       ),
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }

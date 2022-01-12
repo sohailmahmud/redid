@@ -34,19 +34,18 @@ class _LanguagesScreenState extends State<LanguagesScreen> {
         ),
       ),
       body: SettingsList(
-        backgroundColor: kBackgroundColor,
         sections: [
           SettingsSection(tiles: [
             SettingsTile(
-              title: "English",
-              trailing: trailingWidget(0),
+              title: const Text("English"),
+              leading: trailingWidget(0),
               onPressed: (BuildContext context) {
                 changeLanguage(0);
               },
             ),
             SettingsTile(
-              title: "Bengali",
-              trailing: trailingWidget(1),
+              title: const Text("Bengali"),
+              leading: trailingWidget(1),
               onPressed: (BuildContext context) {
                 changeLanguage(1);
               },

@@ -17,13 +17,13 @@ dependencies:
   flutter_otp_text_field: ^1.0.0
   font_awesome_flutter: ^9.2.0
   argon_buttons_flutter: ^1.1.0
-  card_swiper: ^1.0.4
+  card_swiper: ^2.0.1
   google_fonts: ^2.1.0
   http: ^0.13.4
   datetime_picker_formfield: ^2.0.0
-  fl_chart: ^0.40.2
-  settings_ui: ^1.0.0
-  flutter_slidable: ^0.6.0
+  fl_chart: ^0.41.0
+  settings_ui: ^2.0.1
+  flutter_slidable: ^1.2.0
   material_dialogs: ^1.1.1
   dotted_border: ^2.0.0+1
   badges: ^2.0.1
