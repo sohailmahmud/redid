@@ -91,8 +91,8 @@ class HelpSupportState extends State<HelpSupport>
           Container(
             padding: const EdgeInsets.only(left: 40, top: 2, right: 40),
             alignment: Alignment.center,
-            child: Column(
-              children: const [
+            child: const Column(
+              children: [
                 Text(
                   'Our crew of superheroes are standing by',
                   style: TextStyle(

@@ -1,4 +1,4 @@
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badges;
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:redid/src/styles/constants.dart';
@@ -159,7 +159,7 @@ class DashboardState extends State<Dashboard> {
             height: 50,
             width: 35,
             child: IconButton(
-              icon: Badge(
+              icon: badges.Badge(
                 badgeContent: const Padding(
                   padding:
                       EdgeInsets.only(left: 2, right: 2, bottom: 2, top: 2),
@@ -175,8 +175,6 @@ class DashboardState extends State<Dashboard> {
                 ),
                 showBadge: notificationCount == 0 ? false : true,
                 animationDuration: const Duration(milliseconds: 300),
-                animationType: BadgeAnimationType.scale,
-                position: const BadgePosition(top: -5, end: -15),
                 padding: const EdgeInsets.all(2),
                 badgeColor: kBaseColor,
                 child: const FaIcon(

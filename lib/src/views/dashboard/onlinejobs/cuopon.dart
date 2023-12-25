@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -135,7 +134,7 @@ class CouponState extends State<Coupon> {
                       padding: const EdgeInsets.only(right: 10, left: 5),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: kBaseColor,
+                          backgroundColor: kBaseColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                           ),
@@ -166,10 +165,6 @@ class CouponState extends State<Coupon> {
                             fontFamily: 'Roboto',
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
-                          ),
-                          lottieBuilder: Lottie.asset(
-                            'assets/congratulations.json',
-                            fit: BoxFit.contain,
                           ),
                           context: context,
                           actions: [
@@ -249,8 +244,7 @@ class CouponState extends State<Coupon> {
                                             maxLength: 500,
                                             keyboardType:
                                                 TextInputType.multiline,
-                                            inputFormatters: <
-                                                TextInputFormatter>[
+                                            inputFormatters: <TextInputFormatter>[
                                               LengthLimitingTextInputFormatter(
                                                   500),
                                               FilteringTextInputFormatter.allow(
@@ -322,7 +316,7 @@ class CouponState extends State<Coupon> {
                       padding: const EdgeInsets.only(left: 5, right: 10),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: kBackgroundColor,
+                          backgroundColor: kBackgroundColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25),
                             side: const BorderSide(

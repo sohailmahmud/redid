@@ -124,10 +124,10 @@ class UserProfileState extends State<UserProfile>{
                                     MainAxisAlignment.spaceBetween,
                                 mainAxisSize: MainAxisSize.max,
                                 children: <Widget>[
-                                  Column(
+                                  const Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     mainAxisSize: MainAxisSize.min,
-                                    children: const <Widget>[
+                                    children: <Widget>[
                                       Text(
                                         'Personal Information',
                                         style: TextStyle(
@@ -145,8 +145,8 @@ class UserProfileState extends State<UserProfile>{
                                   )
                                 ],
                               )),
-                          Padding(
-                              padding: const EdgeInsets.only(
+                          const Padding(
+                              padding: EdgeInsets.only(
                                   left: 25.0, right: 25.0, top: 20.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -154,7 +154,7 @@ class UserProfileState extends State<UserProfile>{
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     mainAxisSize: MainAxisSize.min,
-                                    children: const <Widget>[
+                                    children: <Widget>[
                                       Text(
                                         'Name',
                                         style: TextStyle(
@@ -182,8 +182,8 @@ class UserProfileState extends State<UserProfile>{
                                   ),
                                 ],
                               )),
-                          Padding(
-                              padding: const EdgeInsets.only(
+                          const Padding(
+                              padding: EdgeInsets.only(
                                   left: 25.0, right: 25.0, top: 25.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -191,7 +191,7 @@ class UserProfileState extends State<UserProfile>{
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     mainAxisSize: MainAxisSize.min,
-                                    children: const <Widget>[
+                                    children: <Widget>[
                                       Text(
                                         'Email',
                                         style: TextStyle(
@@ -217,8 +217,8 @@ class UserProfileState extends State<UserProfile>{
                                   ),
                                 ],
                               )),
-                          Padding(
-                              padding: const EdgeInsets.only(
+                          const Padding(
+                              padding: EdgeInsets.only(
                                   left: 25.0, right: 25.0, top: 25.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -226,7 +226,7 @@ class UserProfileState extends State<UserProfile>{
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     mainAxisSize: MainAxisSize.min,
-                                    children: const <Widget>[
+                                    children: <Widget>[
                                       Text(
                                         'Address',
                                         style: TextStyle(

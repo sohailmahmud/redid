@@ -27,11 +27,11 @@ class PieChart2State extends State {
             children: [
               Container(
                 padding: const EdgeInsets.all(15),
-                child: Row(
+                child: const Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
                       'Today\'s work progress',
                       style: TextStyle(color: kBaseColor, fontSize: 22),
@@ -81,6 +81,7 @@ class PieChart2State extends State {
                       ),
                     ),
                   ),
+                  // ignore: prefer_const_constructors
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.end,

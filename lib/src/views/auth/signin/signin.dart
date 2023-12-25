@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -23,6 +24,7 @@ class SignInState extends State<SignIn> {
 
   late String password;
   late bool _passwordVisible;
+  bool? showvalue = false;
 
   @override
   void initState() {
@@ -129,86 +131,108 @@ class SignInState extends State<SignIn> {
         ),
       ),
     );
-    final forgotPasswordLabel = Container(
-      padding: const EdgeInsets.only(top: 30, bottom: 25),
-      child: InkWell(
-        highlightColor: kBackgroundColor,
-        hoverColor: kBackgroundColor,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(5.0),
-              child: const CircleAvatar(
-                radius: 10,
-                backgroundColor: Colors.transparent,
-                child: FaIcon(
-                  FontAwesomeIcons.userLock,
-                  color: kBodyTextColor,
-                  size: 18,
-                ),
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(left: 10),
-              child: const Text(
-                'Forgot Password?',
-                style: TextStyle(
-                  fontFamily: 'Book-Antiqua',
-                  letterSpacing: 0.2,
-                  fontSize: 16,
-                  color: kBodyTextColor,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ],
-        ),
-        onTap: () {
-          //Navigator.of(context).pushNamed();
-        },
-      ),
-    );
-    final orLabel = Container(
-      padding: const EdgeInsets.only(bottom: 15),
+    final forgotPasswordLabel = Padding(
+      padding: const EdgeInsets.only(top: 20.0, bottom: 20.0),
       child: Row(
-        children: const <Widget>[
-          Expanded(
-            child: Divider(
-              thickness: 2,
-              indent: 30,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                showvalue = !showvalue!;
+              });
+            },
+            child: Row(
+              children: [
+                Checkbox(
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  checkColor: Colors.white,
+                  activeColor: Colors.amber.shade900,
+                  value: showvalue,
+                  onChanged: (bool? value) {
+                    setState(() {
+                      showvalue = value;
+                    });
+                  },
+                ),
+                const Text(
+                  'Remember Me',
+                  style: TextStyle(
+                      fontFamily: 'Segoe',
+                      color: Colors.black45,
+                      letterSpacing: 0.5,
+                      fontSize: 15),
+                  textAlign: TextAlign.left,
+                ),
+              ],
             ),
           ),
-          Text(
-            " or ",
-            style: TextStyle(
-              fontFamily: 'Book-Antiqua',
-              fontSize: 22,
-              color: kBaseColor,
-            ),
-          ),
-          Expanded(
-            child: Divider(
-              thickness: 2,
-              endIndent: 30,
-            ),
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(5.0),
+                child: const CircleAvatar(
+                  radius: 12,
+                  backgroundColor: Colors.transparent,
+                  child: Icon(Icons.lock, color: Colors.black45),
+                ),
+              ),
+              InkWell(
+                //highlightColor: kBackgroundColor,
+                //hoverColor: kBackgroundColor,
+                //splashColor: kBackgroundColor,
+                child: const Text(
+                  'Forgot Password?',
+                  style: TextStyle(
+                      fontFamily: 'Segoe',
+                      color: Colors.black45,
+                      letterSpacing: 0.5,
+                      fontSize: 15),
+                  textAlign: TextAlign.right,
+                ),
+                onTap: () {
+                  //Navigator.of(context).pushNamed(ForgotPassword.tag);
+                },
+              ),
+            ],
           ),
         ],
       ),
     );
-    final createAccountButton = Container(
-      width: MediaQuery.of(context).size.width * 0.70,
-      padding: const EdgeInsets.only(top: 10),
-      child: customMaterialButton(
-        onPressed: () {
-          Navigator.of(context).pop();
-          Navigator.of(context).pushNamed(SignUp.tag);
-        },
-        padding: const EdgeInsets.fromLTRB(10, 8, 10, 8),
-        color: kBaseColor,
-        child: const Text(
-          'Create new Account',
-          style: kButtonStyle,
+
+    final createAccountButton = Padding(
+      padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 30.0),
+      child: SizedBox(
+        child: RichText(
+          textAlign: TextAlign.left,
+          text: TextSpan(
+            text: 'Don\'t have an account? ',
+            style: const TextStyle(
+                fontFamily: 'Segoe',
+                color: Colors.black45,
+                letterSpacing: 0.5,
+                fontSize: 15),
+            children: <TextSpan>[
+              TextSpan(
+                text: 'Sign Up',
+                style: const TextStyle(
+                  color: kBaseColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                ),
+                recognizer: TapGestureRecognizer()
+                  ..onTap = () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return const SignUp();
+                    }));
+                  },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -231,7 +255,6 @@ class SignInState extends State<SignIn> {
                   passwordField,
                   signInButton,
                   forgotPasswordLabel,
-                  orLabel,
                   createAccountButton,
                 ],
               ),

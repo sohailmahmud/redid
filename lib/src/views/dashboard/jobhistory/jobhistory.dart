@@ -20,10 +20,6 @@ class JobHistoryState extends State<JobHistory>
   bool showYesterdayWork = false;
   bool showLifetimeWork = false;
   int? isSelected;
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -209,9 +205,9 @@ class JobHistoryState extends State<JobHistory>
       child: Card(
         color: kBaseColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        child: Column(
+        child: const Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const <Widget>[
+          children: <Widget>[
             CircleAvatar(
               radius: 25,
               child: FaIcon(

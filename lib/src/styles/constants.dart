@@ -41,9 +41,10 @@ const kHeadingTextStyle = TextStyle(
 );
 
 const kButtonStyle = TextStyle(
-  fontFamily: 'Book-Antiqua',
+  fontFamily: 'Roboto',
   fontSize: 22,
   fontWeight: FontWeight.w900,
+  color: kBackgroundColor,
 );
 const kAppBarTextStyle = TextStyle(
   fontFamily: 'Chiller',

@@ -23,4 +23,3 @@ String? passwordValidator(String? password) {
     }
   }
 }
-

@@ -79,7 +79,7 @@ class UserWalletState extends State<UserWallet> {
         Text(
           text,
           style: GoogleFonts.mulish(
-            textStyle: Theme.of(context).textTheme.headline4,
+            textStyle: Theme.of(context).textTheme.headlineMedium,
             fontSize: 14,
             fontWeight: FontWeight.w600,
             color: const Color(0xff76797e),
@@ -108,7 +108,7 @@ class UserWalletState extends State<UserWallet> {
                   Text(
                     'Total Balance,',
                     style: GoogleFonts.mulish(
-                      textStyle: Theme.of(context).textTheme.headline4,
+                      textStyle: Theme.of(context).textTheme.headlineMedium,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: kBackgroundColor,
@@ -121,7 +121,7 @@ class UserWalletState extends State<UserWallet> {
                       Text(
                         '6,354',
                         style: GoogleFonts.mulish(
-                            textStyle: Theme.of(context).textTheme.headline4,
+                            textStyle: Theme.of(context).textTheme.headlineMedium,
                             fontSize: 35,
                             fontWeight: FontWeight.w800,
                             color: LightColor.yellow2),
@@ -158,7 +158,7 @@ class UserWalletState extends State<UserWallet> {
                         Text(
                           "TopUp",
                           style: GoogleFonts.mulish(
-                            textStyle: Theme.of(context).textTheme.headline4,
+                            textStyle: Theme.of(context).textTheme.headlineMedium,
                             fontSize: 12,
                             fontWeight: FontWeight.w600,
                             color: kWhiteShadow,

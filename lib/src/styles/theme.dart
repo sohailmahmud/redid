@@ -4,16 +4,13 @@ import 'package:redid/src/styles/light_color.dart';
 class AppTheme {
   const AppTheme();
   static ThemeData lightTheme = ThemeData(
-      primarySwatch: Colors.blue,
-      backgroundColor: LightColor.background,
       primaryColor: LightColor.navyBlue1,
       cardTheme: const CardTheme(color: LightColor.navyBlue2),
-      textTheme: const TextTheme(headline4: TextStyle(color: LightColor.black)),
+      textTheme: const TextTheme(headlineMedium: TextStyle(color: LightColor.black)),
       iconTheme: const IconThemeData(color: LightColor.navyBlue2),
-      bottomAppBarColor: LightColor.background,
       dividerColor: LightColor.lightGrey,
       primaryTextTheme: const TextTheme(
-          bodyText2: TextStyle(color: LightColor.titleTextColor)));
+          bodyMedium: TextStyle(color: LightColor.titleTextColor)), colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(background: LightColor.background), bottomAppBarTheme: const BottomAppBarTheme(color: LightColor.background));
 
   static TextStyle titleStyle =
       const TextStyle(color: LightColor.titleTextColor, fontSize: 16);

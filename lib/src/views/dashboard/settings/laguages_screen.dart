@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:redid/src/styles/constants.dart';
-import 'package:settings_ui/settings_ui.dart';
 
 class LanguagesScreen extends StatefulWidget {
   const LanguagesScreen({Key? key}) : super(key: key);
@@ -33,26 +32,26 @@ class _LanguagesScreenState extends State<LanguagesScreen> {
           style: kAppBarTextStyle,
         ),
       ),
-      body: SettingsList(
-        sections: [
-          SettingsSection(tiles: [
-            SettingsTile(
-              title: const Text("English"),
-              leading: trailingWidget(0),
-              onPressed: (BuildContext context) {
-                changeLanguage(0);
-              },
-            ),
-            SettingsTile(
-              title: const Text("Bengali"),
-              leading: trailingWidget(1),
-              onPressed: (BuildContext context) {
-                changeLanguage(1);
-              },
-            ),
-          ]),
-        ],
-      ),
+      // body: SettingsList(
+      //   sections: [
+      //     SettingsSection(tiles: [
+      //       SettingsTile(
+      //         title: const Text("English"),
+      //         leading: trailingWidget(0),
+      //         onPressed: (BuildContext context) {
+      //           changeLanguage(0);
+      //         },
+      //       ),
+      //       SettingsTile(
+      //         title: const Text("Bengali"),
+      //         leading: trailingWidget(1),
+      //         onPressed: (BuildContext context) {
+      //           changeLanguage(1);
+      //         },
+      //       ),
+      //     ]),
+      //   ],
+      // ),
     );
   }
 

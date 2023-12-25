@@ -902,7 +902,7 @@ class OnlineJobsState extends State<OnlineJobs> with TickerProviderStateMixin {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                primary: kBackgroundColor,
+                backgroundColor: kBackgroundColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: const BorderSide(
@@ -942,7 +942,7 @@ class OnlineJobsState extends State<OnlineJobs> with TickerProviderStateMixin {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                primary: kBackgroundColor,
+                backgroundColor: kBackgroundColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                   side: const BorderSide(

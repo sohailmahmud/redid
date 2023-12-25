@@ -1,4 +1,3 @@
-import 'package:argon_buttons_flutter/argon_buttons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:redid/src/styles/constants.dart';
@@ -96,50 +95,50 @@ class VerificationState extends State<Verification> {
               onSubmit: (String verificationCode) {}, // end onSubmit
             ),
             const SizedBox(height: 40),
-            Container(
-              padding: const EdgeInsets.only(left: 25, right: 25),
-              child: ArgonTimerButton(
-                initialTimer: 29,
-                height: 25,
-                width: 200,
-                minWidth: 180,
-                padding: const EdgeInsets.fromLTRB(25, 0.0, 25, 0.0),
-                elevation: 1.0,
-                color: kBackgroundColor,
-                borderRadius: 30,
-                colorBrightness: Brightness.light,
-                curve: Curves.ease,
-                materialTapTargetSize: MaterialTapTargetSize.padded,
-                clipBehavior: Clip.antiAlias,
-                reverseCurve: Curves.ease,
-                focusNode: FocusNode(),
-                child: const Text(
-                  "Resend OTP",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    fontFamily: 'Book-Antiqua',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                loader: (timeLeft) {
-                  return Text(
-                    "Valid till $timeLeft seconds",
-                    style: const TextStyle(
-                      color: kTextColor,
-                      fontSize: 15,
-                      fontFamily: 'Book-Antiqua',
-                      fontWeight: FontWeight.w700,
-                    ),
-                  );
-                },
-                onTap: (startTimer, btnState) {
-                  if (btnState == ButtonState.Idle) {
-                    startTimer(29);
-                  }
-                },
-              ),
-            ),
+            // Container(
+            //   padding: const EdgeInsets.only(left: 25, right: 25),
+            //   child: ArgonTimerButton(
+            //     initialTimer: 29,
+            //     height: 25,
+            //     width: 200,
+            //     minWidth: 180,
+            //     padding: const EdgeInsets.fromLTRB(25, 0.0, 25, 0.0),
+            //     elevation: 1.0,
+            //     color: kBackgroundColor,
+            //     borderRadius: 30,
+            //     colorBrightness: Brightness.light,
+            //     curve: Curves.ease,
+            //     materialTapTargetSize: MaterialTapTargetSize.padded,
+            //     clipBehavior: Clip.antiAlias,
+            //     reverseCurve: Curves.ease,
+            //     focusNode: FocusNode(),
+            //     child: const Text(
+            //       "Resend OTP",
+            //       style: TextStyle(
+            //         color: Colors.black,
+            //         fontSize: 15,
+            //         fontFamily: 'Book-Antiqua',
+            //         fontWeight: FontWeight.w700,
+            //       ),
+            //     ),
+            //     loader: (timeLeft) {
+            //       return Text(
+            //         "Valid till $timeLeft seconds",
+            //         style: const TextStyle(
+            //           color: kTextColor,
+            //           fontSize: 15,
+            //           fontFamily: 'Book-Antiqua',
+            //           fontWeight: FontWeight.w700,
+            //         ),
+            //       );
+            //     },
+            //     onTap: (startTimer, btnState) {
+            //       if (btnState == ButtonState.Idle) {
+            //         startTimer(29);
+            //       }
+            //     },
+            //   ),
+            // ),
             const SizedBox(height: 20),
             Center(
               child: customMaterialButton(
@@ -169,7 +168,7 @@ class VerificationState extends State<Verification> {
 
   TextStyle? createStyle(Color color) {
     ThemeData theme = Theme.of(context);
-    return theme.textTheme.headline3?.copyWith(color: color);
+    return theme.textTheme.displaySmall?.copyWith(color: color);
   }
 }
 

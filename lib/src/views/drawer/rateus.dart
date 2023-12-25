@@ -1,7 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:redid/src/styles/constants.dart';
@@ -155,67 +153,67 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.only(top: 15, bottom: 10),
-                  child: RatingBar.builder(
-                    initialRating: 0,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: kBaseColor,
-                    ),
-                    onRatingUpdate: (rating) {
-                      // ignore: avoid_print
-                      print(rating);
-                    },
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.only(top: 10, bottom: 10),
-                  child: RatingBar.builder(
-                    initialRating: 0,
-                    itemCount: 5,
-                    itemBuilder: (context, index) {
-                      switch (index) {
-                        case 0:
-                          return const Icon(
-                            Icons.sentiment_very_dissatisfied,
-                            color: Colors.red,
-                          );
-                        case 1:
-                          return const Icon(
-                            Icons.sentiment_dissatisfied,
-                            color: Colors.redAccent,
-                          );
-                        case 2:
-                          return const Icon(
-                            Icons.sentiment_neutral,
-                            color: Colors.amber,
-                          );
-                        case 3:
-                          return const Icon(
-                            Icons.sentiment_satisfied,
-                            color: Colors.lightGreen,
-                          );
-                        case 4:
-                          return const Icon(
-                            Icons.sentiment_very_satisfied,
-                            color: Colors.green,
-                          );
-                      }
-                      return throw '';
-                    },
-                    onRatingUpdate: (rating) {
-                      if (kDebugMode) {
-                        print(rating);
-                      }
-                    },
-                  ),
-                ),
+                // Container(
+                //   padding: const EdgeInsets.only(top: 15, bottom: 10),
+                //   child: RatingBar.builder(
+                //     initialRating: 0,
+                //     minRating: 1,
+                //     direction: Axis.horizontal,
+                //     allowHalfRating: true,
+                //     itemCount: 5,
+                //     itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                //     itemBuilder: (context, _) => const Icon(
+                //       Icons.star,
+                //       color: kBaseColor,
+                //     ),
+                //     onRatingUpdate: (rating) {
+                //       // ignore: avoid_print
+                //       print(rating);
+                //     },
+                //   ),
+                // ),
+                // Container(
+                //   padding: const EdgeInsets.only(top: 10, bottom: 10),
+                //   child: RatingBar.builder(
+                //     initialRating: 0,
+                //     itemCount: 5,
+                //     itemBuilder: (context, index) {
+                //       switch (index) {
+                //         case 0:
+                //           return const Icon(
+                //             Icons.sentiment_very_dissatisfied,
+                //             color: Colors.red,
+                //           );
+                //         case 1:
+                //           return const Icon(
+                //             Icons.sentiment_dissatisfied,
+                //             color: Colors.redAccent,
+                //           );
+                //         case 2:
+                //           return const Icon(
+                //             Icons.sentiment_neutral,
+                //             color: Colors.amber,
+                //           );
+                //         case 3:
+                //           return const Icon(
+                //             Icons.sentiment_satisfied,
+                //             color: Colors.lightGreen,
+                //           );
+                //         case 4:
+                //           return const Icon(
+                //             Icons.sentiment_very_satisfied,
+                //             color: Colors.green,
+                //           );
+                //       }
+                //       return throw '';
+                //     },
+                //     onRatingUpdate: (rating) {
+                //       if (kDebugMode) {
+                //         print(rating);
+                //       }
+                //     },
+                //   ),
+                // ),
                 Container(
                   padding: const EdgeInsets.only(
                       left: 25, top: 10, right: 25, bottom: 10),
@@ -341,7 +339,7 @@ class RateUsState extends State<RateUs> with SingleTickerProviderStateMixin {
                   child: Text(
                     'Love, from the redID team.',
                     style: GoogleFonts.mulish(
-                      textStyle: Theme.of(context).textTheme.headline4,
+                      textStyle: Theme.of(context).textTheme.headlineMedium,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: const Color(0xff76797e),
